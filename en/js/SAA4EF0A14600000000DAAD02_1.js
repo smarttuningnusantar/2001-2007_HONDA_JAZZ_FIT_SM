@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group2\" class=\"drag\" style=\"position:relative; width:950px; height:1039px;\" coordsize=\"950,1039\">");
+write("<v:rect id=\"rect2\"class=\"drag\"  style=\"width:950px;height:1039px;\">");
+write("<img id=\"img2\" src=\"../img/SAA4EF0A14600000000DAAD02.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:1039px;border-color:#ffffff\">");
+write("<p id=\"p2_1\" class=\"drag\" style=\"position:absolute;left:691px;top:480px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>THERMOSTAT<br><a href=\"javascript:parent.Cts('000000000000013','i000')\"></b>Replacement,</a><br> in the Shop Manual, P/N 62SAA00<br><a href=\"javascript:parent.Cts('000000000002913','i000')\">Inspection,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p2_2\" class=\"drag\" style=\"position:absolute;left:691px;top:805px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>EXHAUST GAS RECIRCULATION<br>(EGR)/PASSAGE ASSEMBLY<br><a href=\"javascript:parent.Cts('000000000000014','i000')\"></b>Installation,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p2_3\" class=\"drag\" style=\"position:absolute;left:420px;top:649px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>O-RING<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_4\" class=\"drag\" style=\"position:absolute;left:27px;top:861px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DOWEL PIN<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_5\" class=\"drag\" style=\"position:absolute;left:623px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CYLINDER HEAD BOLT<br><a href=\"javascript:parent.Cts('000000000000516','i050')\"></b>Inspection,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p2_6\" class=\"drag\" style=\"position:absolute;left:759px;top:418px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>THERMOSTAT HOUSING<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_7\" class=\"drag\" style=\"position:absolute;left:624px;top:738px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>GASKET<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_8\" class=\"drag\" style=\"position:absolute;left:18px;top:732px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CYLINDER HEAD <br>GASKET<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

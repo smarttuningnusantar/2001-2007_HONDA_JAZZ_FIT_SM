@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group28\" class=\"drag\" style=\"position:relative; width:950px; height:687px;\" coordsize=\"950,687\">");
+write("<v:rect id=\"rect28\"class=\"drag\"  style=\"width:950px;height:687px;\">");
+write("<img id=\"img28\" src=\"../img/SAA7EJPA20300000000DBAD14.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:687px;border-color:#ffffff\">");
+write("<p id=\"p28_1\" class=\"drag\" style=\"position:absolute;left:132px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>6P CONNECTOR<br>(1)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p28_2\" class=\"drag\" style=\"position:absolute;left:130px;top:197px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>20P CONNECTOR<br>(4) (CVT) <br></b></nobr>");
+write("</p>");
+write("<p id=\"p28_3\" class=\"drag\" style=\"position:absolute;left:402px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>EVAPORATOR<br>SENSOR (2)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p28_4\" class=\"drag\" style=\"position:absolute;left:740px;top:209px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ECM/PCM B (5)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p28_5\" class=\"drag\" style=\"position:absolute;left:136px;top:421px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ECM/PCM A (6)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p28_6\" class=\"drag\" style=\"position:absolute;left:459px;top:422px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PCM C (7) (CVT)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p28_7\" class=\"drag\" style=\"position:absolute;left:431px;top:196px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>14P CONNECTOR<br>(4) (M/T) <br></b></nobr>");
+write("</p>");
+write("<p id=\"p28_8\" class=\"drag\" style=\"position:absolute;left:727px;top:26px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ECM/PCM E (3)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p28_9\" class=\"drag\" style=\"position:absolute;left:0px;top:620px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>NOTE:<br>· Connector with male terminals (double outline): view from terminal side<br>· Connector with female terminals (single outline): view from wire side<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

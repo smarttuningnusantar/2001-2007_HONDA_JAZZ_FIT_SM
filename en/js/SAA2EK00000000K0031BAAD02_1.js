@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:687px;\" coordsize=\"950,687\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:687px;\">");
+write("<img id=\"img1\" src=\"../img/SAA2EK00000000K0031BAAD02.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:687px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:103px;top:643px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SIDE AIRBAG<br>INFORMATION<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:86px;top:472px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>STEERING<br>COLUMN NOTICE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:737px;top:642px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>FRONT SEAT BELT<br>TENSIONER WARNING<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:702px;top:526px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>MONITOR CAUTION<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:702px;top:441px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SIDE AIRBAG MODULE DANGER<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:788px;top:272px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>FRONT PASSENGER<br>MODULE DANGER<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:700px;top:48px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PASSENGER AIRBAG INGORMATION<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:512px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PASSENGER AIRBAG CHILD SEAT CAUTION<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:280px;top:48px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DRIVER AIRBAG INFORMATION<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

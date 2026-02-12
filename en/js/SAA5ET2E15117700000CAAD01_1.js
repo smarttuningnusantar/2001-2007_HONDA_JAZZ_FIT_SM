@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:543px;\" coordsize=\"950,543\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:543px;\">");
+write("<img id=\"img1\" src=\"../img/SAA5ET2E15117700000CAAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:543px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:766px;top:105px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>STEERING SHIFT<br>+ (PLUS) SWITCH<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:571px;top:15px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>STEERING SHIFT<br>− (MINUS) SWITCH<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:765px;top:293px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>7SPEED MODE<br>MAIN SWITCH<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:587px;top:467px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DATA LINK <br>CONNECTOR (DLC)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:461px;top:467px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PARK PIN <br>SWITCH<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:303px;top:468px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SHIFT LOCK<br>SOLENOID<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:263px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>POWERTRAIN<br>CONTROL<br>MODULE (PCM)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:0px;top:513px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>The illustration shows the RHD model; LHD is symmetrical.<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

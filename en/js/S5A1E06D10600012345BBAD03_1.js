@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:475px; height:369px;\" coordsize=\"475,369\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:475px;height:369px;\">");
+write("<img id=\"img1\" src=\"../img/S5A1E06D10600012345BBAD03.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:475px;height:369px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:2px;top:16px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>Example of DTC15<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:1px;top:90px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>ON<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:1px;top:142px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>OFF<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:121px;top:48px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>Long blink<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:260px;top:32px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>Short blinks <br>(five times)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:1px;top:278px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>ON<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:1px;top:330px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>OFF<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:2px;top:200px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>Example of DTC22<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:150px;top:232px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>Long blinks (two times)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_10\" class=\"drag\" style=\"position:absolute;left:382px;top:216px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>Short blinks <br>(two times)<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

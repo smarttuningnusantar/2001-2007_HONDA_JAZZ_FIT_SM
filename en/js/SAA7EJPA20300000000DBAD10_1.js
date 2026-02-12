@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group24\" class=\"drag\" style=\"position:relative; width:950px; height:447px;\" coordsize=\"950,447\">");
+write("<v:rect id=\"rect24\"class=\"drag\"  style=\"width:950px;height:447px;\">");
+write("<img id=\"img24\" src=\"../img/SAA7EJPA20300000000DBAD10.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:447px;border-color:#ffffff\">");
+write("<p id=\"p24_1\" class=\"drag\" style=\"position:absolute;left:83px;top:196px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SECONDARY HO2S<br>(SENSOR 2) (5)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p24_2\" class=\"drag\" style=\"position:absolute;left:754px;top:33px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>FUEL PUMP (4)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p24_3\" class=\"drag\" style=\"position:absolute;left:507px;top:19px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DATA LINK CONNECTOR<br>(3)<sup>*</sup><br></b></nobr>");
+write("</p>");
+write("<p id=\"p24_4\" class=\"drag\" style=\"position:absolute;left:321px;top:195px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>3P CONNECTOR<br>(6)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p24_5\" class=\"drag\" style=\"position:absolute;left:92px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>18P CONNECTOR<br>(1)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p24_6\" class=\"drag\" style=\"position:absolute;left:556px;top:194px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>12P CONNECTOR<br>(7)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p24_7\" class=\"drag\" style=\"position:absolute;left:318px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>BRAKE PEDAL<br>POSITION SWITCH<br>(2)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p24_8\" class=\"drag\" style=\"position:absolute;left:1px;top:372px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>NOTE:<br>· Connector with male terminals (double outline): view from terminal side<br>· Connector with female terminals (single outline): view from wire side<br>*: Connector with female terminals (single outline): view from terminal side<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

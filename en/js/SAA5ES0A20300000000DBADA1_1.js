@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group43\" class=\"drag\" style=\"position:relative; width:950px; height:831px;\" coordsize=\"950,831\">");
+write("<v:rect id=\"rect43\"class=\"drag\"  style=\"width:950px;height:831px;\">");
+write("<img id=\"img43\" src=\"../img/SAA5ES0A20300000000DBADA1.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:831px;border-color:#ffffff\">");
+write("<p id=\"p43_1\" class=\"drag\" style=\"position:absolute;left:296px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DASHBOARD<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p43_2\" class=\"drag\" style=\"position:absolute;left:740px;top:28px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C241<br>C306<br></b></nobr>");
+write("</p>");
+write("<p id=\"p43_3\" class=\"drag\" style=\"position:absolute;left:803px;top:320px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE<br>COMPARTMENT<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p43_4\" class=\"drag\" style=\"position:absolute;left:485px;top:564px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C209<br></b></nobr>");
+write("</p>");
+write("<p id=\"p43_5\" class=\"drag\" style=\"position:absolute;left:843px;top:544px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C215<br>C305<br></b></nobr>");
+write("</p>");
+write("<p id=\"p43_6\" class=\"drag\" style=\"position:absolute;left:211px;top:715px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C218*<sup>6</sup><br></b></nobr>");
+write("</p>");
+write("<p id=\"p43_7\" class=\"drag\" style=\"position:absolute;left:80px;top:708px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C217<br></b></nobr>");
+write("</p>");
+write("<p id=\"p43_8\" class=\"drag\" style=\"position:absolute;left:35px;top:360px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C204<br></b></nobr>");
+write("</p>");
+write("<p id=\"p43_9\" class=\"drag\" style=\"position:absolute;left:38px;top:799px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>*6: Except IN model<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

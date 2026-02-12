@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group2\" class=\"drag\" style=\"position:relative; width:950px; height:415px;\" coordsize=\"950,415\">");
+write("<v:rect id=\"rect2\"class=\"drag\"  style=\"width:950px;height:415px;\">");
+write("<img id=\"img2\" src=\"../img/SAA7EV1A20326400000CAAD02.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:415px;border-color:#ffffff\">");
+write("<p id=\"p2_1\" class=\"drag\" style=\"position:absolute;left:268px;top:68px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>High<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_2\" class=\"drag\" style=\"position:absolute;left:372px;top:337px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>0 °C<br>(32 °F)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_3\" class=\"drag\" style=\"position:absolute;left:238px;top:15px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SUBFUEL SOLENOID and<br>SUBFUEL PUMP ON (for idling)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_4\" class=\"drag\" style=\"position:absolute;left:713px;top:200px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SUBFUEL SOLENOID and<br>SUBFUEL PUMP ON<br>(for prevent from<br>sticking and fuel contaminating) <br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_5\" class=\"drag\" style=\"position:absolute;left:86px;top:198px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>FUEL GRADE<br>(alcohol contained level)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_6\" class=\"drag\" style=\"position:absolute;left:249px;top:301px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>Low<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_7\" class=\"drag\" style=\"position:absolute;left:675px;top:308px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>High<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_8\" class=\"drag\" style=\"position:absolute;left:527px;top:22px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SUBFUEL SOLENOID and<br>SUBFUEL PUMP ON<br>(for engine start)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_9\" class=\"drag\" style=\"position:absolute;left:699px;top:102px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SUBFUEL SOLENOID and<br>SUBFUEL PUMP ON<br>(for acceleration)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_10\" class=\"drag\" style=\"position:absolute;left:439px;top:369px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE COOLANT<br>TEMPERATURE<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

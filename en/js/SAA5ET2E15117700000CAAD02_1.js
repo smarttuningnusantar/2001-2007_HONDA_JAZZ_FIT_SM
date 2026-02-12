@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group2\" class=\"drag\" style=\"position:relative; width:950px; height:543px;\" coordsize=\"950,543\">");
+write("<v:rect id=\"rect2\"class=\"drag\"  style=\"width:950px;height:543px;\">");
+write("<img id=\"img2\" src=\"../img/SAA5ET2E15117700000CAAD02.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:543px;border-color:#ffffff\">");
+write("<p id=\"p2_1\" class=\"drag\" style=\"position:absolute;left:459px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CVT DRIVEN PULLEY<br>SPEED SENSOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_2\" class=\"drag\" style=\"position:absolute;left:688px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>TRANSMISSION <br>RANGE SWITCH<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_3\" class=\"drag\" style=\"position:absolute;left:262px;top:34px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CVT SPEED SENSOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_4\" class=\"drag\" style=\"position:absolute;left:112px;top:462px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ABS CONTROL<br>UNIT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_5\" class=\"drag\" style=\"position:absolute;left:361px;top:462px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>INHIBITOR<br>SOLENOID<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_6\" class=\"drag\" style=\"position:absolute;left:547px;top:462px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CVT DRIVE PULLEY<br>SPEED SENSOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_7\" class=\"drag\" style=\"position:absolute;left:770px;top:93px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CVT DRIVE PULLEY<br>PRESSURE<br>CONTROL VALVE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_8\" class=\"drag\" style=\"position:absolute;left:770px;top:161px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CVT DRIVEN PULLEY<br>PRESSURE<br>CONTROL VALVE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_9\" class=\"drag\" style=\"position:absolute;left:771px;top:229px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CVT START CLUTCH<br>PRESSURE<br>CONTROL VALVE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_10\" class=\"drag\" style=\"position:absolute;left:1px;top:512px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>The illustration shows the RHD model; LHD is similar.<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group14\" class=\"drag\" style=\"position:relative; width:950px; height:687px;\" coordsize=\"950,687\">");
+write("<v:rect id=\"rect14\"class=\"drag\"  style=\"width:950px;height:687px;\">");
+write("<img id=\"img14\" src=\"../img/SAA7EJAA20300000000DBAD14.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:687px;border-color:#ffffff\">");
+write("<p id=\"p14_1\" class=\"drag\" style=\"position:absolute;left:132px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>6P CONNECTOR<br>(1)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p14_2\" class=\"drag\" style=\"position:absolute;left:719px;top:19px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>20P CONNECTOR<br>(3) (CVT) <br></b></nobr>");
+write("</p>");
+write("<p id=\"p14_3\" class=\"drag\" style=\"position:absolute;left:402px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>EVAPORATOR<br>SENSOR (2)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p14_4\" class=\"drag\" style=\"position:absolute;left:431px;top:207px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ECM/PCM A (4)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p14_5\" class=\"drag\" style=\"position:absolute;left:727px;top:209px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ECM/PCM B (5)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p14_6\" class=\"drag\" style=\"position:absolute;left:150px;top:421px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PCM C (6)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p14_7\" class=\"drag\" style=\"position:absolute;left:450px;top:419px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ECM/PCM E (7)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p14_8\" class=\"drag\" style=\"position:absolute;left:126px;top:197px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>14P CONNECTOR<br>(3) (M/T) <br></b></nobr>");
+write("</p>");
+write("<p id=\"p14_9\" class=\"drag\" style=\"position:absolute;left:0px;top:620px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>NOTE:<br>· Connector with male terminals (double outline): view from terminal side<br>· Connector with female terminals (single outline): view from wire side<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

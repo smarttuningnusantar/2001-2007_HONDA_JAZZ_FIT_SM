@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:671px;\" coordsize=\"950,671\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:671px;\">");
+write("<img id=\"img1\" src=\"../img/SAA2E00D10600000000DAAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:671px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:177px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-DASH FUSE/RELAY BOX<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:33px;top:113px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-HOOD FUSE/RELAY BOX<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:170px;top:561px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>RIGHT-FRONT WHEEL SENSOR<br><a href=\"javascript:parent.Cts('000000000000085','i000')\"></b>Inspection,</a><br><a href=\"javascript:parent.Cts('000000000000084','i000')\">Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:25px;top:626px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ABS MODULATOR-CONTROL UNIT<br><a href=\"javascript:parent.Cts('000000000000083','i000')\"></b>Removal and Installation,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:423px;top:607px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>LEFT-FRONT WHEEL SENSOR<br><a href=\"javascript:parent.Cts('000000000000085','i000')\"></b>Inspection,</a><br><a href=\"javascript:parent.Cts('000000000000084','i000')\">Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:584px;top:538px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>RIGHT-REAR WHEEL SENSOR<br><a href=\"javascript:parent.Cts('000000000000085','i000')\"></b>Inspection,</a><br><a href=\"javascript:parent.Cts('000000000000084','i000')\">Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:601px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DATA LINK CONNECTOR (16P)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:720px;top:452px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>LEFT-REAR<br>WHEEL SENSOR<br><a href=\"javascript:parent.Cts('000000000000085','i000')\"></b>Inspection,</a><br><a href=\"javascript:parent.Cts('000000000000084','i000')\">Replacement,</a><br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

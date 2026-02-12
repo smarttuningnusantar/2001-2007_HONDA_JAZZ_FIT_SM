@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:735px;\" coordsize=\"950,735\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:735px;\">");
+write("<img id=\"img1\" src=\"../img/SAA3ENAA20326900000DAAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:735px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:787px;top:93px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>INTAKE AIR<br>TEMPERATURE <br>(IAT)SENSOR<br><a href=\"javascript:parent.Cts('000000000000555','i000')\"></b>Replacement,<br></a><br> in the '02 Jazz/Fit <br> Shop Manual<br></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:688px;top:557px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE COOLANT<br>TEMPERATURE<br>(ECT) SENSOR<br><a href=\"javascript:parent.Cts('000000000000553','i000')\"></b>Replacement,</a><br> in the '02 Jazz/Fit Shop Manual<br></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:227px;top:631px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>KNOCK SENSOR<br><a href=\"javascript:parent.Cts('000000000000556','i000')\"></b>Replacement,</a><br> in the '02 Jazz/Fit Shop Manual<br></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:389px;top:560px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>MANIFOLD ABSOLUTE<br>PRESSURE (MAP) SENSOR<br><a href=\"javascript:parent.Cts('000000000000557','i000')\"></b>Replacement,</a><br> in the '02 Jazz/Fit Shop Manual<br></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:719px;top:497px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>THROTTLE POSITION (TP)<br>SENSOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:8px;top:546px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CRANKSHAFT POSITION (CKP)<br>SENSOR<br><a href=\"javascript:parent.Cts('000000000000552','i000')\"></b>Replacement,</a><br> in the '02 Jazz/Fit Shop Manual<br></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:388px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>REAR<br>IGNITION<br>COIL<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:3px;top:411px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>FRONT<br>IGNITION<br>COIL<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:804px;top:250px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ELECTRICAL<br>LOAD DETECTOR<br>(ELD)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_10\" class=\"drag\" style=\"position:absolute;left:605px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CAMSHAFT POSITION (CMP) SENSOR<br>(TOP DEAD CENTER (TDC) SENSOR)<br><a href=\"javascript:parent.Cts('000000000000558','i000')\"></b>Replacement,</a><br> in the '02 Jazz/Fit Shop Manual<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

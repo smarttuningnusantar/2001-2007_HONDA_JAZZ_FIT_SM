@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group12\" class=\"drag\" style=\"position:relative; width:950px; height:735px;\" coordsize=\"950,735\">");
+write("<v:rect id=\"rect12\"class=\"drag\"  style=\"width:950px;height:735px;\">");
+write("<img id=\"img12\" src=\"../img/SAA7EJAA20300000000DBAD12.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:735px;border-color:#ffffff\">");
+write("<p id=\"p12_1\" class=\"drag\" style=\"position:absolute;left:110px;top:23px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PGM-FI MAIN <br>RELAY 1 (FI MAIN)<br>(1)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p12_2\" class=\"drag\" style=\"position:absolute;left:665px;top:20px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-DASH<br>FUSE/RELAY<br>BOX (3)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p12_3\" class=\"drag\" style=\"position:absolute;left:125px;top:239px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-DASH<br>FUSE/RELAY<br>BOX (4)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p12_4\" class=\"drag\" style=\"position:absolute;left:387px;top:240px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-DASH<br>FUSE/RELAY<br>BOX (5)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p12_5\" class=\"drag\" style=\"position:absolute;left:668px;top:242px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-DASH<br>FUSE/RELAY<br>BOX (6)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p12_6\" class=\"drag\" style=\"position:absolute;left:126px;top:466px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-DASH<br>FUSE/RELAY<br>BOX (7)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p12_7\" class=\"drag\" style=\"position:absolute;left:410px;top:467px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-DASH<br>FUSE/RELAY<br>BOX (8)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p12_8\" class=\"drag\" style=\"position:absolute;left:665px;top:467px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-DASH<br>FUSE/RELAY<br>BOX (9)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p12_9\" class=\"drag\" style=\"position:absolute;left:380px;top:23px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PGM-FI MAIN <br>RELAY 2 (FUEL PUMP)<br>(2)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p12_10\" class=\"drag\" style=\"position:absolute;left:0px;top:673px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>NOTE:<br>· Connector with male terminals (double outline): view from terminal side<br>· Connector with female terminals (single outline): view from wire side<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

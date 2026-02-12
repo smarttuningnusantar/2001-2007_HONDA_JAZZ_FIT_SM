@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:703px;\" coordsize=\"950,703\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:703px;\">");
+write("<img id=\"img1\" src=\"../img/SAA6EU0A20326900000DAAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:703px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:785px;top:439px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>INTAKE AIR <br>TEMPERATURE<br>(IAT) SENSOR<br><a href=\"javascript:parent.Cts('000000000000555','i000')\"></b>Replacement,<br></a><br> in the Shop Manual,<br> P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:635px;top:603px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE COOLANT TEMPERATURE<br>(ECT) SENSOR<br><a href=\"javascript:parent.Cts('000000000000553','i000')\"></b>Replacement,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:333px;top:633px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>KNOCK SENSOR<br><a href=\"javascript:parent.Cts('000000000000556','i000')\"></b>Replacement,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:729px;top:560px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>THROTTLE POSITION<br>(TP) SENSOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:22px;top:605px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CRANKSHAFT POSITION (CKP)<br>SENSOR<br><a href=\"javascript:parent.Cts('000000000000552','i000')\"></b>Replacement,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:143px;top:89px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ELECTRICAL<br>LOAD DETECTOR (ELD)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:10px;top:501px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>IGNITION<br>COIL<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:526px;top:89px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CAMSHAFT POSITION (CMP) SENSOR<br>(TOP DEAD CENTER (TDC) SENSOR) <br><a href=\"javascript:parent.Cts('000000000000558','i000')\"></b>Replacement,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:483px;top:15px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>MANIFOLD ABSOLUTE<br>PRESSURE (MAP) SENSOR<br><a href=\"javascript:parent.Cts('000000000000557','i000')\"></b>Replacement,</a> <br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

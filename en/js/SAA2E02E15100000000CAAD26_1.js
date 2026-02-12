@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group2\" class=\"drag\" style=\"position:relative; width:950px; height:511px;\" coordsize=\"950,511\">");
+write("<v:rect id=\"rect2\"class=\"drag\"  style=\"width:950px;height:511px;\">");
+write("<img id=\"img2\" src=\"../img/SAA2E02E15100000000CAAD26.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:511px;border-color:#ffffff\">");
+write("<p id=\"p2_1\" class=\"drag\" style=\"position:absolute;left:571px;top:24px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PARK ROD<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_2\" class=\"drag\" style=\"position:absolute;left:766px;top:148px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PARK PAWL<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_3\" class=\"drag\" style=\"position:absolute;left:795px;top:335px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PARK ROD SPRING<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_4\" class=\"drag\" style=\"position:absolute;left:670px;top:477px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PARK ROD HOLDER<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_5\" class=\"drag\" style=\"position:absolute;left:546px;top:473px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PARK CONE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_6\" class=\"drag\" style=\"position:absolute;left:375px;top:466px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PARK GEAR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_7\" class=\"drag\" style=\"position:absolute;left:47px;top:408px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>START CLUTCH<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_8\" class=\"drag\" style=\"position:absolute;left:45px;top:137px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PARK PAWL<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_9\" class=\"drag\" style=\"position:absolute;left:235px;top:15px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PARK PAWL SPRING<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

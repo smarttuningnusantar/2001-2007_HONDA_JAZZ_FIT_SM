@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:799px;\" coordsize=\"950,799\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:799px;\">");
+write("<img id=\"img1\" src=\"../img/SAA4E60F18100000000DAAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:799px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:196px;top:15px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>EPS CONTROL UNIT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:424px;top:15px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>GAUGE ASSEMBLY<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:98px;top:121px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>BATTERY<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:124px;top:653px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>TIE-RODS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:260px;top:653px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>TORQUE SENSOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:760px;top:507px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-DASH<br>FUSE/RELAY BOX<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:711px;top:575px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DATA LINK CONNECTOR (16P)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:655px;top:626px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-HOOD<br>FUSE/RELAY BOX<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:442px;top:692px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>STEERING GEARBOX<br><a href=\"javascript:parent.Cts('000000000000921','i000')\"></b>Steerring Gearbox Installation,</a><br><a href=\"javascript:parent.Cts('000000000001641','i000')\">Steerring Gearbox Overhaul,</a><br><a href=\"javascript:parent.Cts('000000000001642','i000')\">Rack Guide Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_10\" class=\"drag\" style=\"position:absolute;left:1px;top:767px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>The illustration shows LHD model; RHD model is symmetrical.<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

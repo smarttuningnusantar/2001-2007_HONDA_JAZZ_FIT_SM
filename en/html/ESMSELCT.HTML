@@ -1,0 +1,1161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+                      "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en">
+<head>
+<meta name="author" content="HONDA MOTOR Co.,Ltd.">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link href="../css/ESMCONTS.CSS" rel="stylesheet">
+<script src="../js/FrameSync.js"></script>
+<script src="../js/ESMSELCT.JS"></script>
+<script src="../js/MODELINFO.JS"></script>
+<script>
+<!--
+var gESM, gLng, fn;
+var gSIE, gMSG, sDT;
+var gModelInfo;
+var gSmFlag, gBrmFlag;
+var gKey, gSct, gSc, gSys, gComp, gSitq, gKeyword;
+var parentAvailable = false;
+var frameInitialized = false;
+
+// Use FrameSync for synchronized parent initialization
+if (typeof(FrameSync) !== 'undefined') {
+  console.log("[ESMSELCT] Using FrameSync for parent synchronization");
+  
+  FrameSync.waitForParent(function(success, elapsed) {
+    if (success) {
+      console.log("[ESMSELCT] Parent is ready after " + elapsed + "ms");
+      initializeFromParent();
+    } else {
+      console.warn("[ESMSELCT] Parent readiness timeout after " + elapsed + "ms");
+      initializeWithFallback();
+    }
+  }, { timeout: 10000 }); // Wait up to 10 seconds for parent to be ready
+} else {
+  console.warn("[ESMSELCT] FrameSync not available, using direct access");
+  // Fallback to direct access if FrameSync is not loaded
+  try {
+    if (typeof(parent) !== 'undefined' && typeof(parent.document) !== 'undefined' && 
+        typeof(parent.document.ESM) === 'object') {
+      initializeFromParent();
+    } else {
+      throw new Error("Parent ESM not immediately available");
+    }
+  } catch(e) {
+    console.error("[ESMSELCT] Direct access failed:", e.message);
+    initializeWithFallback();
+  }
+}
+
+function initializeFromParent() {
+  if (frameInitialized) return;
+  
+  try {
+    console.log("[ESMSELCT] Initializing from parent ESM");
+    parent.document.title = "JAZZ/FIT Shop Manual (HONDA MOTOR Co.,Ltd.)";
+    
+    document.ESM = parent.document.ESM;
+    gESM = document.ESM;
+    gMSG = gESM.MsgC || [];
+    gLng = gESM.Lng || [];
+    gModelInfo = gESM.ModelInfo || [];
+    fn = gESM.fn || {};
+    parentAvailable = true;
+    
+    // Initialize SIE array
+    if (typeof(gESM.SIE) == "undefined") {
+      gSIE = new Array;
+      gESM.SIE = gSIE;
+    } else {
+      gSIE = gESM.SIE;
+      gSIE.length = 0;
+    }
+    
+    // Ensure ModelInfo is initialized
+    if (typeof(gESM.ModelInfo) == "undefined") {
+      gModelInfo = new Array;
+      gESM.ModelInfo = gModelInfo;
+    } else {
+      gModelInfo = gESM.ModelInfo;
+      if(gModelInfo && gModelInfo.length > 0) {
+        gModelInfo.length = 0;
+      }
+    }
+    
+    frameInitialized = true;
+    console.log("[ESMSELCT] Frame successfully initialized from parent");
+    
+  } catch(e) {
+    console.error("[ESMSELCT] Error during parent initialization:", e.message);
+    initializeWithFallback();
+  }
+}
+
+function initializeWithFallback() {
+  if (frameInitialized) return;
+  
+  console.warn("[ESMSELCT] Initializing with fallback ESM object");
+  
+  // Initialize with defaults
+  gESM = {
+    Lng: [],
+    MsgC: [],
+    ModelInfo: [],
+    SIE: [],
+    lngSel: 0,
+    mySel: 0,
+    mcSel: 0,
+    smFlag: -1,
+    brmFlag: -1,
+    Key: "",
+    Sct: "",
+    Sc: "",
+    Sys: "",
+    Comp: "",
+    Sitq: "",
+    Keyword: ""
+  };
+  
+  gMSG = gESM.MsgC;
+  gLng = gESM.Lng;
+  gModelInfo = gESM.ModelInfo;
+  gSIE = gESM.SIE;
+  
+  // Function object with safe defaults
+  fn = {
+    GetCookie: function(name) {
+      return "";
+    },
+    SetCookie: function(name, value, path) {
+      // No-op
+    },
+    FormatStr: function(str) {
+      return str;
+    },
+    ChangeLang: function(flag) {
+      // No-op
+    }
+  };
+  
+  document.ESM = gESM;
+  frameInitialized = true;
+  
+  console.info("[ESMSELCT] Fallback initialization complete. Redirecting to main page in 2 seconds...");
+  setTimeout(function() {
+    try {
+      location.href = "../../HONDAESM.HTML";
+    } catch(e) {
+      console.error("Redirect failed:", e.message);
+    }
+  }, 2000);
+}
+
+
+// Call initialization functions with safety checks
+if (typeof(CreateModelInf) == "function") {
+  try {
+    CreateModelInf();
+  } catch(e) {
+    console.error("Error in CreateModelInf:", e.message);
+  }
+
+  if (typeof(SetManualType) == "function") {
+    try {
+      SetManualType();
+    } catch(e) {
+      console.error("Error in SetManualType:", e.message);
+      gSmFlag = -1;
+      gBrmFlag = -1;
+    }
+  } else {
+    gSmFlag = -1;
+    gBrmFlag = -1;
+  }
+  
+  if (gESM) {
+    gESM.smFlag = gSmFlag;
+    gESM.brmFlag = gBrmFlag;
+  }
+
+  var strLang, strYear, strCode, strType, strData;
+
+  // Safely get cookie values
+  try {
+    if (fn && typeof(fn.GetCookie) == 'function') {
+      strYear = fn.GetCookie("EsmYear") || "";
+      if(strYear && strYear.length > 0) {
+        strYear = strYear.toUpperCase();
+        gESM.mySel = 0;
+        if(gModelInfo && gModelInfo.length > 0) {
+          for (i=0; i < gModelInfo.length; ++i) {
+            strData = gModelInfo[i].Year;
+            if (strData) {
+              strData = strData.toUpperCase();
+              if (strYear == strData) {
+                gESM.mySel = i;
+                break;
+              }
+            }
+          }
+        }
+      }
+      
+      strCode = fn.GetCookie("EsmCode") || "";
+      if(strCode && strCode.length > 0) {
+        strCode = strCode.toUpperCase();
+        gESM.mcSel = 0;
+        if(gModelInfo && gModelInfo[gESM.mySel] && gModelInfo[gESM.mySel].CodeList) {
+          for (i=0; i < gModelInfo[gESM.mySel].CodeList.length; ++i) {
+            strData = gModelInfo[gESM.mySel].CodeList[i].Code;
+            if (strData) {
+              strData = strData.toUpperCase();
+              if (strCode == strData) {
+                gESM.mcSel = i;
+                break;
+              }
+            }
+          }
+        }
+      }
+      
+      gESM.manType = fn.GetCookie("EsmType") || "";
+      if(gESM.manType && gESM.manType.length > 0) {
+        if(gESM.manType == "SM") {
+          gESM.mdlSel = 1;
+        }
+        else if(gESM.manType == "BM") {
+          gESM.mdlSel = 2;
+        }
+      }
+    }
+  } catch(e) {
+    console.error("Error reading cookies:", e.message);
+  }
+}
+//-->
+</script>
+<script>
+<!--
+// Safely set cookie if fn is available
+if (fn && typeof(fn.SetCookie) == 'function') {
+  try {
+    fn.SetCookie("EsmStart", "true", true);
+  } catch(e) {
+    console.warn("Could not set EsmStart cookie:", e.message);
+  }
+}
+
+function Initialize()
+{
+  var fChange = false;
+  var i;
+
+  // Ensure gMSG is an array
+  if (gMSG && gMSG.length) {
+    gMSG.length = 0;
+  }
+  sDT = new Array;
+  
+  // Safety check: ensure gModelInfo and other required arrays exist
+  if (!gModelInfo || gModelInfo.length === 0) {
+    console.error("Model info not available");
+    return;
+  }
+  
+  if (!gESM) {
+    console.error("ESM object not available");
+    return;
+  }
+  
+  // Safely get combo box elements
+  var cmbMY = document.getElementById("cmbMY") || document.all("cmbMY");
+  var cmbMC = document.getElementById("cmbMC") || document.all("cmbMC");
+  var cmbLang = document.getElementById("cmbLang") || document.all("cmbLang");
+  var radSM = document.getElementById("radSM") || document.all("radSM");
+  var radBM = document.getElementById("radBM") || document.all("radBM");
+  
+  if (!cmbMY || !cmbMC) {
+    console.error("Required form elements (cmbMY or cmbMC) not found");
+    return;
+  }
+
+  for (i=0; i < gModelInfo.length; ++i) {
+    var elmOpt = document.createElement("option");
+    elmOpt.text   = gModelInfo[i].Year;
+    elmOpt.value  = i;
+    cmbMY.options.add(elmOpt);
+  }
+  cmbMY.selectedIndex = gESM.mySel >= 0 ? gESM.mySel : 0;
+  
+  if(gModelInfo[cmbMY.selectedIndex] && gModelInfo[cmbMY.selectedIndex].CodeList) {
+    for (i=0; i < gModelInfo[cmbMY.selectedIndex].CodeList.length; ++i) {
+      var elmOpt = document.createElement("option");
+      elmOpt.text   = gModelInfo[cmbMY.selectedIndex].CodeList[i].Code;
+      elmOpt.value  = i;
+      cmbMC.options.add(elmOpt);
+    }
+  }
+  cmbMC.selectedIndex = gESM.mcSel >= 0 ? gESM.mcSel : 0;
+
+  SetSubject(fChange);
+
+  if(cmbLang && gLng && gLng.length > 0) {
+    for (i=0; i < gLng.length; ++i) {
+      var elmOpt = document.createElement("option");
+      elmOpt.text = gLng[i].Name;
+      elmOpt.value = gLng[i].Code;
+      cmbLang.options.add(elmOpt);
+    }
+    cmbLang.selectedIndex = gESM.lngSel >= 0 ? gESM.lngSel : 0;
+    cmbLang.disabled = (gLng.length <= 1)? true : false;
+  } else if(cmbLang) {
+    cmbLang.disabled = true;
+  }
+
+  if(radSM) radSM.disabled = (gESM.smFlag == -1)? true : false;
+  if(radBM) radBM.disabled = (gESM.brmFlag == -1)? true : false;
+
+  if(gESM.mdlSel == 1) {
+    if(radSM) radSM.checked = true;
+    if(radBM) radBM.checked = false;
+  }
+  else if(gESM.mdlSel == 2) {
+    radSM.checked = false;
+    radBM.checked = true;
+  }
+  OnChangeIndv(true, gESM.mdlSel);
+
+}
+function SetSubject(fChange)
+{
+  // Load SMT (System/Component Tree) file for selected model and code
+  if (!gESM || !gModelInfo) {
+    console.error("SetSubject: ESM or ModelInfo not available");
+    return;
+  }
+  
+  if(gESM.mySel >= 0 && gESM.mcSel >= 0) {
+    try {
+      if (!gModelInfo[gESM.mySel]) {
+        console.error("SetSubject: Model year not found at index", gESM.mySel);
+        return;
+      }
+      
+      if (!gModelInfo[gESM.mySel].CodeList || !gModelInfo[gESM.mySel].CodeList[gESM.mcSel]) {
+        console.error("SetSubject: Model code not found");
+        return;
+      }
+      
+      var code = gModelInfo[gESM.mySel].CodeList[gESM.mcSel].Code;
+      var year = gModelInfo[gESM.mySel].Year;
+      var smtFile = "./SMT_" + code + "_" + year + ".html";
+      
+      console.log("[SetSubject] Loading tree for model: " + year + ", code: " + code);
+      
+      // Try different ways to get iframe
+      var iframeTree = document.getElementById("iframeTree");
+      if (!iframeTree) {
+        iframeTree = document.all ? document.all("iframeTree") : null;
+      }
+      if (!iframeTree) {
+        iframeTree = document.getElementsByName("SelTree")[0];
+      }
+      
+      if (iframeTree) {
+        iframeTree.src = smtFile;
+        console.log("[SetSubject] Loaded: " + smtFile);
+        
+        // Show the tree div and hide searching message
+        var divSearching = document.getElementById("divSysCompTreeSearching");
+        var divSearched = document.getElementById("divSysCompTreeSearched");
+        
+        if (!divSearching) {
+          divSearching = document.all ? document.all("divSysCompTreeSearching") : null;
+        }
+        if (!divSearched) {
+          divSearched = document.all ? document.all("divSysCompTreeSearched") : null;
+        }
+        
+        if (divSearching && divSearched) {
+          divSearching.style.display = "none";
+          divSearched.style.display = "block";
+          console.log("[SetSubject] Tree div displayed");
+        }
+      } else {
+        console.error("SetSubject: Cannot find iframeTree element");
+      }
+    } catch(e) {
+      console.error("SetSubject: Error -", e.message);
+    }
+  } else {
+    console.warn("SetSubject: Invalid selection - mySel:", gESM.mySel, "mcSel:", gESM.mcSel);
+  }
+}
+
+function Tsl(strKey, strSct, strSc, strSys, strComp, strSitq)
+{
+  // Called from tree when user selects a component - load SML (Service Manual List)
+  console.log("[Child Tsl] Called from tree with - System:", strSys, "Component:", strComp);
+  
+  // First try to delegate to parent (grandparent from tree's perspective)
+  try {
+    if (parent && parent.parent && typeof(parent.parent.Tsl) === 'function') {
+      console.log("[Child Tsl] Delegating to parent.parent.Tsl()");
+      parent.parent.Tsl(strKey, strSct, strSc, strSys, strComp, strSitq);
+      return;
+    }
+  } catch(e) {
+    console.warn("[Child Tsl] Could not delegate to parent.parent:", e.message);
+  }
+  
+  // Try top.Tsl() - the actual root parent
+  try {
+    if (top && typeof(top.Tsl) === 'function') {
+      console.log("[Child Tsl] Delegating to top.Tsl()");
+      top.Tsl(strKey, strSct, strSc, strSys, strComp, strSitq);
+      return;
+    }
+  } catch(e) {
+    console.warn("[Child Tsl] Could not delegate to top:", e.message);
+  }
+  
+  // Fallback: try to load directly in local parent's F12
+  if (!gESM || !gModelInfo) {
+    console.error("Tsl: gESM or gModelInfo not available");
+    return;
+  }
+  
+  try {
+    if (gESM.mySel < 0 || gESM.mcSel < 0) {
+      console.error("Tsl: Invalid selection indices - mySel:" + gESM.mySel + " mcSel:" + gESM.mcSel);
+      return;
+    }
+    
+    if (!gModelInfo[gESM.mySel] || !gModelInfo[gESM.mySel].CodeList || !gModelInfo[gESM.mySel].CodeList[gESM.mcSel]) {
+      console.error("Tsl: Invalid model/code selection");
+      return;
+    }
+    
+    var code = gModelInfo[gESM.mySel].CodeList[gESM.mcSel].Code;
+    var year = gModelInfo[gESM.mySel].Year;
+    var smlFile = "./SML_" + code + "_" + year + ".html";
+    
+    console.log("[Child Tsl] Fallback: Loading SML for:", year + "-" + code);
+    
+    // Update gESM with selected component info
+    gESM.Key = strKey;
+    gESM.Sct = strSct;
+    gESM.Sc = strSc;
+    gESM.Sys = strSys;
+    gESM.Comp = strComp;
+    gESM.Sitq = strSitq;
+    
+    // Try to load SML in parent frame's F12
+    var targetFrame = null;
+    var loadedVia = "";
+    
+    // Method 1: parent.frames.F12 (using name attribute - most reliable)
+    try {
+      if (parent && parent.frames && parent.frames.F12) {
+        targetFrame = parent.frames.F12;
+        loadedVia = "parent.frames.F12";
+        console.log("[Child Tsl] ✓ Found F12 via parent.frames.F12");
+      }
+    } catch(e) {
+      console.warn("[Child Tsl] Method 1 (parent.frames.F12) failed:", e.message);
+    }
+    
+    // Method 2: parent.F12 (direct property access)
+    if (!targetFrame) {
+      try {
+        if (parent && parent.F12) {
+          targetFrame = parent.F12;
+          loadedVia = "parent.F12";
+          console.log("[Child Tsl] ✓ Found F12 via parent.F12");
+        }
+      } catch(e) {
+        console.warn("[Child Tsl] Method 2 (parent.F12) failed:", e.message);
+      }
+    }
+    
+    // Now try to load the SML file
+    if (targetFrame && targetFrame.location) {
+      try {
+        targetFrame.location = smlFile;
+        console.log("[Child Tsl] ✓ Successfully loaded SML via " + loadedVia + ": " + smlFile);
+      } catch(e) {
+        console.error("[Child Tsl] Failed to set location:", e.message);
+      }
+    } else {
+      console.error("[Child Tsl] ✗ Cannot access target frame");
+    }
+  } catch(e) {
+    console.error("Tsl: Unexpected exception -", e.message);
+  }
+}
+
+function OnLoadTree(obj)
+{
+  // Called from tree iframe onLoad - signals tree is ready
+  console.log("[OnLoadTree] Tree frame loaded");
+  
+  try {
+    if(obj && (obj.name == "SelTree" || obj.name == "iframeTree" || true)) {
+      var divSearching = document.getElementById("divSysCompTreeSearching");
+      var divSearched = document.getElementById("divSysCompTreeSearched");
+      
+      if (!divSearching) {
+        divSearching = document.all ? document.all("divSysCompTreeSearching") : null;
+      }
+      if (!divSearched) {
+        divSearched = document.all ? document.all("divSysCompTreeSearched") : null;
+      }
+      
+      if (divSearching && divSearched) {
+        divSearching.style.display = "none";
+        divSearched.style.display = "block";
+        console.log("[OnLoadTree] ✓ Tree display div shown");
+      } else {
+        console.warn("[OnLoadTree] Could not find display divs");
+      }
+      
+      // Inject CSS into tree iframe for better font sizing
+      try {
+        var iframeTree = document.getElementById("iframeTree");
+        if (iframeTree && iframeTree.contentDocument) {
+          var treeDoc = iframeTree.contentDocument;
+          
+          // Create style element for injected CSS
+          var styleEl = treeDoc.createElement("style");
+          styleEl.type = "text/css";
+          styleEl.textContent = `
+            body {
+              font-family: Arial, sans-serif;
+              font-size: 13px;
+              padding: 8px;
+            }
+            table {
+              width: 100%;
+              border-collapse: collapse;
+            }
+            table td, table th {
+              padding: 6px 4px;
+              font-size: 13px;
+              line-height: 1.6;
+              vertical-align: top;
+            }
+            span {
+              font-size: 13px;
+              line-height: 1.6;
+            }
+            a {
+              font-size: 13px;
+              color: #0066cc;
+              text-decoration: none;
+              cursor: pointer;
+            }
+            a:hover {
+              text-decoration: underline;
+              color: #0033aa;
+            }
+            img {
+              vertical-align: middle;
+            }
+            /* Extra padding for nested items */
+            table td {
+              border-bottom: 1px solid #f0f0f0;
+            }
+          `;
+          
+          // Insert style at the beginning of head or body
+          if (treeDoc.head) {
+            treeDoc.head.appendChild(styleEl);
+          } else if (treeDoc.body) {
+            treeDoc.body.insertBefore(styleEl, treeDoc.body.firstChild);
+          }
+          
+          console.log("[OnLoadTree] ✓ CSS injected into tree iframe for improved readability");
+        }
+      } catch(e) {
+        console.warn("[OnLoadTree] Could not inject CSS into iframe:", e.message);
+      }
+    }
+  } catch(e) {
+    console.warn("OnLoadTree: Error -", e.message);
+  }
+}
+
+function WordSearch()
+{
+  var strTree;
+  
+  if (!gESM || !gModelInfo) {
+    console.error("ESM or ModelInfo not available");
+    return;
+  }
+
+  var txtWord = document.getElementById("txtWord") || document.all("txtWord");
+  if (txtWord) {
+    gESM.Keyword = txtWord.value;
+  }
+  
+  document.ESM = gESM;
+  try {
+    if (parent && parent.document) {
+      parent.document.ESM = document.ESM;
+    }
+  } catch(e) {
+    console.warn("Cannot access parent document:", e.message);
+  }
+  
+  var radSM = document.getElementById("radSM") || document.all("radSM");
+  var radBM = document.getElementById("radBM") || document.all("radBM");
+  
+  if(radSM && radSM.checked == true) {
+    strTree = "SML_";
+  }
+  else if(radBM && radBM.checked == true) {
+    strTree = "BRL_";
+  }
+  else {
+    try {
+      if(document.iframeTree) {
+        document.iframeTree.location = "./ESMBLANK.HTML";
+      }
+    } catch(e) {
+      console.warn("Cannot set iframeTree location:", e.message);
+    }
+    return;
+  }
+  
+  if(gModelInfo[gESM.mySel] && gModelInfo[gESM.mySel].CodeList[gESM.mcSel]) {
+    strTree += gModelInfo[gESM.mySel].CodeList[gESM.mcSel].Code + "_";
+    strTree += gModelInfo[gESM.mySel].Year + ".html";
+    try {
+      if(parent && parent.F12) {
+        parent.F12.location = strTree;
+      }
+    } catch(e) {
+      console.warn("Cannot set parent F12 location:", e.message);
+    }
+  }
+}
+
+function ClearSearch()
+{
+  var strTree;
+
+  if (!gESM || !gModelInfo) {
+    console.error("ESM or ModelInfo not available");
+    return;
+  }
+
+  gESM.Key = "";         
+  gESM.Sct = "";         
+  gESM.Sc  = "";         
+  gESM.Sys = "";         
+  gESM.Comp = "";        
+  gESM.Sitq = "";        
+  gESM.Keyword = "";     
+  
+  var txtWord = document.getElementById("txtWord") || document.all("txtWord");
+  if (txtWord) {
+    txtWord.value = "";
+  }
+
+  try {
+    if(parent && parent.F12) {
+      parent.F12.location = "./ESMBLANK.HTML";
+    }
+  } catch(e) {
+    console.warn("Cannot set parent F12 location:", e.message);
+  }
+  
+  var radSM = document.getElementById("radSM") || document.all("radSM");
+  var radBM = document.getElementById("radBM") || document.all("radBM");
+  
+  if(radSM && radSM.checked == true) {
+    strTree = "SMT_";
+  }
+  else if(radBM && radBM.checked == true) {
+    strTree = "BRT_";
+  }
+  else {
+    try {
+      if(document.iframeTree) {
+        document.iframeTree.location = "./ESMBLANK.HTML";
+      }
+    } catch(e) {
+      console.warn("Cannot set iframeTree location:", e.message);
+    }
+    return;
+  }
+  
+  if(gModelInfo[gESM.mySel] && gModelInfo[gESM.mySel].CodeList[gESM.mcSel]) {
+    strTree += gModelInfo[gESM.mySel].CodeList[gESM.mcSel].Code + "_";
+    strTree += gModelInfo[gESM.mySel].Year + ".html";
+    try {
+      if(document.iframeTree) {
+        document.iframeTree.location = strTree;
+      }
+    } catch(e) {
+      console.warn("Cannot set iframeTree location:", e.message);
+    }
+  }
+}
+function SortComp(p1, p2)
+{
+  if (p1.Title < p2.Title) {
+    return(-1);
+  }
+  if (p1.Title > p2.Title) {
+    return(1);
+  }
+
+  return(0);
+}
+function OnChangeLang()
+{
+  if (!gESM) {
+    console.error("ESM object not available");
+    return;
+  }
+  
+  var cmbLang = document.getElementById("cmbLang") || document.all("cmbLang");
+  var cmbMY = document.getElementById("cmbMY") || document.all("cmbMY");
+  
+  if (!cmbLang || !cmbMY) {
+    console.error("Form elements not available");
+    return;
+  }
+  
+  gESM.lngSel = cmbLang.selectedIndex;
+  try {
+    if (parent && typeof(parent.ChangeLang) === 'function') {
+      parent.ChangeLang(true);
+    }
+  } catch(e) {
+    console.warn("Cannot call parent.ChangeLang:", e.message);
+  }
+  cmbMY.selectedIndex = 0;
+}
+
+function OnChangeText()
+{
+  try {
+    if(parent && parent.F12) {
+      parent.F12.location = "./ESMBLANK.HTML";
+    }
+  } catch(e) {
+    console.warn("Cannot set parent F12 location:", e.message);
+  }
+}
+
+function OnChangeModelYear()
+{
+  if (!gESM || !gModelInfo) {
+    console.error("ESM or ModelInfo not available");
+    return;
+  }
+  
+  var cmbMY = document.getElementById("cmbMY") || document.all("cmbMY");
+  var cmbMC = document.getElementById("cmbMC") || document.all("cmbMC");
+  
+  if (!cmbMY || !cmbMC) {
+    console.error("Form elements not available");
+    return;
+  }
+  
+  gESM.mySel = cmbMY.selectedIndex;
+  SetSubject(true);
+  
+  try {
+    if (parent && typeof(parent.ChangeModelYear) === 'function') {
+      parent.ChangeModelYear(true);
+    }
+  } catch(e) {
+    console.warn("Cannot call parent.ChangeModelYear:", e.message);
+  }
+  
+  cmbMC.options.length = 0;
+  
+  if(gModelInfo[cmbMY.selectedIndex] && gModelInfo[cmbMY.selectedIndex].CodeList) {
+    for (var i=0; i < gModelInfo[cmbMY.selectedIndex].CodeList.length; ++i) {
+      var elmOpt = document.createElement("option");
+      elmOpt.text   = gModelInfo[cmbMY.selectedIndex].CodeList[i].Code;
+      elmOpt.value  = i;
+      cmbMC.options.add(elmOpt);
+    }
+  }
+  
+  cmbMC.selectedIndex = 0;
+  
+  try {
+    if (parent && typeof(parent.ChangeModelCode) === 'function') {
+      parent.ChangeModelCode(true);
+    }
+  } catch(e) {
+    console.warn("Cannot call parent.ChangeModelCode:", e.message);
+  }
+  
+  OnChangeModelCode();
+}
+
+function OnChangeModelCode()
+{
+  var strTree;
+
+  if (!gESM || !gModelInfo) {
+    console.error("ESM or ModelInfo not available");
+    return;
+  }
+
+  var cmbMC = document.getElementById("cmbMC") || document.all("cmbMC");
+  var radSM = document.getElementById("radSM") || document.all("radSM");
+  var radBM = document.getElementById("radBM") || document.all("radBM");
+  
+  if (!cmbMC) {
+    console.error("Form element cmbMC not available");
+    return;
+  }
+
+  gESM.mcSel = cmbMC.selectedIndex;
+  console.log("[OnChangeModelCode] Selected model code at index:", gESM.mcSel);
+  
+  try {
+    if (parent && typeof(parent.ChangeModelCode) === 'function') {
+      parent.ChangeModelCode(true);
+    }
+  } catch(e) {
+    console.warn("Cannot call parent.ChangeModelCode:", e.message);
+  }
+  
+  // Clear the right panel when code changes
+  try {
+    var targetFrame = null;
+    
+    // Try multiple ways to access F12 frame
+    if (parent && parent.F12) {
+      targetFrame = parent.F12;
+    } else if (parent && parent.frames && parent.frames['F12']) {
+      targetFrame = parent.frames['F12'];
+    } else if (top && top.frames && top.frames['F12']) {
+      targetFrame = top.frames['F12'];
+    }
+    
+    if (targetFrame && targetFrame.location) {
+      targetFrame.location = "./ESMBLANK.HTML";
+    }
+  } catch(e) {
+    console.warn("Cannot clear parent F12:", e.message);
+  }
+  
+  // Load the system/component tree
+  console.log("[OnChangeModelCode] Calling SetSubject to load tree...");
+  SetSubject(true);
+  
+  // Safely access nested properties
+  if(gModelInfo[gESM.mySel] && 
+     gModelInfo[gESM.mySel].CodeList && 
+     gModelInfo[gESM.mySel].CodeList[gESM.mcSel]) {
+    strTree += gModelInfo[gESM.mySel].CodeList[gESM.mcSel].Code + "_";
+    strTree += gModelInfo[gESM.mySel].Year + ".html";
+    try {
+      if(document.iframeTree) {
+        document.iframeTree.location = strTree;
+      }
+    } catch(e) {
+      console.warn("Cannot set iframeTree location:", e.message);
+    }
+  }
+}
+function OnChangeModel()
+{
+  var cmbModel = document.getElementById("cmbModel") || document.all("cmbModel");
+  if (!gESM || !cmbModel) {
+    console.error("ESM or cmbModel not available");
+    return;
+  }
+  
+  if (gESM.mdlSel != cmbModel.selectedIndex) {
+    OnChangeIndv(true, cmbModel.selectedIndex);
+  }
+}
+
+function OnChangeIndv(fReload, nIndex)
+{
+  if (!gESM) {
+    console.error("ESM object not available");
+    return;
+  }
+  
+  if(gESM.mdlSel == nIndex) {
+    if(!fReload) {
+      return;
+    }
+  }
+  
+  gESM.mdlSel = nIndex;
+  
+  var radSM = document.getElementById("radSM") || document.all("radSM");
+  var radBM = document.getElementById("radBM") || document.all("radBM");
+  
+  if(nIndex == 1) {
+    if(radSM) radSM.checked = true;
+    if(radBM) radBM.checked = false;
+    gESM.manTyp = "SM";
+  }
+  else if(nIndex == 2) {
+    if(radSM) radSM.checked = false;
+    if(radBM) radBM.checked = true;
+    gESM.manTyp = "BM";
+  }
+  
+  try {
+    if(parent && parent.F12) {
+      parent.F12.location = "./ESMBLANK.HTML";
+    }
+  } catch(e) {
+    console.warn("Cannot set parent F12 location:", e.message);
+  }
+
+  var strTree;
+
+  if(radSM && radSM.checked == true) {
+    strTree = "SMT_";
+  }
+  else if(radBM && radBM.checked == true) {
+    strTree = "BRT_";
+  }
+  else {
+    try {
+      if(document.iframeTree) {
+        document.iframeTree.location = "./ESMBLANK.HTML";
+      }
+    } catch(e) {
+      console.warn("Cannot set iframeTree location:", e.message);
+    }
+    return;
+  }
+  
+  // Safely access nested properties
+  if(gModelInfo && gModelInfo[gESM.mySel] && 
+     gModelInfo[gESM.mySel].CodeList && 
+     gModelInfo[gESM.mySel].CodeList[gESM.mcSel]) {
+    strTree += gModelInfo[gESM.mySel].CodeList[gESM.mcSel].Code + "_";
+    strTree += gModelInfo[gESM.mySel].Year + ".html";
+    try {
+      if(document.iframeTree) {
+        document.iframeTree.location = strTree;
+      }
+    } catch(e) {
+      console.warn("Cannot set iframeTree location:", e.message);
+    }
+  }
+  
+  try {
+    if(parent && typeof(parent.ChangeModelType) === 'function') {
+      parent.ChangeModelType(true);
+    }
+  } catch(e) {
+    console.warn("Cannot call parent.ChangeModelType:", e.message);
+  }
+
+}
+function Old(obj){
+  if(obj == null){
+    
+    return;
+  }
+  if(obj.name == iframeTree.name){
+    divSysCompTreeSearching.style.display = "none";
+    divSysCompTreeSearched.style.display = "block";
+    gESM.Key = "";         
+    gESM.Sct = "";         
+    gESM.Sc  = "";         
+    gESM.Sys = "";         
+    gESM.Comp = "";        
+    gESM.Sitq = "";        
+    gESM.Keyword = "";     
+    document.ESM = gESM;
+  }
+  else {
+    
+  }
+}
+function Tsl(key,sct,sc,sys,comp,sitq){
+  gESM.Key = key;         
+  gESM.Sct = sct;         
+  gESM.Sc  = sc;         
+  gESM.Sys = sys;         
+  gESM.Comp = comp;        
+  gESM.Sitq = sitq;        
+  document.ESM = gESM;
+  
+  // Load SML (Service Manual List) file for selected component
+  if (!gESM || !gModelInfo || gESM.mySel < 0 || gESM.mcSel < 0) {
+    console.error("[Tsl] Invalid ESM state - cannot load SML");
+    return;
+  }
+  
+  try {
+    var code = gModelInfo[gESM.mySel].CodeList[gESM.mcSel].Code;
+    var year = gModelInfo[gESM.mySel].Year;
+    var smlFile = "./SML_" + code + "_" + year + ".html";
+    
+    console.log("[Tsl] Loading SML file:", smlFile);
+    
+    // Try multiple methods to access parent F12 frame
+    var loaded = false;
+    
+    // Method 1: parent.F12 direct access
+    try {
+      if (parent && parent.F12 && parent.F12.location) {
+        parent.F12.location = smlFile;
+        console.log("[Tsl] ✓ Successfully loaded via parent.F12");
+        loaded = true;
+      }
+    } catch(e) {
+      console.warn("[Tsl] Method 1 (parent.F12) failed:", e.message);
+    }
+    
+    // Method 2: parent.frames.F12
+    if (!loaded) {
+      try {
+        if (parent && parent.frames && parent.frames.F12 && parent.frames.F12.location) {
+          parent.frames.F12.location = smlFile;
+          console.log("[Tsl] ✓ Successfully loaded via parent.frames.F12");
+          loaded = true;
+        }
+      } catch(e) {
+        console.warn("[Tsl] Method 2 (parent.frames.F12) failed:", e.message);
+      }
+    }
+    
+    // Method 3: parent.frames[1] (assuming F12 is second frame)
+    if (!loaded) {
+      try {
+        if (parent && parent.frames && parent.frames[1] && parent.frames[1].location) {
+          parent.frames[1].location = smlFile;
+          console.log("[Tsl] ✓ Successfully loaded via parent.frames[1]");
+          loaded = true;
+        }
+      } catch(e) {
+        console.warn("[Tsl] Method 3 (parent.frames[1]) failed:", e.message);
+      }
+    }
+    
+    if (!loaded) {
+      console.error("[Tsl] ✗ Could not load SML file - all methods failed");
+    }
+  } catch(e) {
+    console.error("[Tsl] Exception occurred:", e.message);
+  }
+}
+
+function Jmp(anc){
+  
+}
+
+function Prt(key){
+  
+}
+
+function Scl(sys,comp){
+  
+}
+//-->
+</script>
+</head>
+<body onload="Initialize();" margintop="0" marginleft="0">
+<div id="SEARCH">
+  <table width="100%" cellspacing="0">
+    <tr>
+        <td align="left">
+          <img src="../img/GL_SEARCH.PNG" title="Search"
+               onclick="WordSearch();" ondblclick="WordSearch();">
+        </td>
+    </tr>
+  </table>
+  <hr color="gray">
+  <table width="100%" cellspacing="0">
+    <tr>
+      <td width="1%"><img src="../img/LABELPNT.PNG" width="16" height="16"></td>
+      <td width="99%" id="SELTITLE" class="Label">Model</td>
+    </tr>
+  </table>
+  <table cellspacing="0">
+    <tr id="ModelYear">
+      <td width="1%"></td>
+      <td width="99%" class="Label" style="margin-left:10px;">Model Year</td>
+    </tr>
+    <tr>
+      <td width="1%"></td>
+      <td width="99%" style="padding: 0 0 8px 10px;">
+        <select id="cmbMY" onchange="OnChangeModelYear();"></select>
+      </td>
+    </tr>
+    <tr>
+      <td width="1%"></td>
+      <td width="99%" class="Label" style="margin-left:10px; margin-top:4px;">Model Code</td>
+    </tr>
+    <tr>
+      <td width="1%"></td>
+      <td width="99%" style="padding: 0 0 8px 10px;">
+        <select id="cmbMC" onchange="OnChangeModelCode();"></select>
+      </td>
+    </tr>
+  </table>
+  <hr color="gray">
+  <table width="100%" cellspacing="0">
+    <tr>
+      <td width="1%"><img src="../img/LABELPNT.PNG" width="16" height="16"></td>
+      <td width="99%" id="SELTITLE" class="Label">Individual Search</td>
+    </tr>
+  </table>
+  <table width="100%" cellspacing="0">
+    <tr>
+      <td width="50%" align="center">
+         <input type="radio" value="1" name="radInd1" id="radSM" onClick="OnChangeIndv(true,1);">
+         <label for="radSM">Shop Manual</label>
+      </td>
+      <td width="50%" align="center">
+         <input type="radio" value="2" name="radInd2" id="radBM" onClick="OnChangeIndv(true,2);">
+         <label for="radBM">Body Repair Manual</label>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+         <img id="Ind1I" src="../img/DM_SHOP_MANUAL.PNG" align="center" onClick="OnChangeIndv(true,1);" ondblClick="OnChangeIndv(true,1);">
+      </td>
+      <td width="50%" align="center">
+         <img id="Ind2I" src="../img/DM_BODY_RIPEA.PNG" align="center" onClick="OnChangeIndv(true,2);" ondblClick="OnChangeIndv(true,2);">
+      </td>
+    </tr>
+  </table>
+  <hr color="gray">
+  <table width="100%" cellspacing="0">
+    <tr>
+      <td width="1%"><img src="../img/LABELPNT.PNG" width="16" height="16"></td>
+      <td id="SELTITLE" class="Label">System/Component Selection</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td style="padding: 8px 0;">
+        <div id="divSysCompTreeSearching" style="display:none" class="SearchMessage" ondblclick="divSysCompTreeSearching.style.display='none';divSysCompTreeSearched.style.display='block';">Now&nbsp;Searching...</div>
+        <div id="divSysCompTreeSearched" style="display:none;">
+          <iframe id="iframeTree" src="./ESMBLANK.HTML" name="SelTree"></iframe>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:1119px;\" coordsize=\"950,1119\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:1119px;\">");
+write("<img id=\"img1\" src=\"../img/SAA2EM0D14300000000DAAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:1119px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:624px;top:114px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>INDICATOR<br></b>Brake System Indicator Circuit<br><a href=\"javascript:parent.Cts('000000000000101','i000')\"> Diagram,</a><br>Parking Brake Switch<br><a href=\"javascript:parent.Cts('000000000000080','i000')\"> Test,</a><br>Brake Fluid Level Switch<br><a href=\"javascript:parent.Cts('000000000000093','i000')\"> Test,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:539px;top:33px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>BRAKE BOOSTER<br></b>Brake Booster<br><a href=\"javascript:parent.Cts('000000000003044','i000')\"> Inspection,</a><br>Brake Booster<br><a href=\"javascript:parent.Cts('000000000000088','i000')\"> Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:742px;top:781px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PARKING BRAKE CABLE<br></b>Parking Brake Cable<br><a href=\"javascript:parent.Cts('000000000000079','i000')\"> Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:596px;top:894px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>BRAKE PEDAL<br></b>Brake Pedal and Brake Redal Position Switch<br><a href=\"javascript:parent.Cts('000000000000099','i000')\"> Adjustment,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:655px;top:834px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PARKING BRAKE LEVER<br></b>Parking Brake Inspection and<br><a href=\"javascript:parent.Cts('000000000000078','i000')\"> Adjustment,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:242px;top:146px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>BRAKE HOSES and LINES<br></b>Brake Hoses and Lines<br><a href=\"javascript:parent.Cts('000000000000095','i000')\"> Inspection,</a><br>Brake Hoses<br><a href=\"javascript:parent.Cts('000000000000094','i000')\"> Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:234px;top:983px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>MASTER CYLINDER<br><a href=\"javascript:parent.Cts('000000000003045','i000')\"></b>Master Cylinder Removal/Installation,<br></a><br><a href=\"javascript:parent.Cts('000000000000096','i000')\">Disassembly,</a><br><a href=\"javascript:parent.Cts('000000000000097','i000')\">Reassembly,</a><br>Brake Booster Pushrod Clearance<br><a href=\"javascript:parent.Cts('000000000000089','i000')\"> Adjustment,</a><br><a href=\"javascript:parent.Cts('000000000000086','i000')\">Brake System Bleeding,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:16px;top:867px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>FRONT BRAKES<br></b>Front Brake Pads, Inspection and<br><a href=\"javascript:parent.Cts('000000000000098','i000')\"> Replacement,</a><br>Front Brake Disc<br><a href=\"javascript:parent.Cts('000000000000091','i000')\"> Inspection,</a><br>Front Brake Caliper<br><a href=\"javascript:parent.Cts('000000000000090','i000')\"> Overhaul,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:676px;top:228px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>REAR BRAKES<br></b>Rear Drum Brake<br><a href=\"javascript:parent.Cts('000000000000092','i000')\"> Inspection,</a><br>Rear Brake Shoes<br><a href=\"javascript:parent.Cts('000000000000100','i000')\"> Replacement,</a><br>Rear Wheel Cylinder Disassembly/<br><a href=\"javascript:parent.Cts('000000000000102','i000')\"> Inspection,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_10\" class=\"drag\" style=\"position:absolute;left:0px;top:14px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>NOTE: LHD type is shown, RHD type is symmetrical.<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

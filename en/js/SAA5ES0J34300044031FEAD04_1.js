@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group3\" class=\"drag\" style=\"position:relative; width:475px; height:176px;\" coordsize=\"475,176\">");
+write("<v:rect id=\"rect3\"class=\"drag\"  style=\"width:475px;height:176px;\">");
+write("<img id=\"img3\" src=\"../img/SAA5ES0J34300044031FEAD04.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:475px;height:176px;border-color:#ffffff\">");
+write("<p id=\"p3_1\" class=\"drag\" style=\"position:absolute;left:127px;top:17px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>Terminal<br></b></nobr>");
+write("</p>");
+write("<p id=\"p3_2\" class=\"drag\" style=\"position:absolute;left:48px;top:39px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>Position<br></b></nobr>");
+write("</p>");
+write("<p id=\"p3_3\" class=\"drag\" style=\"position:absolute;left:328px;top:29px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>2<br></b></nobr>");
+write("</p>");
+write("<p id=\"p3_4\" class=\"drag\" style=\"position:absolute;left:411px;top:29px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>3<br></b></nobr>");
+write("</p>");
+write("<p id=\"p3_5\" class=\"drag\" style=\"position:absolute;left:48px;top:63px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>TILT UP<br></b></nobr>");
+write("</p>");
+write("<p id=\"p3_6\" class=\"drag\" style=\"position:absolute;left:48px;top:88px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>TILT DOWN<br></b></nobr>");
+write("</p>");
+write("<p id=\"p3_7\" class=\"drag\" style=\"position:absolute;left:48px;top:113px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>SWING LEFT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p3_8\" class=\"drag\" style=\"position:absolute;left:48px;top:138px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>SWING RIGHT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p3_9\" class=\"drag\" style=\"position:absolute;left:243px;top:29px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>1<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

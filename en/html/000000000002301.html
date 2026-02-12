@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+<meta name="author" content="HONDA ACCESS Co.,Ltd.">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>SAA4EF0000000000000JCAT32</title>
+<link href="../css/ViewerStyle.css" rel="stylesheet">
+<script>
+<!--
+function prOptionStruct(disString, contNum) {
+	var	data = new Array;
+	data.disString		= disString;
+	data.contNum		= contNum;
+	return(data);
+}
+var kmOption = new Array;
+var mlOption = new Array;
+var selectContNum = "";
+kmOption[0]=prOptionStruct("5,000km/0,25year","000000000005431");
+kmOption[1]=prOptionStruct("10,000km/0,5year","000000000005432");
+kmOption[2]=prOptionStruct("15,000km/0,75year","000000000005433");
+kmOption[3]=prOptionStruct("20,000km/1year","000000000005434");
+kmOption[4]=prOptionStruct("25,000km/1,25year","000000000005435");
+kmOption[5]=prOptionStruct("30,000km/1,5year","000000000005436");
+kmOption[6]=prOptionStruct("35,000km/1,75year","000000000005437");
+kmOption[7]=prOptionStruct("40,000km/2year","000000000005438");
+kmOption[8]=prOptionStruct("45,000km/2,25year","000000000005439");
+kmOption[9]=prOptionStruct("50,000km/2,5year","000000000005440");
+kmOption[10]=prOptionStruct("55,000km/2,75year","000000000005441");
+kmOption[11]=prOptionStruct("60,000km/3year","000000000005442");
+kmOption[12]=prOptionStruct("65,000km/3,25year","000000000005443");
+kmOption[13]=prOptionStruct("70,000km/3,5year","000000000005444");
+kmOption[14]=prOptionStruct("75,000km/3,75year","000000000005445");
+kmOption[15]=prOptionStruct("80,000km/4year","000000000005446");
+kmOption[16]=prOptionStruct("85,000km/4,25year","000000000005447");
+kmOption[17]=prOptionStruct("90,000km/4,5year","000000000005448");
+kmOption[18]=prOptionStruct("95,000km/4,75year","000000000005449");
+kmOption[19]=prOptionStruct("100,000km/5year","000000000005450");
+mlOption[0]=prOptionStruct("3,000miles/0,25year","000000000005451");
+mlOption[1]=prOptionStruct("6,000miles/0,5year","000000000005452");
+mlOption[2]=prOptionStruct("9,000miles/0,75year","000000000005453");
+mlOption[3]=prOptionStruct("12,000miles/1year","000000000005454");
+mlOption[4]=prOptionStruct("15,000miles/1,25year","000000000005455");
+mlOption[5]=prOptionStruct("18,000miles/1,5year","000000000005456");
+mlOption[6]=prOptionStruct("21,000miles/1,75year","000000000005457");
+mlOption[7]=prOptionStruct("25,000miles/2year","000000000005458");
+mlOption[8]=prOptionStruct("28,000miles/2,25year","000000000005459");
+mlOption[9]=prOptionStruct("31,000miles/2,5year","000000000005460");
+mlOption[10]=prOptionStruct("34,000miles/2,75year","000000000005461");
+mlOption[11]=prOptionStruct("37,000miles/3year","000000000005462");
+mlOption[12]=prOptionStruct("40,000miles/3,25year","000000000005463");
+mlOption[13]=prOptionStruct("43,000miles/3,5year","000000000005464");
+mlOption[14]=prOptionStruct("46,000miles/3,75year","000000000005465");
+mlOption[15]=prOptionStruct("50,000miles/4year","000000000005466");
+mlOption[16]=prOptionStruct("53,000miles/4,25year","000000000005467");
+mlOption[17]=prOptionStruct("56,000miles/4,5year","000000000005468");
+mlOption[18]=prOptionStruct("59,000miles/4,75year","000000000005469");
+mlOption[19]=prOptionStruct("62,000miles/5year","000000000005470");
+function prOnLoadProc() {
+	CreateKiloMeterList();
+	parent.Old(this);
+	return;
+}
+function SelectModeClicked(index) {
+	if(index == 0){
+		CreateKiloMeterList();
+	} else {
+		CreateMilesList();
+	}
+	ListSelected();
+	return;
+}
+function CreateKiloMeterList() {
+	fomMain.cmbList.length = kmOption.length;
+	for ( var i = 0; i < kmOption.length; i++ ) {
+		fomMain.cmbList.options[i].value	= kmOption[i].contNum;
+		fomMain.cmbList.options[i].text		= kmOption[i].disString;
+	}
+	fomMain.cmbList.options.selectedIndex = 0;
+	selectContNum = fomMain.cmbList.options[0].value;
+	return;
+}
+function CreateMilesList() {
+	fomMain.cmbList.length = mlOption.length;
+	for ( var i = 0; i < mlOption.length; i++ ) {
+		fomMain.cmbList.options[i].value	= mlOption[i].contNum;
+		fomMain.cmbList.options[i].text		= mlOption[i].disString;
+	}
+	fomMain.cmbList.options.selectedIndex = 0;
+	selectContNum = fomMain.cmbList.options[0].value;
+	return;
+}
+function ListSelected() {
+	var index = fomMain.cmbList.options.selectedIndex;
+	if(index < 0){
+		return;
+	}
+	if(index >= fomMain.cmbList.options.length){
+		return;
+	}
+	selectContNum = fomMain.cmbList.options[index].value;
+	return;
+}
+function SearchButtonClicked() {
+	parent.Cts(selectContNum);
+}
+//-->
+</script>
+</head>
+<body onLoad="prOnLoadProc()" style="font-family:sans-serif;">
+<form name="fomMain">
+<table width="100%" border="0"><tr>
+<td width="0"></td>
+<td align="left">
+<a href="#" onClick="SearchButtonClicked();"><img src="../img/GL_SEARCH.PNG" border="0" alt="Search"></a>
+</td>
+</tr></table>
+<table width="100%" border="0"><tr>
+<td width="10"><img src="../img/LABELPNT.PNG" width="16" height="16"></td>
+<td colspan="2">Mileage&nbsp;/&nbsp;Year</td>
+</tr></table>
+<table border="0"><tr>
+<td width="20"></td>
+<td>
+<input type="radio" name="km_miles" value="km" checked="" onClick="SelectModeClicked(0)"> km
+</td>
+<td>
+<input type="radio" name="km_miles" value="ms" onClick="SelectModeClicked(1)"> mile
+</td>
+</tr></table>
+<table width="100%" border="0" align="center">
+<tr><td width="20"></td>
+<td colspan="2">
+<select name="cmbList" size="1" onChange="ListSelected()">
+<option></option>
+</select></td></tr>
+</table>
+</form>
+</body>
+</html>

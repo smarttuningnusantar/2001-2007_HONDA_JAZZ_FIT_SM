@@ -1,0 +1,259 @@
+div.Header	{
+				font-family:		"Arial";
+				font-weight:		bold;
+				font-size:			2em;
+				width:				100%;
+				filter:				shadow(color=gray,direction=135);
+			}
+/* Reset all spacing for tree rendering */
+body#TreeBody,
+body#INDEX,
+#TreeBody * {
+				margin:				0 !important;
+				padding:			0 !important;
+			}
+/* Main search container styling */
+#SEARCH		{
+				padding:			10px 8px;
+				background:			#ffffff;
+				font-family:		Arial, sans-serif;
+			}
+/* Search table styling */
+#SEARCH table	{
+				margin-bottom:		8px;
+				width:				100%;
+			}
+#SEARCH table tr {
+				height:				auto;
+			}
+#SEARCH hr		{
+				border:				none;
+				border-top:			1px solid #d0d0d0;
+				margin:				12px 0;
+				padding:			0;
+			}
+.Label		{
+				font-size:			15px;
+				font-weight:		600;
+				color:				#333333;
+				margin-bottom:		8px;
+				line-height:		1.4;
+			}
+/* Enhanced styling for section titles */
+#SELTITLE	{
+				font-size:			18px !important;
+				font-weight:		bold !important;
+				color:				#1a1a1a !important;
+				margin:				12px 0 10px 0 !important;
+				padding:			10px 0 8px 0 !important;
+				border-bottom:		2px solid #999999 !important;
+				display:			block !important;
+				letter-spacing:		0.5px !important;
+				text-transform:		none !important;
+			}
+/* Tree container styling */
+#divSysCompTreeSearched {
+				padding:			10px !important;
+				border:				2px solid #888888 !important;
+				border-radius:		4px !important;
+				background:			#f9f9f9 !important;
+				margin:				8px 0 !important;
+				min-height:			600px !important;
+				box-shadow:			inset 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.08) !important;
+			}
+/* Improved iframe tree styling */
+#iframeTree		{
+				width:				100% !important;
+				min-width:			300px !important;
+				min-height:			600px !important;
+				max-height:			none !important;
+				height:				600px !important;
+				border:				1px solid #e5e5e5 !important;
+				border-radius:		3px !important;
+				background:			white !important;
+				overflow:			auto !important;
+			}
+div.title	{
+				background-color:	lightgrey;
+				font-family:		Arial,sans-serif;
+				font-size:			13px;
+				font-weight:		bold;
+				padding:			5px 8px;
+				color:				#333333;
+			}
+div.abbrev	{
+				margin-top:			8px;
+				font-family:		Arial,sans-serif;
+				font-size:			13px;
+			}
+input.abbrev{
+				font-family:		Arial,sans-serif;
+				font-size:			12px;
+				font-weight:		bold;
+				padding:			5px;
+			}
+/* Enhanced input field styling */
+#txtWord	{
+				font-size:			13px;
+				padding:			6px;
+				min-width:			250px;
+				border:				1px solid #999999;
+				border-radius:		3px;
+				font-family:		Arial, sans-serif;
+			}
+ul			{
+				list-style-type:	none;
+				margin:				0 !important;
+				margin-left:		0 !important;
+				margin-top:			0px !important;
+				padding:			0 !important;
+				padding-left:		0 !important;
+				text-align:			left !important;
+			}
+img.illust	{
+				border-style:		none;
+				position:			relative;
+				top:				4px;
+			}
+img.maru	{
+				position:			relative;
+				top:				2px;
+				border:				0;
+			}
+/* Tree structure images - ensure no spacing */
+#TreeBody img,
+#iframeTree img {
+				margin:\t\t\t\t0 !important;
+				padding:\t\t\t0 !important;
+				border:\t\t\t\tnone !important;
+				display:\t\t\tinline-block !important;
+				vertical-align:\tmiddle !important;
+				line-height:\t\t1 !important;
+			}
+/* Clickable image styling */
+img[onclick]	{
+				cursor:				pointer;
+				transition:			all 0.2s ease;
+			}
+img[onclick]:hover {
+				opacity:			0.8;
+				transform:			scale(1.05);
+			}
+/* Improved select dropdown styling */
+select		{
+				font-size:			14px;
+				padding:			8px 10px;
+				min-width:			180px;
+				width:				90%;
+				max-width:			260px;
+				border:				1px solid #bbb;
+				border-radius:		4px;
+				font-family:		Arial, sans-serif;
+				background-color:	white;
+				box-shadow:			0 1px 3px rgba(0,0,0,0.1);
+				cursor:				pointer;
+				transition:			all 0.2s ease;
+			}
+select:hover	{
+				border-color:		#999;
+				box-shadow:			0 2px 4px rgba(0,0,0,0.15);
+			}
+select:focus	{
+				outline:			none;
+				border-color:		#667eea;
+				box-shadow:			0 0 0 3px rgba(102,126,234,0.1), 0 2px 4px rgba(0,0,0,0.15);
+			}
+/* Global style overrides for better readability */
+* [style*="font-size:small"]	{
+				font-size:			13px !important;
+			}
+/* Enhanced tree item styling */
+span[style*="font-size:small"]	{
+				font-size:			13px !important;
+				line-height:		1.2 !important;
+				padding:			1px 2px !important;
+				text-align:			left !important;
+				display:			block !important;
+				min-height:			16px !important;
+				margin:				0 !important;
+			}
+a[style*="font-size:small"]		{
+				font-size:			13px !important;
+				line-height:		1.2 !important;
+				padding:			2px 4px !important;
+				text-decoration:	none !important;
+				color:				#0066cc !important;
+				cursor:				pointer !important;
+				text-align:			left !important;
+				display:			block !important;
+				min-height:			16px !important;
+				margin:				0 !important;
+				border-radius:		2px !important;
+				transition:			all 0.15s ease !important;
+			}
+a[style*="font-size:small"]:hover {
+				text-decoration:	none !important;
+				color:				#0047b2 !important;
+				background:			#e8f2ff !important;
+				border-radius:		2px !important;
+				padding-left:		5px !important;
+			}
+/* Improved spacing for tree items */
+td[valign="top"]	{
+				padding-top:		2px !important;
+				padding-bottom:		2px !important;
+				padding-left:		4px !important;
+				padding-right:		4px !important;
+				text-align:			left !important;
+				vertical-align:		middle !important;
+			}
+/* Tree item text alignment */
+td				{
+				text-align:			left !important;
+				padding:			1px 3px !important;
+			}
+/* Ensure all text in tree is left-aligned */
+#iframeTree, #divSysCompTreeSearched {
+				text-align:			left !important;
+			}
+/* Tree table styling for compact appearance */
+#iframeTree table, #divSysCompTreeSearched table {
+				margin:				0 !important;
+				padding:			0 !important;
+				border-collapse:	collapse;
+				border-spacing:		0;
+				width:				auto;
+			}
+/* Tree table rows - no spacing */
+#iframeTree tr, #divSysCompTreeSearched tr {
+				margin:				0 !important;
+				padding:			0 !important;
+				height:				auto !important;
+			}
+/* All divs in tree - remove spacing */
+#iframeTree div, #divSysCompTreeSearched div {
+				margin:				0 !important;
+				padding:			0 !important;
+			}
+/* Selected tree item styling - more prominent highlight */
+#iframeTree span:has(+ span[style*="background"]),
+#TreeBody span[style*="background-color: rgb(255, 204, 153)"] {
+				background-color:	#FFB84D !important;
+				color:				#000 !important;
+				font-weight:		500 !important;
+				padding:\t\t\t1px 3px !important;
+				border-radius:\t\t2px !important;
+				display:\t\t\tblock !important;
+			}
+/* Radio button and label styling */
+input[type="radio"]	{
+				margin:				0 6px 0 0;
+				cursor:				pointer;
+				accent-color:		#667eea;
+			}
+label			{
+				font-size:			14px;
+				color:				#333;
+				cursor:				pointer;
+				user-select:		none;
+			}

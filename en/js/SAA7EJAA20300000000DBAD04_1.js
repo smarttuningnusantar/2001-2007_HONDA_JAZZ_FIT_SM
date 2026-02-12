@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group4\" class=\"drag\" style=\"position:relative; width:950px; height:479px;\" coordsize=\"950,479\">");
+write("<v:rect id=\"rect4\"class=\"drag\"  style=\"width:950px;height:479px;\">");
+write("<img id=\"img4\" src=\"../img/SAA7EJAA20300000000DBAD04.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:479px;border-color:#ffffff\">");
+write("<p id=\"p4_1\" class=\"drag\" style=\"position:absolute;left:582px;top:211px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ABS MODULATOR-<br>CONTROL UNIT<br>(9)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p4_2\" class=\"drag\" style=\"position:absolute;left:92px;top:19px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>2P CONNECTOR<br>(1)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p4_3\" class=\"drag\" style=\"position:absolute;left:247px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>TEST TACHOMETER<br>CONNECTOR<br>(2)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p4_4\" class=\"drag\" style=\"position:absolute;left:450px;top:34px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ELD (3)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p4_5\" class=\"drag\" style=\"position:absolute;left:745px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-HOOD<br>FUSE/RELAY BOX<br>(5)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p4_6\" class=\"drag\" style=\"position:absolute;left:83px;top:210px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-HOOD<br>FUSE/RELAY BOX<br>(6)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p4_7\" class=\"drag\" style=\"position:absolute;left:248px;top:211px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-HOOD<br>FUSE/RELAY BOX<br>(7)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p4_8\" class=\"drag\" style=\"position:absolute;left:414px;top:210px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-HOOD<br>FUSE/RELAY BOX<br>(8)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p4_9\" class=\"drag\" style=\"position:absolute;left:572px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-HOOD<br>FUSE/RELAY BOX<br>(4)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p4_10\" class=\"drag\" style=\"position:absolute;left:0px;top:413px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>NOTE:<br>· Connector with male terminals (double outline): view from terminal side<br>· Connector with female terminals (single outline): view from wire side<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

@@ -1,0 +1,23 @@
+# robots.txt for Honda Jazz/Fit Service Manual
+# Allow search engines to crawl and index the documentation
+
+User-agent: *
+Allow: /2001-2007_HONDA_JAZZ_FIT_SM/
+Disallow: /2001-2007_HONDA_JAZZ_FIT_SM/temp/
+Disallow: /2001-2007_HONDA_JAZZ_FIT_SM/.git/
+
+# Specific rules for various bots
+User-agent: Googlebot
+Allow: /2001-2007_HONDA_JAZZ_FIT_SM/
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /2001-2007_HONDA_JAZZ_FIT_SM/
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /2001-2007_HONDA_JAZZ_FIT_SM/
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://gazrux184-del.github.io/2001-2007_HONDA_JAZZ_FIT_SM/sitemap.xml

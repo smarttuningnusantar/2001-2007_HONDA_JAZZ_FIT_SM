@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:879px;\" coordsize=\"950,879\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:879px;\">");
+write("<img id=\"img1\" src=\"../img/SAA2E00A14100012901LAAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:879px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:245px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>BEARING RETAINER<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:392px;top:53px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>FRONT BEARING<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:637px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DRIVE-END HOUSING<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:822px;top:230px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PULLEY<br>LOCKNUT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:732px;top:407px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PULLEY<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:4px;top:636px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>TERMINAL INSULATOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:125px;top:804px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>REAR HOUSING<br>ASSEMBLY<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:356px;top:764px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>REAR BEARING<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:724px;top:846px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ROTOR<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

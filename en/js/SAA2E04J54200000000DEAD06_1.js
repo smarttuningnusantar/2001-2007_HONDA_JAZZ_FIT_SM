@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group2\" class=\"drag\" style=\"position:relative; width:950px; height:924px;\" coordsize=\"950,924\">");
+write("<v:rect id=\"rect2\"class=\"drag\"  style=\"width:950px;height:924px;\">");
+write("<img id=\"img2\" src=\"../img/SAA2E04J54200000000DEAD06.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:924px;border-color:#ffffff\">");
+write("<p id=\"p2_1\" class=\"drag\" style=\"position:absolute;left:628px;top:15px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>AUDIO UNIT (Without Navigation)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_2\" class=\"drag\" style=\"position:absolute;left:747px;top:175px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>EPS CONTROL UNIT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_3\" class=\"drag\" style=\"position:absolute;left:539px;top:265px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>IMOES UNIT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_4\" class=\"drag\" style=\"position:absolute;left:190px;top:240px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>NAVIGATION UNIT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_5\" class=\"drag\" style=\"position:absolute;left:186px;top:894px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>HEATER CONTROL PANEL<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_6\" class=\"drag\" style=\"position:absolute;left:549px;top:825px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SRS UNIT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_7\" class=\"drag\" style=\"position:absolute;left:680px;top:855px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>EPS MOTOR RELAY<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_8\" class=\"drag\" style=\"position:absolute;left:680px;top:876px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b> Wire colors:PNK/BLU,<br> WHT/RED, BLK and GRN<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

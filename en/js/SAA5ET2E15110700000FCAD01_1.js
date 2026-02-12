@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:475px; height:320px;\" coordsize=\"475,320\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:475px;height:320px;\">");
+write("<img id=\"img1\" src=\"../img/SAA5ET2E15110700000FCAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:475px;height:320px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:87px;top:16px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>GAUGE ASSEMBLY CONNECTOR B (14P)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:129px;top:290px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b></b>Wire side of female terminals<br></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:40px;top:115px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>ATP S<br>(BLU/WHT)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:68px;top:157px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>D IND (PNK)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:140px;top:183px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>ATP L<br>(BLU)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:282px;top:183px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>ATP N<br>(RED/BLK)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:304px;top:157px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>ATP N (WHT)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:351px;top:114px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>ATP P<br>(BLU/BLK)<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

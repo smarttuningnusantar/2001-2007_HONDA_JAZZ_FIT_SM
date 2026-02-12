@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta name="author" content="HONDA MOTOR Co.,Ltd.">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>Component Tree</title>
+<style type="text/css">
+body {
+  margin: 0;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  background: #fff;
+  overflow-y: auto;
+}
+
+.tree-item {
+  margin: 2px 0;
+  padding: 2px 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tree-item:hover {
+  background-color: #e0e0ff;
+  border-radius: 2px;
+}
+
+.tree-item-icon {
+  display: inline-block;
+  width: 16px;
+  margin-right: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tree-item-text {
+  display: inline-block;
+  color: #000;
+}
+
+.tree-item a {
+  text-decoration: none;
+  color: #000;
+}
+
+.tree-item a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<div class="tree-item" onclick="parent.OnSelectComponent('01', 'General Information');"><span class="tree-item-icon">►</span><span class="tree-item-text">General Information</span></div>
+<div class="tree-item" onclick="parent.OnSelectComponent('02', 'Specifications');"><span class="tree-item-icon">►</span><span class="tree-item-text">Specifications</span></div>
+<div class="tree-item" onclick="parent.OnSelectComponent('03', 'Maintenance Schedule');"><span class="tree-item-icon">►</span><span class="tree-item-text">Maintenance Schedule</span></div>
+<div class="tree-item" onclick="parent.OnSelectComponent('04', 'Engine');"><span class="tree-item-icon">►</span><span class="tree-item-text">Engine</span></div>
+<div class="tree-item" onclick="parent.OnSelectComponent('05', 'Trans/Driveline');"><span class="tree-item-icon">►</span><span class="tree-item-text">Trans/Driveline</span></div>
+<div class="tree-item" onclick="parent.OnSelectComponent('06', 'Steering');"><span class="tree-item-icon">►</span><span class="tree-item-text">Steering</span></div>
+<div class="tree-item" onclick="parent.OnSelectComponent('07', 'Suspension');"><span class="tree-item-icon">►</span><span class="tree-item-text">Suspension</span></div>
+<div class="tree-item" onclick="parent.OnSelectComponent('08', 'Brakes');"><span class="tree-item-icon">►</span><span class="tree-item-text">Brakes</span></div>
+<div class="tree-item" onclick="parent.OnSelectComponent('09', 'HVAC');"><span class="tree-item-icon">►</span><span class="tree-item-text">HVAC</span></div>
+<div class="tree-item" onclick="parent.OnSelectComponent('10', 'Body');"><span class="tree-item-icon">►</span><span class="tree-item-text">Body</span></div>
+<div class="tree-item" onclick="parent.OnSelectComponent('11', 'Driving Support & Restraints');"><span class="tree-item-icon">►</span><span class="tree-item-text">Driving Support & Restraints</span></div>
+<div class="tree-item" onclick="parent.OnSelectComponent('12', 'DTC Troubleshooting');"><span class="tree-item-icon">►</span><span class="tree-item-text">DTC Troubleshooting</span></div>
+<div class="tree-item" onclick="parent.OnSelectComponent('13', 'Wiring Diagrams');"><span class="tree-item-icon">►</span><span class="tree-item-text">Wiring Diagrams</span></div>
+</body>
+</html>

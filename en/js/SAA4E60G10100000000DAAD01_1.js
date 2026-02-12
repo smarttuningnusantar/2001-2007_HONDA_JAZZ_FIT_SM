@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:943px;\" coordsize=\"950,943\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:943px;\">");
+write("<img id=\"img1\" src=\"../img/SAA4E60G10100000000DAAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:943px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:671px;top:94px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SERVICE VALVE<br>(HIGH-PRESSURE SIDE)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:48px;top:100px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SERVICE VALVE<br>(LOW-PRESSURE SIDE)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:211px;top:693px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>COMPRESSOR<br><a href=\"javascript:parent.Cts('000000000000569','i000')\"></b>Replacement,</a><br> in the Shop Manual, P/N 62SAA00<br><a href=\"javascript:parent.Cts('000000000000126','i000')\">Clutch Check,</a><br> in the Shop Manual, P/N 62SAA00<br><a href=\"javascript:parent.Cts('000000000000125','i000')\">Clutch Overhaul,</a><br> in the Shop Manual, P/N 62SAA00<br><a href=\"javascript:parent.Cts('000000000000126','i000')\">Thermal Protector Check,</a><br> in the Shop Manual, P/N 62SAA00<br><a href=\"javascript:parent.Cts('000000000000128','i000')\">Thermal Protector Replacement,</a> <br> in the Shop Manual, P/N 62SAA00<br><a href=\"javascript:parent.Cts('000000000000127','i000')\">Relief Valve Replacement,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:607px;top:665px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CONDENSER<br></b>(With built-in receiver/dryer)<br><a href=\"javascript:parent.Cts('000000000000928','i000')\">Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:35px;top:622px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SIGHT GLASS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:438px;top:19px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>EVAPORATOR CORE<br></b>(Built-in the heater unit)<br><a href=\"javascript:parent.Cts('000000000000131','i000')\">Replacement,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:683px;top:561px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>RECEIVER/DRYER<br><a href=\"javascript:parent.Cts('000000000000122','i000')\"></b>Desiccant replacement,<br></a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:1px;top:913px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>LHD type is shown, RHD type is similar.<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

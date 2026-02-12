@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group21\" class=\"drag\" style=\"position:relative; width:950px; height:719px;\" coordsize=\"950,719\">");
+write("<v:rect id=\"rect21\"class=\"drag\"  style=\"width:950px;height:719px;\">");
+write("<img id=\"img21\" src=\"../img/SAA7EJPA20300000000DBAD07.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:719px;border-color:#ffffff\">");
+write("<p id=\"p21_1\" class=\"drag\" style=\"position:absolute;left:15px;top:63px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE<br>COMPARTMENT<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p21_2\" class=\"drag\" style=\"position:absolute;left:19px;top:540px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-DASH<br>FUSE/RELAY<br>BOX<br></b></nobr>");
+write("</p>");
+write("<p id=\"p21_3\" class=\"drag\" style=\"position:absolute;left:767px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DASHBOARD<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p21_4\" class=\"drag\" style=\"position:absolute;left:374px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>2<br></b></nobr>");
+write("</p>");
+write("<p id=\"p21_5\" class=\"drag\" style=\"position:absolute;left:468px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>3<br></b></nobr>");
+write("</p>");
+write("<p id=\"p21_6\" class=\"drag\" style=\"position:absolute;left:567px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>4<br></b></nobr>");
+write("</p>");
+write("<p id=\"p21_7\" class=\"drag\" style=\"position:absolute;left:652px;top:19px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>5<br></b></nobr>");
+write("</p>");
+write("<p id=\"p21_8\" class=\"drag\" style=\"position:absolute;left:287px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>1<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:863px;\" coordsize=\"950,863\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:863px;\">");
+write("<img id=\"img1\" src=\"../img/SAA2E00A32200043502LAAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:863px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:824px;top:86px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>O-RING<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:763px;top:315px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>6 N·m (0.6 kgf·m, <br>4 lbf·ft)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:708px;top:415px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>OIL PUMP COVER<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:540px;top:455px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>OUTER ROTOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:437px;top:502px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>INNER ROTOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:218px;top:138px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DOWEL PINS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:346px;top:664px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>RELIEF VALVE<br></b>Valve must slide freely<br>in housing bore.<br>Replace if scored.<br></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:321px;top:814px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SEALING BOLT<br>39 N·m (4.0 kgf·m, 29 lbf·ft)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:83px;top:722px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SPRING<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_10\" class=\"drag\" style=\"position:absolute;left:118px;top:66px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PUMP HOUSING<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

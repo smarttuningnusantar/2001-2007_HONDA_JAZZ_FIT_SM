@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:687px;\" coordsize=\"950,687\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:687px;\">");
+write("<img id=\"img1\" src=\"../img/SAA2EA0A20326900000DAAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:687px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:798px;top:86px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>INTAKE AIR<br>TEMPERATURE <br>(IAT)SENSOR<br><a href=\"javascript:parent.Cts('000000000001784','i000')\"></b>Troubleshooting,<br></a><br><a href=\"javascript:parent.Cts('000000000000555','i000')\">Replacement,<br></a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:701px;top:559px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE COOLANT<br>TEMPERATURE<br>(ECT) SENSOR<br><a href=\"javascript:parent.Cts('000000000001779','i000')\"></b>Troubleshooting,</a><br><a href=\"javascript:parent.Cts('000000000000553','i000')\">Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:274px;top:629px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>KNOCK SENSOR<br><a href=\"javascript:parent.Cts('000000000001794','i000')\"></b>Troubleshooting,</a><br><a href=\"javascript:parent.Cts('000000000000556','i000')\">Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:422px;top:557px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>MANIFOLD ABSOLUTE<br>PRESSURE (MAP)<br>SENSOR<br><a href=\"javascript:parent.Cts('000000000001776','i000')\"></b>Troubleshooting,</a><br><a href=\"javascript:parent.Cts('000000000000557','i000')\">Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:742px;top:499px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>THROTTLE POSITION (TP)<br>SENSOR<br><a href=\"javascript:parent.Cts('000000000001781','i000')\"></b>Troubleshooting,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:77px;top:548px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CRANKSHAFT POSITION (CKP)<br>SENSOR<br><a href=\"javascript:parent.Cts('000000000001778','i000')\"></b>Troubleshooting,</a><br><a href=\"javascript:parent.Cts('000000000000552','i000')\">Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:618px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>TOP DEAD CENTER (TDC)<br>SENSOR<br><a href=\"javascript:parent.Cts('000000000001783','i000')\"></b>Troubleshooting,</a><br><a href=\"javascript:parent.Cts('000000000000558','i000')\">Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:401px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>REAR<br>IGNITION<br>COIL<br><a href=\"javascript:parent.Cts('000000000001790','i000')\"></b>Troubleshooting,<br></a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:15px;top:412px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>FRONT<br>IGNITION<br>COIL<br><a href=\"javascript:parent.Cts('000000000001790','i000')\"></b>Troubleshooting,<br></a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_10\" class=\"drag\" style=\"position:absolute;left:805px;top:235px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ELECTRICAL<br>LOAD DETECTOR<br>(ELD)<br><a href=\"javascript:parent.Cts('000000000001792','i000')\"></b>Troubleshooting,<br></a><br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

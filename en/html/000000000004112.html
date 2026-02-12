@@ -1,0 +1,886 @@
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta name="author" content="HONDA ACCESS Co.,Ltd.">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>Navigation Function</title>
+<link href="../css/ViewerStyle.css" rel="stylesheet">
+<style>
+	v\:*	{ behavior: url(#default#VML); }
+	.drag	{ position: relative; cursor:   hand; }
+</style>
+</head>
+<script>
+<!--
+-->
+</script>
+<script>
+<!--
+function jsResetImage() {
+	_prResetPosition();
+	_prResetImage();
+	return;
+}
+function jsResizeImage(rate) {
+	_prResizeImage(rate);
+	return;
+}
+var z,x,y;
+var gImageGroupList_	= new Array;
+var gIdx_				= 0;
+function _prImageGroupStruct(group_size,rect_size,img_size,p_tag,tp_obj,bl_obj,ul_obj) {
+	this.group		= group_size;
+	this.rect		= rect_size;
+	this.img		= img_size;
+	this.p			= p_tag;
+	this.tp			= tp_obj;
+	this.bl			= bl_obj;
+	this.ul			= ul_obj;
+}
+function _prSizeStruct(newObj,newWidth,newHeight) {
+	this.obj		= newObj;
+	this.width		= newWidth;
+	this.height		= newHeight;
+}
+function _prPTagStruct(newObj,newLeft,newTop,newFontSize) {
+	this.obj		= newObj;
+	this.left		= newLeft;
+	this.top		= newTop;
+	this.fontsize	= newFontSize;
+}
+function _prLineTagStruct(newObj,newFromx,newFromy, newTox, newToy) {
+	this.obj			= newObj;
+	this.fromx		= newFromx;
+	this.fromy		= newFromy;
+	this.tox		= newTox;
+	this.toy		= newToy;
+}
+function _prTPTagStruct(newObj,newFontSize) {
+	this.obj		= newObj;
+	this.fontsize	= newFontSize;
+}
+function _prInitImageInfo(rate) {
+	var endFlag = false;
+	gDefaultRate_ = rate;
+	gIdx_ = 0;
+	var save_i;
+	var iii = 100;
+	for(var i = 1; !endFlag; i++){
+		save_i = i;
+		var groupObject = document.getElementById("group" + i);
+		if(groupObject == null){
+			groupObject = document.getElementById("group" + iii);
+			if(groupObject == null){
+				groupObject = document.getElementById("group" + i + "_noresize");
+				if(groupObject == null){
+					endFlag = true;	
+					break;
+				}
+				continue;
+			}
+			else {
+				i = iii
+				iii++;
+			}
+		}
+		var groupWidth	= _prRemoveUnit(groupObject.style.width);
+		var groupHeight	= _prRemoveUnit(groupObject.style.height);
+		var rectObject	= document.getElementById("rect" + i);
+		var rectWidth	= null;
+		var rectHeight	= null;
+		if(rectObject != null){
+			rectWidth	= _prRemoveUnit(rectObject.style.width);
+			rectHeight	= _prRemoveUnit(rectObject.style.height);
+		}
+		var imgObject	= document.getElementById("img" + i);
+		var imgWidth	= null;
+		var imgHeight	= null;
+		if(imgObject != null){
+			imgWidth	= _prRemoveUnit(imgObject.style.width);
+			imgHeight	= _prRemoveUnit(imgObject.style.height);
+		}
+		var pObject		= null;
+		for(var j = 1; !endFlag; j++){
+			var pTag = document.getElementById("p" + i + "_" + j);
+			if(pTag == null){
+				if(j == 1){
+					endFlag = true;
+				}
+				break;
+			}
+			if(j == 1){
+				pObject		= new Array();
+			}
+			pObject[j-1] = new _prPTagStruct(
+									pTag,
+									_prRemoveUnit(pTag.style.left),
+									_prRemoveUnit(pTag.style.top),
+									_prRemoveUnit(pTag.style.fontSize)
+								);
+		}
+		endFlag = false;
+		var tpObject		= null;
+		for(var j = 1; !endFlag; j++){
+			var tpTag = document.getElementById("tp" + i + "_" + j);
+			if(tpTag == null){
+				if(j == 1){
+					endFlag = true;  
+				}
+				break;
+			}
+			if(j == 1){
+				tpObject		= new Array();
+			}
+			tpObject[j-1] = new _prTPTagStruct(
+									tpTag,
+									_prRemoveUnit(tpTag.style.fontSize)
+								);
+		}
+		endFlag = false;
+		var blObject		= null;
+		for(var j = 1; !endFlag; j++){
+			var baseline = document.getElementById("bl" + i + "_" + j);
+			if(baseline == null){
+				if(j == 1){
+					endFlag = true;  
+				}
+				break;
+			}
+			if(j == 1){
+				blObject		= new Array();
+			}
+			blObject[j-1] = new _prLineTagStruct(
+									baseline,
+									(baseline.from+'').substring(0,(baseline.from+'').indexOf(",")),
+									(baseline.from+'').substring((baseline.from+'').indexOf(",")+1,(baseline.from+'').length),
+									(baseline.to+'').substring(0,(baseline.to+'').indexOf(",")),
+									(baseline.to+'').substring((baseline.to+'').indexOf(",")+1, (baseline.to+'').length)
+								);
+		}
+		endFlag = false;
+		var ulObject		= null;
+		for(var j = 1; !endFlag; j++){
+			var underline = document.getElementById("ul" + i + "_" + j);
+			if(underline == null){
+				if(j == 1){
+					endFlag = true;  
+				}
+				break;
+			}
+			if(j == 1){
+				ulObject		= new Array();
+			}
+			ulObject[j-1] = new _prLineTagStruct(
+									underline,
+									(underline.from+'').substring(0,(underline.from+'').indexOf(",",0)),
+									(underline.from+'').substring((underline.from+'').indexOf(",")+1,(underline.from+'').length),
+									(underline.to+'').substring(0,(underline.to+'').indexOf(",")),
+									(underline.to+'').substring((underline.to+'').indexOf(",")+1, (underline.to+'').length)
+								);
+		}
+		endFlag = false;
+		gImageGroupList_[gIdx_] = new _prImageGroupStruct (
+			new _prSizeStruct(groupObject,groupWidth,groupHeight),
+			new _prSizeStruct(rectObject,rectWidth,rectHeight),
+			new _prSizeStruct(imgObject,imgWidth,imgHeight),
+			pObject,
+			tpObject,
+			blObject,
+			ulObject
+		);
+		gIdx_++;
+		i = save_i;
+	}
+	return ;
+}
+function _prResizeImage(rate) {
+	var  hei = 0;
+	for(var i=0; i<gImageGroupList_.length; i++){
+		if(gImageGroupList_[i].group != null){
+			var obj = gImageGroupList_[i].group;
+			obj.obj.style.width = (obj.width * rate) + 'px';
+			obj.obj.style.height = (obj.height * rate) + 'px';
+			obj.obj.coordsize = (obj.width * rate) + ',' + (obj.height * rate);
+			hei = obj.height * rate
+		}
+		if(gImageGroupList_[i].rect != null){
+			var obj = gImageGroupList_[i].rect;
+			obj.obj.style.width = (obj.width * rate) + 'px';
+			obj.obj.style.height = (obj.height * rate) + 'px';
+		}
+		if(gImageGroupList_[i].img != null){
+			var obj = gImageGroupList_[i].img;
+			obj.obj.style.width = (obj.width * rate) + 'px';
+			obj.obj.style.height = (obj.height * rate) + 'px';
+		}
+		if(gImageGroupList_[i].p != null){
+			var obj = gImageGroupList_[i].p;
+			for(var j=0; j<obj.length; j++){
+				var p = obj[j];
+				if(p.left != ""){
+					p.obj.style.left		= (p.left * rate) + 'px';
+				}
+				if(p.top != ""){
+					p.obj.style.top			= (p.top * rate) + 'px';
+				}
+				if(p.fontsize != ""){
+					p.obj.style.fontSize	= (p.fontsize * rate) + 'pt';
+				}
+			}
+		}
+		if(gImageGroupList_[i].tp != null){
+			var obj = gImageGroupList_[i].tp;
+			for(var j=0; j<obj.length; j++){
+				var tp = obj[j];
+				if(tp.fontsize != ""){
+					if(tp.fontsize*rate < 5.5){
+						tp.obj.style.fontSize	= '5.5pt';
+					}
+					else{
+						tp.obj.style.fontSize	= (tp.fontsize * rate) + 'pt';
+					}
+				}
+			}
+		}
+		if(gImageGroupList_[i].bl != null){
+			var obj = gImageGroupList_[i].bl;
+			for(var j=0; j<obj.length; j++){
+				var bl = obj[j];
+				var fromx,tox;
+				if(bl.fromx != ""){
+					fromx = bl.fromx * rate;
+					bl.obj.from	= fromx + "," + (bl.fromy * rate);
+				}
+				if(bl.tox != ""){
+					tox = bl.tox * rate;
+					if((0 >=tox-fromx) && (fromx-tox) < 1) {
+						tox = tox-1;
+					}
+					if((0 <= tox-fromx) && (tox-fromx) < 1) {
+						tox = tox+1;
+					}
+					bl.obj.to	= tox + "," + (bl.toy * rate);
+				}
+			}
+		}
+		if(gImageGroupList_[i].ul != null){
+			var obj = gImageGroupList_[i].ul;
+			for(var j=0; j<obj.length; j++){
+				var ul = obj[j];
+				if(ul.fromx != ""){
+					ul.obj.from	= (ul.fromx * rate) + "," + (ul.fromy * rate);
+				}
+				if(ul.tox != ""){
+					ul.obj.to	= (ul.tox * rate) + "," + (ul.toy * rate);
+				}
+			}
+		}
+	}
+	return hei;
+}
+function _prResizeImageAt(idx,rate) {
+	var  hei = 0;
+		if(gImageGroupList_[idx].group != null){
+			var obj = gImageGroupList_[idx].group;
+			obj.obj.style.width = (obj.width * rate) + 'px';
+			obj.obj.style.height = (obj.height * rate) + 'px';
+			obj.obj.coordsize = (obj.width * rate) + ',' + (obj.height * rate);
+			hei = obj.height * rate
+		}
+		if(gImageGroupList_[idx].rect != null){
+			var obj = gImageGroupList_[idx].rect;
+			obj.obj.style.width = (obj.width * rate) + 'px';
+			obj.obj.style.height = (obj.height * rate) + 'px';
+		}
+		if(gImageGroupList_[idx].img != null){
+			var obj = gImageGroupList_[idx].img;
+			obj.obj.style.width = (obj.width * rate) + 'px';
+			obj.obj.style.height = (obj.height * rate) + 'px';
+		}
+		if(gImageGroupList_[idx].p != null){
+			var obj = gImageGroupList_[idx].p;
+			for(var j=0; j<obj.length; j++){
+				var p = obj[j];
+				if(p.left != ""){
+					p.obj.style.left		= (p.left * rate) + 'px';
+				}
+				if(p.top != ""){
+					p.obj.style.top			= (p.top * rate) + 'px';
+				}
+				if(p.fontsize != ""){
+					p.obj.style.fontSize	= (p.fontsize * rate) + 'pt';
+				}
+			}
+		}
+		if(gImageGroupList_[idx].tp != null){
+			var obj = gImageGroupList_[idx].tp;
+			for(var j=0; j<obj.length; j++){
+				var tp = obj[j];
+				if(tp.fontsize != ""){
+					if(tp.fontsize*rate < 5.5){
+						tp.obj.style.fontSize	= '5.5pt';
+					}
+					else{
+						tp.obj.style.fontSize	= (tp.fontsize * rate) + 'pt';
+					}
+				}
+			}
+		}
+		if(gImageGroupList_[idx].bl != null){
+			var obj = gImageGroupList_[idx].bl;
+			for(var j=0; j<obj.length; j++){
+				var bl = obj[j];
+				var fromx,tox;
+				if(bl.fromx != ""){
+					fromx = bl.fromx * rate;
+					bl.obj.from	= fromx + "," + (bl.fromy * rate);
+				}
+				if(bl.tox != ""){
+					tox = bl.tox * rate;
+					if((0 >=tox-fromx) && (fromx-tox) < 1) {
+						tox = tox-1;
+					}
+					if((0 <= tox-fromx) && (tox-fromx) < 1) {
+						tox = tox+1;
+					}
+					bl.obj.to	= tox + "," + (bl.toy * rate);
+				}
+			}
+		}
+		if(gImageGroupList_[idx].ul != null){
+			var obj = gImageGroupList_[idx].ul;
+			for(var j=0; j<obj.length; j++){
+				var ul = obj[j];
+				if(ul.fromx != ""){
+					ul.obj.from	= (ul.fromx * rate) + "," + (ul.fromy * rate);
+				}
+				if(ul.tox != ""){
+					ul.obj.to	= (ul.tox * rate) + "," + (ul.toy * rate);
+				}
+			}
+		}
+	return hei;
+}
+function _prRemoveUnit(src){
+	var dst = src.substring(0,src.length-2);
+	return dst;
+}
+-->
+</script>
+<script>
+<!--
+function Apf() {
+   _prInitImageInfo(100);
+   window.focus();
+   if(gImageGroupList_.length == 0) {
+      window.print();
+   }
+   else {
+      divBody.style.display = "none";
+      var  img_pos,img_hei;
+      var  img_rate = 1.0;
+      var  i;
+      var  obj;
+      var  paper_wid,paper_hei,paper_len;
+      paper_wid = 640.0;
+      paper_hei = 950.0;
+      paper_len = 980.0;
+      for(i=0; i<gImageGroupList_.length; i++){
+         if(gImageGroupList_[i].group != null){
+           obj = gImageGroupList_[i].group;
+         }
+      }
+      if(paper_wid > paper_hei) {
+         alert("Make the print setting 'A4 Landscape'.");
+      }
+      for(i=0; i<gImageGroupList_.length; i++){
+         if(gImageGroupList_[i].group != null){
+            obj = gImageGroupList_[i].group;
+            if(img_rate > paper_wid/obj.width) {
+               img_rate =  paper_wid/obj.width;
+            }
+            if(img_rate > paper_hei/obj.height) {
+               img_rate =  paper_hei/obj.height;
+            }
+         }
+      }
+      _prResizeImage(img_rate);
+      window.scrollTo(0,10000);
+      var totalHei = document.body.scrollTop+document.body.clientHeight-img_hei;
+      divBody.style.display = "block";
+      var  idObj;
+      var groupObject = document.getElementById("group" + i);
+      var   beforeOffset = 0;
+      var   current_pos;
+      var   img_pos = img_dis = 0;
+      for(i=0; i<gImageGroupList_.length; i++){
+         idObj =document.getElementById("imgId" + (i+1));
+         if(idObj != null) {
+            idObj.style.display = "block";
+            current_pos = idObj.offsetTop;
+            if(gImageGroupList_[i].group != null){
+               obj = gImageGroupList_[i].group;
+               img_dis = current_pos - beforeOffset;
+               if(i == 0) {
+                  var pageCnt = Math.floor(current_pos/paper_hei);
+                  img_dis = img_dis - paper_hei*pageCnt;
+               }
+               img_hei = obj.height*img_rate;
+               img_pos += parseInt(img_dis);
+               if(parseInt(img_pos) > paper_len) {
+                  img_pos = img_pos - paper_len;
+               }
+               img_pos += parseInt(img_hei);
+               idObj.style.display = "none";
+               if(parseInt(img_pos) > paper_len) {
+                  idObj.style.display = "block";
+                  img_pos = parseInt(img_hei) + 50;
+               }
+               beforeOffset = current_pos + parseInt(img_hei);
+            }
+         }
+      }
+      window.print();
+      divBody.style.display = "none";
+      _prResizeImage(100/100);
+      divBody.style.display = "block";
+      window.scrollTo(0,0);
+   }
+}
+-->
+</script>
+<body onload="javascript:parent.Old(this)" style="font-family:sans-serif;">
+<div id="divBody" style="display:block">
+<div xmlns:v="urn:schemas-microsoft-com:vml">
+<div class="top_title">
+<b>
+Navigation Function
+</b>
+</div>
+<div>
+<div>
+The navigation system is composed of the AVN unit, the vehicle speed pulse (VSP) sensor, the GPS antenna.
+</div>
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<div class="figure_title">
+<b>
+Function Diagram
+</b>
+</div>
+<script src="../js/SAA2E00J36200000000CAAD05_1.js">
+</script>
+</div>
+</div>
+<br>
+<div class="topic_title">
+<b>
+Vehicle Speed Pulse (VSP) Sensor
+</b>
+</div>
+<br>
+<div>
+<div>
+The vehicle speed pulse (VSP) sensor is driven by the differential gear. For every revolution of the sensor, a four-pulse signal is sent to the navigation unit. The VSP outputs the distance signal by turning the navigation unit's sensor power on and off.
+</div>
+<span style="display:none" id="imgId2">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<script src="../js/SAA2E00J36200000000CAAD06_1.js">
+</script>
+</div>
+</div>
+<br>
+<div class="topic_title">
+<b>
+Yaw Rate Sensor
+</b>
+</div>
+<br>
+<div>
+The yaw rate sensor detects the direction change (angular speed) of the vehicle. The sensor is oscillation gyro built into the AVN unit.
+</div>
+<br>
+<div class="topic_title">
+<b>
+Global Positioning System (GPS)
+</b>
+</div>
+<br>
+<div>
+<div>
+The Global Positioning System (GPS) enables the navigation system to determine the current position of the vehicle by using the electric waves transmitted from the satellites in orbit around the earth. The satellites transmit the satellite identification signal, orbit information, transmission time signal, and other information. When the GPS receiver receives the electric waves from three or more satellites simultaneously, it calculates the current position of the vehicle based on the distance to each satellite and the satellite positions on their respective orbits.
+</div>
+<div>
+<b>
+Position detection Image with GPS satellite
+</b>
+</div>
+<span style="display:none" id="imgId3">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<script src="../js/S0XYA82J36100000000CAAD05_1.js">
+</script>
+</div>
+</div>
+<br>
+<div class="topic_title">
+<b>
+Precision of GPS
+</b>
+</div>
+<br>
+<div>
+The precision of the GPS varies according to the number of satellites from which electric waves are received and the control condition. The precision is indicated by the GPS mark shown on the upper left of the display.
+</div>
+<div>
+<table width="100%" class="Viewer" frame="border">
+<col width="10%">
+<col width="10%">
+<col width="10%">
+<col width="14%">
+<col width="20%">
+<col width="33%">
+<thead>
+<tr>
+<th class="ViewerTH" colspan="3" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="center">
+<div>
+<b>
+GPS MARK
+</b>
+</div>
+</th>
+<th class="ViewerTH" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="center">
+<div>
+<b>
+No.of SATELLITES
+</b>
+</div>
+</th>
+<th class="ViewerTH" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="center">
+<div>
+<b>
+CONDITION
+</b>
+</div>
+</th>
+<th class="ViewerTH" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="center">
+<div>
+<b>
+DISCRIPTION
+</b>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:none;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+No satellite mark
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:none;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+→
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="left">
+<script src="../js/S0KXA12J36100000000CAAD11_1.js">
+</script>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="center">
+<div>
+Two or less
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+Impossible to detect vehicle position
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+GPS funtion is normal.
+</div>
+<div>
+The satellite electric waves received by the GPS are too few to detect the vehicle position.
+</div>
+</td>
+</tr>
+<tr>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:none;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+Yellow satellite mark
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:none;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+→
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="left">
+<script src="../js/S0KXA12J36100000000CAAD12_1.js">
+</script>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="center">
+<div>
+Three
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+Vehicle position detectable in two demensions
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+The longitude and latitude of the vehicle position can be detected. (Less precise than detection in three dimensions)
+</div>
+</td>
+</tr>
+<tr>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:none;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+Green satellite mark
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:none;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+→
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="left">
+<script src="../js/S0KXA12J36100000000CAAD13_1.js">
+</script>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="center">
+<div>
+Four or more
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+Vehicle position detectable in three dimensions
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+The longitude, latitude and the altitude of the vehicle position can be detected. (More precise than detection in two dimensions)
+</div>
+</td>
+</tr>
+<tr>
+<td class="ViewerTD" colspan="3" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+Not indicate
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="center">
+<div>
+———
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+Faulty
+</div>
+</td>
+<td class="ViewerTD" style="border-left-style:none;border-right-style:solid;border-bottom-style:solid;border-top-style:none;" align="left">
+<div>
+The GPS can't be used due to a faulty GPS receiver, open in the wire, or other fault.
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<br>
+<div class="topic_title">
+<b>
+GPS Antenna
+</b>
+</div>
+<br>
+<div>
+Receiving the electric waves from the satellites, the GPS antenna amplifies and transmits them to the GPS receiver.
+</div>
+<br>
+<div class="topic_title">
+<b>
+GPS Receiver
+</b>
+</div>
+<br>
+<div>
+The GPS receiver is built in the AVN unit. It calculates the vehicle position by receiving the signal from the GPS antenna. The vehicle position and signal reception condition is transmitted from the GPS receiver to the AVN unit to adjust vehicle position.
+</div>
+<br>
+<div class="topic_title">
+<b>
+AVN Unit
+</b>
+</div>
+<br>
+<div>
+The AVN unit calculates the vehicle position and guides you to the destination. The unit performs map matching correction, GPS correction, and distance tuning. It also controls the menu functions and the DVD-ROM drive. With control of all these items, the AVN unit makes the navigation picture signal, then it transmits the signal to the display unit and audio driving instructions to the audio unit.
+</div>
+<br>
+<div class="topic_title">
+<b>
+Calculation of Vehicle Position
+</b>
+</div>
+<br>
+<div>
+The AVN unit calculates the vehicle position (the driving direction and the current position) by receiving the directional change signals from the yaw rate sensor and the travel distance signals from the vehicle speed pulse (VSP) sensor.
+</div>
+<br>
+<div class="topic_title">
+<b>
+Map Matching Tuning
+</b>
+</div>
+<br>
+<div>
+The map matching tuning is accomplished by indicating the vehicle position on the roads on the map. The map data transmitted from the DVD-ROM is checked against the vehicle position data, and the vehicle position is indicated on the nearest road. Map matching tuning does not occur when the vehicle travels on a road not shown on the map or when the vehicle position is far away from a road on the map.
+</div>
+<br>
+<div class="topic_title">
+<b>
+GPS Tuning
+</b>
+</div>
+<br>
+<div>
+The GPS tuning is accomplished by indcating the vehicle position as the GPS's vehicle position. The AVN unit comprares its calculated vehicle position data with the GPS vehicle position data. If there is large difference between the two, the indicated vehicle position is adjusted to the GPS vehicle position.
+</div>
+<br>
+<div class="topic_title">
+<b>
+Distance Tuning
+</b>
+</div>
+<br>
+<div>
+The distance tuning reduces the difference between the travel distance signal from the VSP and the distance data on the map. The AVN unit compares its calculated vehicle position data with the GPS vehicle position data. The AVN unit then decreases the tuning value when the vehicle position is always ahead of the GPS vehicle position, and it increases the tuning value when the vehicle position is always behind the GPS vehicle position.
+</div>
+<br>
+<div class="topic_title">
+<b>
+Route Guidance
+</b>
+</div>
+<br>
+<div>
+The AVN unit can calculate different routes to a selected destination. You have four options:
+</div>
+<ul type="disc">
+<li>
+<div>
+Direct Route − Calculate a route that is the most direct and will take the least time.
+</div>
+</li>
+<li>
+<div>
+Easy Route − Calcute a route that minimizes the number of turns needed.
+</div>
+</li>
+<li>
+<div>
+Minimize Motorways − Calculate a route that avoids motorway travel. If that is not possible, keep the amount of motorway travel to a minimum.
+</div>
+</li>
+<li>
+<div>
+Mimimize Toll Roads − Calculate a route that avoids, or minimizes travel on toll roads
+</div>
+</li>
+</ul>
+<br>
+<div class="topic_title">
+<b>
+Audio Guidance
+</b>
+</div>
+<br>
+<div>
+The AVN unit transmits audio driving instructions before entering an intersection or passing a junction.The audio instructions come through audio unit and the front speakers.
+</div>
+<br>
+<div class="topic_title">
+<b>
+DVD-ROM
+</b>
+</div>
+<br>
+<div>
+The map data (including all scale rates) is stored in the DVD-ROM. The map data includes:
+</div>
+<ul type="disc">
+<li>
+<div>
+Road distances, road widths, speed limits, traffic regulations, passing time at junction, distances to junctions, and the driving instructions for audio guidance.
+</div>
+</li>
+<li>
+<div>
+Latitude and longitude GPS.
+</div>
+</li>
+</ul>
+<br>
+<div class="topic_title">
+<b>
+Audio Unit
+</b>
+</div>
+<br>
+<div>
+The audio unit built in the AVN unit. It receives the audio driving instructions from the navigation unit and transmits the instructions through the front speakers even when the audio system is in use.
+</div>
+<br>
+<div class="topic_title">
+<b>
+Display Unit
+</b>
+</div>
+<br>
+<div>
+<div>
+The display unit built in the AVN unit. It uses Liquid Crystal Display (LCD). The LCD is a six-inch-wide, Thin Film Transistor (TFT), stripe type with about 280,000 picture elements. The color film and fluorecent light are laid out on the back of the liquid crystal film.
+</div>
+<span style="display:none" id="imgId4">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<div class="figure_title">
+<b>
+Operation keys
+</b>
+</div>
+<script src="../js/SAA2E00J36200000000CAAD07_1.js">
+</script>
+</div>
+<span style="display:none" id="imgId5">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<script src="../js/SAA2E00J36200000000CAAD08_1.js">
+</script>
+</div>
+</div>
+</div></div>
+</body>
+</html>

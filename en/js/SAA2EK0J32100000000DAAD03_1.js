@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group3\" class=\"drag\" style=\"position:relative; width:950px; height:895px;\" coordsize=\"950,895\">");
+write("<v:rect id=\"rect3\"class=\"drag\"  style=\"width:950px;height:895px;\">");
+write("<img id=\"img3\" src=\"../img/SAA2EK0J32100000000DAAD03.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:895px;border-color:#ffffff\">");
+write("<p id=\"p3_1\" class=\"drag\" style=\"position:absolute;left:0px;top:14px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>NOTE: LHD type is shown, RHD type is similar.<br></nobr>");
+write("</p>");
+write("<p id=\"p3_2\" class=\"drag\" style=\"position:absolute;left:491px;top:175px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>REAR FOG LIGHT INDICATOR LIGHT <br>(KG, KE and KR models)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p3_3\" class=\"drag\" style=\"position:absolute;left:527px;top:262px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>HIGH BEAM INDICATOR LIGHT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p3_4\" class=\"drag\" style=\"position:absolute;left:18px;top:494px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>HEADLIGHT ADJUSTER<br>SWITCH<br>(KG, KE and KR models)<br><a href=\"javascript:parent.Cts('000000000000238','i000')\"></b>Test,</a><br><a href=\"javascript:parent.Cts('000000000000238','i000')\">Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p3_5\" class=\"drag\" style=\"position:absolute;left:42px;top:832px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-DASH<br>FUSE/RELAY BOX<br></b></nobr>");
+write("</p>");
+write("<p id=\"p3_6\" class=\"drag\" style=\"position:absolute;left:464px;top:849px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>TAILLIGHT RELAY<br><a href=\"javascript:parent.Cts('000000000003007','i000')\"></b>Test,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p3_7\" class=\"drag\" style=\"position:absolute;left:498px;top:780px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>MULTI-RELAY BOX<br></b></nobr>");
+write("</p>");
+write("<p id=\"p3_8\" class=\"drag\" style=\"position:absolute;left:586px;top:713px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>BRAKE PEDAL POSITION SWITCH<br><a href=\"javascript:parent.Cts('000000000000233','i000')\"></b>Test,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p3_9\" class=\"drag\" style=\"position:absolute;left:463px;top:98px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>REAR FOG LIGHT SWITCH <br>(KG, KE and KR models)<br><a href=\"javascript:parent.Cts('000000000002976','i000')\"></b>Test,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p3_10\" class=\"drag\" style=\"position:absolute;left:463px;top:50px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>COMBINATION LIGHT SWITCH<br><a href=\"javascript:parent.Cts('000000000002976','i000')\"></b>Test,</a><br><a href=\"javascript:parent.Cts('000000000002976','i000')\">Replacement,</a><br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

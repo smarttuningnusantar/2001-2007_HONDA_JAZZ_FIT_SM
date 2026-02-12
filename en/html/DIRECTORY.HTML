@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Manual Directory - Honda Jazz/Fit Service Manual</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+  .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+  
+  h1 { color: #333; margin-bottom: 10px; border-bottom: 3px solid #0066cc; padding-bottom: 10px; }
+  .subtitle { color: #666; margin-bottom: 30px; font-size: 14px; }
+  
+  .search-box { margin: 20px 0; }
+  .search-box input { 
+    width: 100%; padding: 12px; font-size: 16px; border: 2px solid #ddd; 
+    border-radius: 4px; max-width: 500px;
+  }
+  .search-box input:focus { outline: none; border-color: #0066cc; }
+  
+  .info-box {
+    background: #e8f4f8; border-left: 4px solid #0066cc; padding: 15px;
+    margin: 20px 0; border-radius: 4px;
+  }
+  
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin-top: 20px; }
+  
+  .entry-link {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white; padding: 20px; border-radius: 6px;
+    text-decoration: none; transition: all 0.3s;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 120px; text-align: center;
+  }
+  .entry-link:hover { 
+    transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  }
+  
+  .entry-number { font-size: 28px; font-weight: bold; }
+  .entry-label { font-size: 12px; opacity: 0.9; margin-top: 5px; }
+  
+  .stats { 
+    background: #f9f9f9; padding: 15px; border-radius: 4px; margin: 20px 0;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;
+  }
+  .stat { text-align: center; padding: 10px; background: white; border-radius: 4px; }
+  .stat-value { font-size: 24px; font-weight: bold; color: #0066cc; }
+  .stat-label { font-size: 12px; color: #666; margin-top: 5px; }
+  
+  .controls { margin: 20px 0; }
+  button { background: #0066cc; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin-right: 10px; font-size: 14px; }
+  button:hover { background: #004499; }
+  
+  .pagination { text-align: center; margin: 30px 0; }
+  .pagination button { margin: 5px; }
+  .page-info { margin: 20px 0; color: #666; }
+  
+  .no-results { text-align: center; padding: 40px; color: #999; }
+  
+  .hidden { display: none; }
+  
+  .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>📖 Shop Manual Directory</h1>
+  <p class="subtitle">Complete index of all Honda Jazz/Fit 2001-2007 service manual pages</p>
+  
+  <div class="info-box">
+    ℹ️ <strong>Total Entries:</strong> 1002 pages | 
+    <strong>Format:</strong> Numbered HTML files | 
+    <strong>Updated:</strong> 2024
+  </div>
+  
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search by entry number (e.g., 1, 100, 500)...">
+  </div>
+  
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value" id="totalCount">1002</div>
+      <div class="stat-label">Total Entries</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="displayCount">1002</div>
+      <div class="stat-label">Showing</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="pageNum">1</div>
+      <div class="stat-label">Current Page</div>
+    </div>
+  </div>
+  
+  <div class="controls">
+    <button onclick="resetSearch()">Show All</button>
+    <button onclick="loadFirst()">First 50</button>
+    <button onclick="loadRandom()">Random Pages</button>
+  </div>
+  
+  <div class="page-info">
+    Showing <span id="startNum">1</span> - <span id="endNum">50</span> of <span id="totalNum">1002</span>
+  </div>
+  
+  <div class="grid" id="entriesGrid"></div>
+  
+  <div class="pagination" id="paginationControls"></div>
+  
+  <div class="footer">
+    Honda Jazz/Fit Service Manual | All pages are organized sequentially | 
+    <a href="../../HONDAESM.HTML">Back to Main</a>
+  </div>
+</div>
+
+<script>
+// Configuration
+const TOTAL_ENTRIES = 1002;
+const ENTRIES_PER_PAGE = 50;
+let currentPage = 1;
+let searchResults = [];
+let isSearching = false;
+
+// Initialize
+window.onload = function() {
+  loadFirstPage();
+};
+
+function loadFirstPage() {
+  currentPage = 1;
+  isSearching = false;
+  searchResults = [];
+  displayPage(1);
+}
+
+function generateEntries(start, end) {
+  let entries = [];
+  for (let i = start; i <= end && i <= TOTAL_ENTRIES; i++) {
+    entries.push(i);
+  }
+  return entries;
+}
+
+function displayPage(pageNum) {
+  let entriesToShow = [];
+  
+  if (isSearching) {
+    entriesToShow = searchResults;
+  } else {
+    const start = (pageNum - 1) * ENTRIES_PER_PAGE + 1;
+    const end = Math.min(pageNum * ENTRIES_PER_PAGE, TOTAL_ENTRIES);
+    entriesToShow = generateEntries(start, end);
+  }
+  
+  renderGrid(entriesToShow);
+  updatePagination();
+  updateStats(entriesToShow);
+}
+
+function renderGrid(entries) {
+  const grid = document.getElementById('entriesGrid');
+  grid.innerHTML = '';
+  
+  if (entries.length === 0) {
+    grid.innerHTML = '<div class="no-results" style="grid-column: 1/-1;">No results found. Try a different search.</div>';
+    return;
+  }
+  
+  entries.forEach(num => {
+    const link = document.createElement('a');
+    link.href = `000000000000${String(num).padStart(3, '0')}.html`;
+    link.className = 'entry-link';
+    link.innerHTML = `
+      <div class="entry-number">${num}</div>
+      <div class="entry-label">Page ${num}</div>
+    `;
+    grid.appendChild(link);
+  });
+}
+
+function updateStats(entries) {
+  const start = (currentPage - 1) * ENTRIES_PER_PAGE + 1;
+  const end = Math.min(currentPage * ENTRIES_PER_PAGE, entries.length);
+  
+  document.getElementById('displayCount').textContent = entries.length;
+  document.getElementById('pageNum').textContent = currentPage;
+  document.getElementById('startNum').textContent = entries.length > 0 ? 1 : 0;
+  document.getElementById('endNum').textContent = Math.min(ENTRIES_PER_PAGE, entries.length);
+  document.getElementById('totalNum').textContent = isSearching ? entries.length : TOTAL_ENTRIES;
+}
+
+function updatePagination() {
+  const container = document.getElementById('paginationControls');
+  container.innerHTML = '';
+  
+  let maxPages = Math.ceil(TOTAL_ENTRIES / ENTRIES_PER_PAGE);
+  if (isSearching) {
+    maxPages = Math.ceil(searchResults.length / ENTRIES_PER_PAGE);
+  }
+  
+  if (maxPages <= 1) return;
+  
+  if (currentPage > 1) {
+    const btn = document.createElement('button');
+    btn.textContent = '← Previous';
+    btn.onclick = () => {
+      currentPage--;
+      displayPage(currentPage);
+      window.scrollTo(0, 0);
+    };
+    container.appendChild(btn);
+  }
+  
+  // Page numbers
+  for (let i = Math.max(1, currentPage - 2); i <= Math.min(maxPages, currentPage + 2); i++) {
+    const btn = document.createElement('button');
+    btn.textContent = i;
+    if (i === currentPage) {
+      btn.style.background = '#004499';
+      btn.style.fontWeight = 'bold';
+    }
+    btn.onclick = () => {
+      currentPage = i;
+      displayPage(currentPage);
+      window.scrollTo(0, 0);
+    };
+    container.appendChild(btn);
+  }
+  
+  if (currentPage < maxPages) {
+    const btn = document.createElement('button');
+    btn.textContent = 'Next →';
+    btn.onclick = () => {
+      currentPage++;
+      displayPage(currentPage);
+      window.scrollTo(0, 0);
+    };
+    container.appendChild(btn);
+  }
+}
+
+// Search functionality
+document.getElementById('searchInput').addEventListener('keyup', function(e) {
+  const query = this.value.trim();
+  
+  if (query === '') {
+    resetSearch();
+    return;
+  }
+  
+  // If search is a range
+  if (query.includes('-')) {
+    const parts = query.split('-');
+    const start = parseInt(parts[0]);
+    const end = parseInt(parts[1]);
+    if (!isNaN(start) && !isNaN(end)) {
+      searchResults = [];
+      for (let i = start; i <= end && i <= TOTAL_ENTRIES; i++) {
+        searchResults.push(i);
+      }
+      isSearching = true;
+      currentPage = 1;
+      displayPage(1);
+      return;
+    }
+  }
+  
+  // Single number search
+  const num = parseInt(query);
+  if (!isNaN(num) && num > 0 && num <= TOTAL_ENTRIES) {
+    searchResults = [num];
+  } else if (query.match(/^\d+$/)) {
+    // Partial match
+    searchResults = [];
+    for (let i = 1; i <= TOTAL_ENTRIES; i++) {
+      if (i.toString().includes(query)) {
+        searchResults.push(i);
+      }
+    }
+  } else {
+    searchResults = [];
+  }
+  
+  isSearching = true;
+  currentPage = 1;
+  displayPage(1);
+});
+
+function resetSearch() {
+  document.getElementById('searchInput').value = '';
+  isSearching = false;
+  currentPage = 1;
+  displayPage(1);
+}
+
+function loadFirst() {
+  resetSearch();
+}
+
+function loadRandom() {
+  const randomEntries = [];
+  for (let i = 0; i < 12; i++) {
+    const random = Math.floor(Math.random() * TOTAL_ENTRIES) + 1;
+    if (!randomEntries.includes(random)) {
+      randomEntries.push(random);
+    }
+  }
+  searchResults = randomEntries.sort((a, b) => a - b);
+  isSearching = true;
+  currentPage = 1;
+  document.getElementById('searchInput').value = 'Random selection: ' + searchResults.join(', ');
+  renderGrid(searchResults);
+  updateStats(searchResults);
+  document.getElementById('paginationControls').innerHTML = '';
+}
+</script>
+
+</body>
+</html>

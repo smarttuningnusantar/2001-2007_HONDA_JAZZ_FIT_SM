@@ -1,0 +1,997 @@
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta name="author" content="HONDA ACCESS Co.,Ltd.">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>SAA7EV1A2032645721BFAAT00</title>
+<link href="../css/ViewerStyle.css" rel="stylesheet">
+<style>
+	v\:*	{ behavior: url(#default#VML); }
+	.drag	{ position: relative; cursor:   hand; }
+</style>
+</head>
+<script>
+<!--
+-->
+</script>
+<body onload="javascript:parent.Old(this)" style="font-family:sans-serif;">
+<div xmlns:v="urn:schemas-microsoft-com:vml">
+<div class="top_title">
+Subfuel Pump Circuit Troubleshooting
+</div>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<div>
+If you suspect a problem with the subfuel pump, check that the subfuel pump actually runs; when it is on, you will hear some noise if you listen to the subfuel fill port with the subfuel fill cap removed. The subfuel pump should run for 2 seconds when the ignition switch is first turned on. If the subfuel pump does not make noise, check as follows:
+</div>
+<a name="i010">
+</a>
+<ol>
+<li value="1">
+<div>
+Turn the ignition switch OFF.
+</div>
+</li>
+</ol>
+<a name="i020">
+</a>
+<ol>
+<li value="2">
+<div>
+Remove the subfuel pump relay (A).
+</div>
+</li>
+</ol>
+<a name="i030">
+</a>
+<ol>
+<li value="3">
+<div>
+Turn the ignition switch ON (II).
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008607','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD01.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i040">
+</a>
+<ol>
+<li value="4">
+<div>
+Measure voltage between the subfuel pump relay 5P connector terminals No. 1, No.5 and body ground individually.
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is there battery voltage?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Go to 
+<a href="javascript:parent.Jmp('i050')">Step 5
+</a>
+.
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Repair open in the wire between the subfuel pump relay and the No. 7 SUBFUEL PUMP (15 A) fuse in the under-dash fuse/relay box. Also replace the No. 7 SUBFUEL PUMP (15 A) fuse.■
+</div>
+</td>
+</tr>
+</table>
+<a name="i050">
+</a>
+<ol>
+<li value="5">
+<div>
+Turn the ignition switch OFF.
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008608','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD02.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i060">
+</a>
+<ol>
+<li value="6">
+<div>
+Connect subfuel pump relay 5P connector terminal No. 3 to body ground with a jumper wire.
+</div>
+</li>
+</ol>
+<a name="i070">
+</a>
+<ol>
+<li value="7">
+<div>
+Turn the ignition switch OFF, and wait 10 seconds.
+</div>
+</li>
+</ol>
+<a name="i080">
+</a>
+<ol>
+<li value="8">
+<div>
+<a href="javascript:parent.Cts('000000000003548','iG09')">
+Connect the ECM test harness and the test pin box to the wire harness only, not to the ECM
+</a>
+</div>
+</li>
+</ol>
+<a name="i090">
+</a>
+<ol>
+<li value="9">
+<div>
+Check for continuity between test pin box terminal No. 101 and body ground.
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is there continuity?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Go to 
+<a href="javascript:parent.Jmp('i100')">Step 10
+</a>
+.
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Repair open in the wire between the ECM connector No. 4 terminal No. 20 (test pin box terminal No. 101) and the subfuel pump relay.■
+</div>
+</td>
+</tr>
+</table>
+<a name="i100">
+</a>
+<ol>
+<li value="10">
+<div>
+<a href="javascript:parent.Cts('000000000003007','i000')">
+Test the subfuel pump relay.
+</a>
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is the subfuel pump relay OK?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Go to 
+<a href="javascript:parent.Jmp('i110')">Step 11
+</a>
+.
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Replace the 
+subfuel pump relay
+.■
+</div>
+</td>
+</tr>
+</table>
+<a name="i110">
+</a>
+<ol>
+<li value="11">
+<div>
+Reinstall the subfuel pump relay.
+</div>
+</li>
+</ol>
+<a name="i120">
+</a>
+<ol>
+<li value="12">
+<div>
+Reconnect ECM connector No. 4 (40P).
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008609','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD03.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i130">
+</a>
+<ol>
+<li value="13">
+<div>
+Turn the ignition switch ON (II), and measure voltage between subfuel pump relay 5P connector terminal No. 2 and body ground within 2 seconds.
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is there battery voltage?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Go to 
+<a href="javascript:parent.Jmp('i140')">Step 14
+</a>
+.
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+<a href="javascript:parent.Cts('000000000003548','iG10')">
+Substitute a known-good ECM,
+</a>
+ then recheck. If the symptom/indication goes away with a known-good ECM, 
+<a href="javascript:parent.Cts('000000000003440','i000')">
+replace the original ECM.
+</a>
+■
+</div>
+</td>
+</tr>
+</table>
+<a name="i140">
+</a>
+<ol>
+<li value="14">
+<div>
+Turn the ignition switch OFF.
+</div>
+</li>
+</ol>
+<a name="i150">
+</a>
+<ol>
+<li value="15">
+<div>
+<a href="javascript:parent.Cts('000000000000226','i000')">
+Remove the glove box.
+</a>
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008610','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD04.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i160">
+</a>
+<ol>
+<li value="16">
+<div>
+<a href="javascript:parent.Cts('000000000002970','i000')">
+Remove the passenger's dashboard under cover, side kick panel.
+</a>
+ Disconnect the dashboard wire harness 4P connector (A).
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008611','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD05.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i170">
+</a>
+<ol>
+<li value="17">
+<div>
+Turn the ignition switch ON (II), and measure voltage between dashboard wire harness 4P connector terminals No. 1 and No. 2 within 2 seconds.
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is there battery voltage?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Go to 
+<a href="javascript:parent.Jmp('i200')">Step 20
+</a>
+.
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Go to 
+<a href="javascript:parent.Jmp('i180')">Step 18
+</a>
+.
+</div>
+</td>
+</tr>
+</table>
+<a name="i180">
+</a>
+<ol>
+<li value="18">
+<div>
+Turn the ignition switch OFF.
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008612','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD06.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i190">
+</a>
+<ol>
+<li value="19">
+<div>
+Check for continuity between body ground and dashboard wire harness 4P connector terminal No. 1.
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is there continuity?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Repair open in the wire between the subfuel pump relay and dashboard wire subharness 4P connector.■
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Repair open in the wire between the dashboard wire harness 4P connector and G401.■
+</div>
+</td>
+</tr>
+</table>
+<a name="i200">
+</a>
+<ol>
+<li value="20">
+<div>
+Pull the right inner fender.
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008613','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD07.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i210">
+</a>
+<ol>
+<li value="21">
+<div>
+Disconnect the fuel subharness 4P connector (A).
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008614','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD08.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i220">
+</a>
+<ol>
+<li value="22">
+<div>
+Connect the fuel subharness 4P connector terminal No. 2 to body ground with a jumper wire.
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008615','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD09.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i230">
+</a>
+<ol>
+<li value="23">
+<div>
+Check for continuity between body ground and dashboard wire harness 4P connector terminal No. 2.
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is there continuity?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Go to 
+<a href="javascript:parent.Jmp('i240')">Step 24
+</a>
+.
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Repair open in the wire between the fuel subharness 4P connector and dashboard wire harness 4P connector.■
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008616','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD10.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i240">
+</a>
+<ol>
+<li value="24">
+<div>
+Connect fuel subharness 4P connector terminal No. 4 to body ground with a jumper wire.
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008617','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD11.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i250">
+</a>
+<ol>
+<li value="25">
+<div>
+Check for continuity between body ground and dashboard wire harness 4P connector terminal No. 1.
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is there continuity?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Go to 
+<a href="javascript:parent.Jmp('i260')">Step 26
+</a>
+.
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Repair open in the wire between the fuel subharness 4P connector and dashboard wire harness 4P connector.■
+</div>
+</td>
+</tr>
+</table>
+<a name="i260">
+</a>
+<ol>
+<li value="26">
+<div>
+<a href="javascript:parent.Cts('000000000003532','i000')">
+Remove the front right fender.
+</a>
+</div>
+</li>
+</ol>
+<a name="i270">
+</a>
+<ol>
+<li value="27">
+<div>
+<a href="javascript:parent.Cts('000000000003474','i000')">
+Disconnect subfuel pump 4P connector.
+</a>
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008618','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD12.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i280">
+</a>
+<ol>
+<li value="28">
+<div>
+Connect subfuel pump 4P connector terminal No. 2 to body ground with a jumper wire.
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008619','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD13.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i290">
+</a>
+<ol>
+<li value="29">
+<div>
+Check for continuity between body ground and fuel subharness 4P connector terminal No. 1.
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is there continuity?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Go to 
+<a href="javascript:parent.Jmp('i300')">Step 30
+</a>
+.
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Repair open in the wire between the subfuel pump and the fuel subharness 4P connector.■
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008620','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD14.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i300">
+</a>
+<ol>
+<li value="30">
+<div>
+Connect subfuel pump 4P connector terminal No. 4 to body ground with a jumper wire.
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008621','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD15.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i310">
+</a>
+<ol>
+<li value="31">
+<div>
+Check for continuity between body ground and fuel subharness 4P connector terminal No. 4.
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is there continuity?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+<a href="javascript:parent.Cts('000000000003472','i000')">
+Replace the subfuel pump.
+</a>
+■
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Repair open in the wire between the subfuel pump and the fuel subharness 4P connector.■
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000008622','1');">
+<img src="../tn/SAA7EV1A2032645721BFAAD16.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

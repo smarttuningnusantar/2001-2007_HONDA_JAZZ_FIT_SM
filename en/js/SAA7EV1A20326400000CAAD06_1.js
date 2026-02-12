@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group6\" class=\"drag\" style=\"position:relative; width:475px; height:353px;\" coordsize=\"475,353\">");
+write("<v:rect id=\"rect6\"class=\"drag\"  style=\"width:475px;height:353px;\">");
+write("<img id=\"img6\" src=\"../img/SAA7EV1A20326400000CAAD06.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:475px;height:353px;border-color:#ffffff\">");
+write("<p id=\"p6_1\" class=\"drag\" style=\"position:absolute;left:182px;top:14px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>From<br>No. 3 METER<br>(7.5 A) FUSE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p6_2\" class=\"drag\" style=\"position:absolute;left:361px;top:139px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>To<br>GAUGE<br>ASSEMBLY<br></b></nobr>");
+write("</p>");
+write("<p id=\"p6_3\" class=\"drag\" style=\"position:absolute;left:341px;top:265px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>SUBFUEL PUMP<br></b></nobr>");
+write("</p>");
+write("<p id=\"p6_4\" class=\"drag\" style=\"position:absolute;left:71px;top:172px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>FUEL<br>INDICATOR<br>UNIT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p6_5\" class=\"drag\" style=\"position:absolute;left:60px;top:74px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>YEL<br></b></nobr>");
+write("</p>");
+write("<p id=\"p6_6\" class=\"drag\" style=\"position:absolute;left:60px;top:280px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>BLK<br></b></nobr>");
+write("</p>");
+write("<p id=\"p6_7\" class=\"drag\" style=\"position:absolute;left:226px;top:155px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>BLU/ORN<br></b></nobr>");
+write("</p>");
+write("<p id=\"p6_8\" class=\"drag\" style=\"position:absolute;left:244px;top:208px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>RED<br></b></nobr>");
+write("</p>");
+write("<p id=\"p6_9\" class=\"drag\" style=\"position:absolute;left:244px;top:231px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>BLU<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

@@ -1,0 +1,438 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Honda ESM - Diagnostic Panel</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f5f5f5;
+  color: #333;
+}
+.header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.header h1 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+}
+.header p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border-left: 4px solid #3498db;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.section h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 20px;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+}
+.status {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 5px 5px 5px 0;
+  font-size: 12px;
+}
+.status.ok {
+  background: #27ae60;
+  color: white;
+}
+.status.warning {
+  background: #f39c12;
+  color: white;
+}
+.status.error {
+  background: #e74c3c;
+  color: white;
+}
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+.stat-item:last-child {
+  border-bottom: none;
+}
+.stat-label {
+  font-weight: bold;
+  color: #2c3e50;
+}
+.stat-value {
+  color: #3498db;
+  font-family: monospace;
+}
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+button:hover {
+  background: #2980b9;
+}
+button.danger {
+  background: #e74c3c;
+}
+button.danger:hover {
+  background: #c0392b;
+}
+.log-container {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.log-item {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.log-item.error {
+  color: #e74c3c;
+  background: #fadbd8;
+}
+.log-item.warning {
+  color: #f39c12;
+  background: #fef5e7;
+}
+.log-item.info {
+  color: #2c3e50;
+}
+.frame-health {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.frame-item {
+  background: #ecf0f1;
+  padding: 10px;
+  border-radius: 3px;
+  border-left: 3px solid #3498db;
+}
+.frame-item.ready {
+  border-left-color: #27ae60;
+}
+.frame-item.error {
+  border-left-color: #e74c3c;
+  background: #fadbd8;
+}
+.version-info {
+  background: #ecf0f1;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 10px 0;
+  font-family: monospace;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>🔧 Honda ESM - Diagnostic Panel</h1>
+    <p>Real-time monitoring and troubleshooting for the Service Manual application</p>
+  </div>
+  
+  <div class="section">
+    <h2>System Status</h2>
+    <div id="systemStatus">
+      <span class="status ok">Loading...</span>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Environment Information</h2>
+    <div id="envInfo">
+      <div class="stat-item">
+        <span class="stat-label">Browser:</span>
+        <span class="stat-value" id="browserInfo">-</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Current URL:</span>
+        <span class="stat-value" id="urlInfo" style="word-break: break-all;">-</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Viewport Size:</span>
+        <span class="stat-value" id="viewportInfo">-</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Local Storage Available:</span>
+        <span class="stat-value" id="storageInfo">-</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Application Health</h2>
+    <div id="healthStatus">
+      Loading...
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Search Statistics</h2>
+    <div id="searchStats">
+      <div class="stat-item">
+        <span class="stat-label">Total Searches:</span>
+        <span class="stat-value" id="totalSearches">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Cached Results:</span>
+        <span class="stat-value" id="cachedResults">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Search History:</span>
+        <span class="stat-value" id="historyCount">0</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Error Logs</h2>
+    <button onclick="clearErrorLogs();" class="danger">Clear Error Logs</button>
+    <button onclick="refreshErrorLogs();">Refresh</button>
+    <div id="errorLogs" class="log-container">
+      No errors recorded.
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Troubleshooting</h2>
+    <button onclick="testFrameAccess();">Test Frame Access</button>
+    <button onclick="testLocalStorage();">Test Local Storage</button>
+    <button onclick="testScriptLoading();">Test Script Loading</button>
+    <button onclick="reloadApplication();">Reload Application</button>
+    <div id="troubleshootOutput" class="log-container" style="margin-top: 10px; display: none;">
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Quick Links</h2>
+    <p>
+      <a href="../../HONDAESM.HTML" style="display: inline-block; background: #3498db; color: white; padding: 10px 20px; border-radius: 3px; text-decoration: none; margin-right: 10px;">Back to Manual</a>
+      <a href="sitemap.xml" style="display: inline-block; background: #95a5a6; color: white; padding: 10px 20px; border-radius: 3px; text-decoration: none; margin-right: 10px;">View Sitemap</a>
+    </p>
+  </div>
+</div>
+
+<script>
+// Auto-update system status
+function updateSystemStatus() {
+  try {
+    var status = 'ok';
+    var message = '✓ All systems operational';
+    
+    if(!window.localStorage) {
+      status = 'warning';
+      message = '⚠ Local Storage limited';
+    }
+    
+    document.getElementById('systemStatus').innerHTML = 
+      '<span class="status ' + status + '">' + message + '</span>';
+  } catch(e) {
+    console.error('Status update error:', e);
+  }
+}
+
+// Display environment info
+function updateEnvironmentInfo() {
+  document.getElementById('browserInfo').textContent = getBrowserInfo();
+  document.getElementById('urlInfo').textContent = window.location.href;
+  document.getElementById('viewportInfo').textContent = 
+    window.innerWidth + 'x' + window.innerHeight;
+  document.getElementById('storageInfo').textContent = 
+    (typeof(Storage) !== 'undefined' ? 'Yes' : 'No');
+}
+
+function getBrowserInfo() {
+  var ua = navigator.userAgent;
+  if(ua.indexOf('Firefox') > -1) return 'Firefox';
+  if(ua.indexOf('Chrome') > -1) return 'Chrome';
+  if(ua.indexOf('Safari') > -1) return 'Safari';
+  if(ua.indexOf('MSIE') > -1 || ua.indexOf('Trident') > -1) return 'Internet Explorer';
+  return 'Unknown';
+}
+
+// Update health status
+function updateHealthStatus() {
+  var health = '<div class="stat-item"><span class="stat-label">Parent Window:</span>' +
+    '<span class="stat-value">' + (typeof(parent.document) !== 'undefined' ? '✓ OK' : '✗ ERROR') + '</span></div>';
+  
+  if(typeof(ErrorHandler) !== 'undefined' && ErrorHandler.getLogs) {
+    var logs = ErrorHandler.getLogs();
+    health += '<div class="stat-item"><span class="stat-label">Recorded Errors:</span>' +
+      '<span class="stat-value">' + logs.length + '</span></div>';
+  }
+  
+  document.getElementById('healthStatus').innerHTML = health;
+}
+
+// Update search statistics
+function updateSearchStats() {
+  if(typeof(SearchOptimizer) !== 'undefined') {
+    var stats = SearchOptimizer.getStats();
+    document.getElementById('totalSearches').textContent = stats.totalSearches;
+    document.getElementById('cachedResults').textContent = stats.cachedResults;
+    document.getElementById('historyCount').textContent = 
+      SearchOptimizer.history ? SearchOptimizer.history.length : 0;
+  }
+}
+
+// Display error logs
+function updateErrorLogs() {
+  var logsContainer = document.getElementById('errorLogs');
+  if(typeof(ErrorHandler) === 'undefined' || !ErrorHandler.getLogs) {
+    logsContainer.innerHTML = '<div class="log-item info">ErrorHandler not available</div>';
+    return;
+  }
+  
+  var logs = ErrorHandler.getLogs();
+  if(logs.length === 0) {
+    logsContainer.innerHTML = '<div class="log-item info">No errors recorded.</div>';
+    return;
+  }
+  
+  var html = '';
+  logs.slice(-10).reverse().forEach(function(log) {
+    var className = log.message.indexOf('error') > -1 ? 'error' : 'warning';
+    html += '<div class="log-item ' + className + '">' + 
+      log.timestamp + ': ' + log.message + 
+      (log.source ? ' (' + log.source.split('/').pop() + ':' + log.lineno + ')' : '') +
+      '</div>';
+  });
+  logsContainer.innerHTML = html;
+}
+
+function clearErrorLogs() {
+  if(typeof(ErrorHandler) !== 'undefined' && ErrorHandler.clearLogs) {
+    ErrorHandler.clearLogs();
+    updateErrorLogs();
+    alert('Error logs cleared.');
+  }
+}
+
+function refreshErrorLogs() {
+  updateErrorLogs();
+}
+
+// Troubleshooting functions
+function testFrameAccess() {
+  var output = document.getElementById('troubleshootOutput');
+  output.style.display = 'block';
+  output.innerHTML = '<div class="log-item info">Testing frame access...</div>';
+  
+  try {
+    var result = 'Frame Access Test:\n';
+    result += 'Parent window exists: ' + (typeof(parent) !== 'undefined' ? 'YES' : 'NO') + '\n';
+    result += 'Parent document exists: ' + (typeof(parent.document) !== 'undefined' ? 'YES' : 'NO') + '\n';
+    
+    if(typeof(parent.document) !== 'undefined') {
+      result += 'Parent title: ' + (parent.document.title || 'NO TITLE') + '\n';
+    }
+    
+    output.innerHTML = '<div class="log-item info" style="white-space: pre-wrap;">' + 
+      result + '</div>';
+  } catch(e) {
+    output.innerHTML = '<div class="log-item error">' + e.message + '</div>';
+  }
+}
+
+function testLocalStorage() {
+  var output = document.getElementById('troubleshootOutput');
+  output.style.display = 'block';
+  output.innerHTML = '<div class="log-item info">Testing local storage...</div>';
+  
+  try {
+    var testKey = 'esmTest_' + Date.now();
+    var testValue = 'test_' + Math.random();
+    
+    localStorage.setItem(testKey, testValue);
+    var retrieved = localStorage.getItem(testKey);
+    var success = retrieved === testValue;
+    
+    localStorage.removeItem(testKey);
+    
+    var result = 'Local Storage Test:\n' +
+      'Write: ' + (success ? '✓ PASS' : '✗ FAIL') + '\n' +
+      'Available space: ' + navigator.storage.estimate().then(function(est) {
+        return (est.usage / 1024 / 1024).toFixed(2) + ' MB used / ' + 
+               (est.quota / 1024 / 1024).toFixed(2) + ' MB quota';
+      }).catch(function() { return 'Unknown'; });
+    
+    output.innerHTML = '<div class="log-item info" style="white-space: pre-wrap;">' + 
+      result + '</div>';
+  } catch(e) {
+    output.innerHTML = '<div class="log-item error">' + e.message + '</div>';
+  }
+}
+
+function testScriptLoading() {
+  var output = document.getElementById('troubleshootOutput');
+  output.style.display = 'block';
+  
+  var result = 'Script Loading Test:\n';
+  result += 'ErrorHandler: ' + (typeof(ErrorHandler) !== 'undefined' ? '✓ LOADED' : '✗ NOT LOADED') + '\n';
+  result += 'SearchOptimizer: ' + (typeof(SearchOptimizer) !== 'undefined' ? '✓ LOADED' : '✗ NOT LOADED') + '\n';
+  
+  output.innerHTML = '<div class="log-item info" style="white-space: pre-wrap;">' + 
+    result + '</div>';
+}
+
+function reloadApplication() {
+  if(confirm('Reload the application? This will refresh the page.')) {
+    window.location.href = '../../HONDAESM.HTML';
+  }
+}
+
+// Initialize on load
+window.addEventListener('load', function() {
+  updateSystemStatus();
+  updateEnvironmentInfo();
+  updateHealthStatus();
+  updateSearchStats();
+  updateErrorLogs();
+  
+  // Auto-refresh every 5 seconds
+  setInterval(function() {
+    updateHealthStatus();
+    updateSearchStats();
+    updateErrorLogs();
+  }, 5000);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+                      "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en">
+<head>
+<meta name="author" content="HONDA MOTOR Co.,Ltd.">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link href="../css/ViewerStyle.css" rel="stylesheet">
+<script src="../js/SieListFunc.js"></script>
+<script>
+<!--
+var tDT     = new Array;
+var cdInfo  = new Array;
+var trSel   = null;
+function SieTitleList()
+{
+  var i=0;
+  var j;
+}
+function Fsl(strKey, strSct, strSc, strSys, strComp, strSitq, strKeywords)
+{
+  CreateConditionInfo(strKey.toUpperCase(), strSct, strSc, strSys, strComp, strSitq);
+  var displayCount = SetDisplayFlag(strKeywords);
+  with(document)
+  {
+    write("<html lang=\"en\">\n");
+    write("<head>\n");
+    write("<meta name=\"author\" content=\"HONDA MOTOR Co.,Ltd.\">\n");
+    write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n");
+    write("<meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n");
+    write("<meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\">\n");
+    write("<link href=\"../css/ViewerStyle.css\" rel=\"stylesheet\">\n");
+    write("<script>\n");
+    write("<!--\n");
+    write("function Chh(height)\n");
+    write("{\n");
+    write("   document.body.bottomMargin = 0;\n");
+    write("   setTimeout('ChhDelay('+height+')',10);\n");
+    write("}\n");
+    write("function ChhDelay(height)\n");
+    write("{\n");
+    write("   var  dataObj = document.getElementById(\"scroll\");\n");
+    write("   dataObj.style.height = height-dataObj.offsetTop;\n");
+    write("   dataObj.style.width = idTitle.clientWidth;\n");
+    write("}\n");
+    write("//-->\n");
+    write("<\/script>\n");
+    write("<\/head>\n");
+    write("<body class=\"MainBody\">\n");
+    write("<table class=\"SubTitle\" cellspacing=0 cellpadding=0 width=\"100%\">\n");
+    write("<tr>\n");
+    write("<td class=\"SubTitle-L\" nowrap></td>\n");
+    write("<td class=\"SubTitle\" nowrap><b>Shop Manual Search Result</b></td>\n");
+    write("<td class=\"SubTitleComment\" nowrap></td>\n");
+    write("<td class=\"SubTitle-R\" nowrap>\n");
+    write("<table width=\"100%\" height=\"100%\" cellspacing=\"0\" cellpadding=\"0\"><tr><td valign=\"middle\">\n");
+    write("<a href=\"#\" onClick=\"javascript:parent.Cts('000000000002312','');\"><img src=\"../img/ABBREVIATION.PNG\" alt=\"Abbreviation\" border=\"0\"></a>\n");
+    write("</td></tr></table>\n");
+    write("</td>\n");
+    write("</tr>\n");
+    write("</table>\n");
+  }
+  document.write("<div class=\"TableLayout\" style=\"overflow:auto;width:100%;display:block\">");
+  document.write("<table id=\"idTitle\" cellspacing=\"1\" width=\"100%\"><tr class=\"TableColumnTitle\" style=\"color:#FFFFFF;background-color:#999999;\">" +
+              "<td width=\"30\"></td>" +
+              "<td align=\"center\" style=\"font-size:medium\">Title</td>");
+  document.write("<td width=\"15\"></td></tr></table></div>");
+  document.write("<div class=\"TableLayout\" id=\"scroll\" style=\"overflow:auto;width:100%;height:5;display:block\">");
+  document.write("<table border=\"0\" cellpadding=\"0\" cellspacing=\"1\" width=\"100%\" style=\"table-layout:fixed\">");
+  if(displayCount == 0) {
+    document.write("<tr><td>There is no Body Repair Manual to apply</td></tr>");
+  }
+  else {
+    for (i=0; i < tDT.length; ++i) {
+      if (tDT[i].Display == true) {
+        strEventClick = "javascript:parent.Cts('" + tDT[i].contentsNum + "','')";
+          strText = tDT[i].Title;
+          if (tDT[i].Dgc.length != 0) {
+            strText += "(" + tDT[i].Dgc + ")";
+          }
+          document.write("<tr class=\"TableData\" style=\"padding-bottom:3px;\"><td width=\"30\">\n");
+          document.write("<span onClick=\"" + strEventClick + "\">" + 
+              "<img src=\"../img/" + tDT[i].Symbol + ".PNG\"" + "\" style=\"cursor:hand;\"></span></td>\n");
+          document.write("<td valign=\"top\">" +
+              "<a href=\"" + strEventClick + "\" style=\"font-size:small;\">" + strText + "</a></td></tr>\n");
+      }
+    }
+  }
+  with(document)
+  {
+    write("</table></div>");
+    write("</body>\n");
+    write("</html>\n");
+  }
+}
+function CreateList()
+{
+  var nNest = 1;
+  var strEventClick, strText, strIMG;
+  var i, j, k, n;
+  if (typeof(SieTitleList) != "function") {
+    return;
+  }
+  tDT.length = 0;
+  SieTitleList();
+}
+//-->
+</script>
+</head>
+<body id="TreeBody" topmargin="10" onLoad="javascript:parent.Old(this)">
+  <div><script>CreateList();</script></div>
+</body>
+</html>

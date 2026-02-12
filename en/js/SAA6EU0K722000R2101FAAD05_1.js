@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group2\" class=\"drag\" style=\"position:relative; width:475px; height:369px;\" coordsize=\"475,369\">");
+write("<v:rect id=\"rect2\"class=\"drag\"  style=\"width:475px;height:369px;\">");
+write("<img id=\"img2\" src=\"../img/SAA6EU0K722000R2101FAAD05.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:475px;height:369px;border-color:#ffffff\">");
+write("<p id=\"p2_1\" class=\"drag\" style=\"position:absolute;left:118px;top:16px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>SPEED SENSOR 3P CONNECTOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_2\" class=\"drag\" style=\"position:absolute;left:97px;top:90px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>PGM-FI ECM/PCM CONNECTOR E (31P)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_3\" class=\"drag\" style=\"position:absolute;left:90px;top:322px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>GAUGE ASSEMBLY CONNECTOR C (30P)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_4\" class=\"drag\" style=\"position:absolute;left:267px;top:68px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>VSP (BLU/WHT)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_5\" class=\"drag\" style=\"position:absolute;left:86px;top:185px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>VSP (BLU/YEL)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_6\" class=\"drag\" style=\"position:absolute;left:127px;top:339px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b></b>Wire side of female terminals<br></nobr>");
+write("</p>");
+write("<p id=\"p2_7\" class=\"drag\" style=\"position:absolute;left:20px;top:68px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b></b>Wire side of female terminals<br></nobr>");
+write("</p>");
+write("<p id=\"p2_8\" class=\"drag\" style=\"position:absolute;left:214px;top:185px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b></b>Wire side of female terminals<br></nobr>");
+write("</p>");
+write("<p id=\"p2_9\" class=\"drag\" style=\"position:absolute;left:83px;top:249px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>VSP (BLU/YEL)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_10\" class=\"drag\" style=\"position:absolute;left:225px;top:221px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>VSP (BLU/YEL)<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

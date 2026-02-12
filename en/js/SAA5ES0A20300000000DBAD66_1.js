@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group19\" class=\"drag\" style=\"position:relative; width:950px; height:735px;\" coordsize=\"950,735\">");
+write("<v:rect id=\"rect19\"class=\"drag\"  style=\"width:950px;height:735px;\">");
+write("<img id=\"img19\" src=\"../img/SAA5ES0A20300000000DBAD66.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:735px;border-color:#ffffff\">");
+write("<p id=\"p19_1\" class=\"drag\" style=\"position:absolute;left:783px;top:275px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE<br>COMPARTMENT<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_2\" class=\"drag\" style=\"position:absolute;left:213px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DASHBOARD<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_3\" class=\"drag\" style=\"position:absolute;left:783px;top:221px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C209<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_4\" class=\"drag\" style=\"position:absolute;left:357px;top:81px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C205*<sup>9</sup><br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_5\" class=\"drag\" style=\"position:absolute;left:17px;top:682px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>*6: Except IN model<br>*9: KE, KN models<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_6\" class=\"drag\" style=\"position:absolute;left:770px;top:146px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C241<br>C306<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_7\" class=\"drag\" style=\"position:absolute;left:822px;top:500px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C215<br>C305<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_8\" class=\"drag\" style=\"position:absolute;left:106px;top:624px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C217<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_9\" class=\"drag\" style=\"position:absolute;left:49px;top:317px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C204<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_10\" class=\"drag\" style=\"position:absolute;left:221px;top:597px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C218*<sup>6</sup><br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group2\" class=\"drag\" style=\"position:relative; width:950px; height:495px;\" coordsize=\"950,495\">");
+write("<v:rect id=\"rect2\"class=\"drag\"  style=\"width:950px;height:495px;\">");
+write("<img id=\"img2\" src=\"../img/SAA2E02E15100000000CAAD07.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:495px;border-color:#ffffff\">");
+write("<p id=\"p2_1\" class=\"drag\" style=\"position:absolute;left:729px;top:71px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>TRANSMISSION<br>RANGE SWITCH<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_2\" class=\"drag\" style=\"position:absolute;left:129px;top:414px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ABS CONTROL<br>UNIT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_3\" class=\"drag\" style=\"position:absolute;left:418px;top:456px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>INHIBITOR<br>SOLENOID<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_4\" class=\"drag\" style=\"position:absolute;left:531px;top:438px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CVT DRIVE PULLEY<br>SPEED SENSOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_5\" class=\"drag\" style=\"position:absolute;left:640px;top:387px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CVT START CLUTCH PRESSURE<br>CONTROL VALVE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_6\" class=\"drag\" style=\"position:absolute;left:764px;top:313px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CVT PULLEY PRESSURE<br>CONTROL VALVE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_7\" class=\"drag\" style=\"position:absolute;left:533px;top:15px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CVT DRIVEN PULLEY<br>SPEED SENSOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_8\" class=\"drag\" style=\"position:absolute;left:318px;top:56px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CVT SPEED SENSOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_9\" class=\"drag\" style=\"position:absolute;left:766px;top:201px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CVT SPEED CHANGE<br>CONTROL VALVE<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

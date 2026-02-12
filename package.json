@@ -1,0 +1,11 @@
+{
+  "name": "pages-check",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node scripts/check_pages.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}

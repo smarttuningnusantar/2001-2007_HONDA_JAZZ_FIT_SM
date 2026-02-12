@@ -1,0 +1,562 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Honda ESM - Comprehensive Test Suite</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  min-height: 100vh;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+.header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.header p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+.content {
+  padding: 30px;
+}
+.test-section {
+  margin-bottom: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.test-header {
+  background: #f5f5f5;
+  padding: 15px 20px;
+  border-bottom: 2px solid #667eea;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+.test-header:hover {
+  background: #efefef;
+}
+.test-header .icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.test-body {
+  padding: 20px;
+  display: none;
+}
+.test-body.active {
+  display: block;
+}
+.test-item {
+  margin-bottom: 15px;
+  padding: 12px;
+  background: #f9f9f9;
+  border-left: 4px solid #667eea;
+  border-radius: 4px;
+}
+.test-item.pass {
+  border-left-color: #27ae60;
+  background: #f0fdf4;
+}
+.test-item.fail {
+  border-left-color: #e74c3c;
+  background: #fef2f2;
+}
+.test-item.warn {
+  border-left-color: #f39c12;
+  background: #fef8f0;
+}
+.test-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.test-name .status {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 16px;
+}
+.test-result {
+  font-size: 14px;
+  color: #666;
+  margin-left: 20px;
+}
+.test-result code {
+  background: #e8e8e8;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+.summary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.summary-item {
+  display: inline-block;
+  margin: 0 20px;
+}
+.summary-number {
+  font-size: 28px;
+  display: block;
+}
+button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #764ba2;
+}
+.console-output {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+.console-output .error {
+  color: #f48771;
+}
+.console-output .success {
+  color: #6a9955;
+}
+.console-output .info {
+  color: #9cdcfe;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>🧪 Honda ESM - Comprehensive Test Suite</h1>
+    <p>Complete testing and validation of all features and functionality</p>
+  </div>
+  
+  <div class="content">
+    <div style="margin-bottom: 20px;">
+      <button onclick="runAllTests()">Run All Tests</button>
+      <button onclick="clearResults()">Clear Results</button>
+      <button onclick="exportResults()">Export Results</button>
+    </div>
+    
+    <!-- Test 1: Core Scripts -->
+    <div class="test-section">
+      <div class="test-header" onclick="toggleSection(this)">
+        <span class="icon">📜</span>
+        <span>Core Scripts & Files Status</span>
+      </div>
+      <div class="test-body">
+        <div id="test-scripts"></div>
+      </div>
+    </div>
+    
+    <!-- Test 2: Global Objects -->
+    <div class="test-section">
+      <div class="test-header" onclick="toggleSection(this)">
+        <span class="icon">📦</span>
+        <span>Global Objects & Variables</span>
+      </div>
+      <div class="test-body">
+        <div id="test-globals"></div>
+      </div>
+    </div>
+    
+    <!-- Test 3: Frame Communication -->
+    <div class="test-section">
+      <div class="test-header" onclick="toggleSection(this)">
+        <span class="icon">🔗</span>
+        <span>Frame Communication & Parent Access</span>
+      </div>
+      <div class="test-body">
+        <div id="test-frames"></div>
+      </div>
+    </div>
+    
+    <!-- Test 4: DOM Elements -->
+    <div class="test-section">
+      <div class="test-header" onclick="toggleSection(this)">
+        <span class="icon">🏗️</span>
+        <span>DOM Elements Availability</span>
+      </div>
+      <div class="test-body">
+        <div id="test-dom"></div>
+      </div>
+    </div>
+    
+    <!-- Test 5: Functions -->
+    <div class="test-section">
+      <div class="test-header" onclick="toggleSection(this)">
+        <span class="icon">⚙️</span>
+        <span>Function Definitions & Calls</span>
+      </div>
+      <div class="test-body">
+        <div id="test-functions"></div>
+      </div>
+    </div>
+    
+    <!-- Test 6: Error Handler -->
+    <div class="test-section">
+      <div class="test-header" onclick="toggleSection(this)">
+        <span class="icon">🛡️</span>
+        <span>Error Handler Module</span>
+      </div>
+      <div class="test-body">
+        <div id="test-errorhandler"></div>
+      </div>
+    </div>
+    
+    <!-- Test 7: Search Optimizer -->
+    <div class="test-section">
+      <div class="test-header" onclick="toggleSection(this)">
+        <span class="icon">🔍</span>
+        <span>Search Optimizer Module</span>
+      </div>
+      <div class="test-body">
+        <div id="test-searchopt"></div>
+      </div>
+    </div>
+    
+    <!-- Test 8: Browser Compatibility -->
+    <div class="test-section">
+      <div class="test-header" onclick="toggleSection(this)">
+        <span class="icon">🌐</span>
+        <span>Browser Compatibility & Features</span>
+      </div>
+      <div class="test-body">
+        <div id="test-browser"></div>
+      </div>
+    </div>
+    
+    <!-- Test 9: Performance -->
+    <div class="test-section">
+      <div class="test-header" onclick="toggleSection(this)">
+        <span class="icon">⚡</span>
+        <span>Performance Metrics</span>
+      </div>
+      <div class="test-body">
+        <div id="test-performance"></div>
+      </div>
+    </div>
+    
+    <!-- Test 10: Functional Tests -->
+    <div class="test-section">
+      <div class="test-header" onclick="toggleSection(this)">
+        <span class="icon">✅</span>
+        <span>Functional Tests</span>
+      </div>
+      <div class="test-body">
+        <div id="test-functional"></div>
+        <button onclick="testFunctions()">Run Interactive Tests</button>
+      </div>
+    </div>
+    
+    <div id="summary-section" style="display: none;">
+      <div class="summary">
+        <div class="summary-item">
+          <span>Passed</span>
+          <span class="summary-number" id="passed-count">0</span>
+        </div>
+        <div class="summary-item">
+          <span>Failed</span>
+          <span class="summary-number" id="failed-count">0</span>
+        </div>
+        <div class="summary-item">
+          <span>Warnings</span>
+          <span class="summary-number" id="warn-count">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var testResults = {
+  passed: 0,
+  failed: 0,
+  warnings: 0
+};
+
+function toggleSection(header) {
+  var body = header.nextElementSibling;
+  if (body.classList.contains('active')) {
+    body.classList.remove('active');
+  } else {
+    document.querySelectorAll('.test-body.active').forEach(function(el) {
+      if (el !== body) {
+        el.classList.remove('active');
+      }
+    });
+    body.classList.add('active');
+  }
+}
+
+function addTest(containerId, name, passed, message) {
+  var container = document.getElementById(containerId);
+  var testClass = passed ? 'pass' : passed === null ? 'warn' : 'fail';
+  var statusIcon = passed ? '✓' : passed === null ? '⚠' : '✗';
+  var html = '<div class="test-item ' + testClass + '">' +
+    '<div class="test-name"><span class="status">' + statusIcon + '</span>' + name + '</div>' +
+    '<div class="test-result">' + message + '</div>' +
+    '</div>';
+  container.innerHTML += html;
+  
+  if (passed) {
+    testResults.passed++;
+  } else if (passed === null) {
+    testResults.warnings++;
+  } else {
+    testResults.failed++;
+  }
+}
+
+function updateSummary() {
+  document.getElementById('summary-section').style.display = 'block';
+  document.getElementById('passed-count').textContent = testResults.passed;
+  document.getElementById('failed-count').textContent = testResults.failed;
+  document.getElementById('warn-count').textContent = testResults.warnings;
+}
+
+function runAllTests() {
+  // Reset
+  testResults = { passed: 0, failed: 0, warnings: 0 };
+  document.querySelectorAll('[id^="test-"]').forEach(function(el) {
+    if (el.id !== 'test-section') el.innerHTML = '';
+  });
+  
+  testCoreScripts();
+  testGlobalObjects();
+  testFrameComm();
+  testDOMElements();
+  testFunctionDefinitions();
+  testErrorHandler();
+  testSearchOptimizer();
+  testBrowserFeatures();
+  testPerformance();
+  updateSummary();
+}
+
+function testCoreScripts() {
+  // Check if main scripts loaded
+  addTest('test-scripts', 'HONDAESM.HTML loaded', typeof(gESM) !== 'undefined', 
+    'Main application script accessible');
+  addTest('test-scripts', 'ErrorHandler.js loaded', typeof(ErrorHandler) !== 'undefined',
+    'Error handling module ' + (typeof(ErrorHandler) !== 'undefined' ? 'available' : 'missing'));
+  addTest('test-scripts', 'SearchOptimizer.js loaded', typeof(SearchOptimizer) !== 'undefined',
+    'Search optimization module ' + (typeof(SearchOptimizer) !== 'undefined' ? 'available' : 'missing'));
+  addTest('test-scripts', 'jQuery compatibility', typeof(window.jQuery) === 'undefined', 
+    'No jQuery dependency (good for lightweight)');
+}
+
+function testGlobalObjects() {
+  var hasESM = typeof(gESM) === 'object' && gESM !== null;
+  addTest('test-globals', 'gESM object exists', hasESM,
+    'Global ESM object ' + (hasESM ? 'initialized' : 'not found'));
+  
+  if (hasESM) {
+    addTest('test-globals', 'gESM.Lng array', Array.isArray(gESM.Lng),
+      'Languages array ' + (Array.isArray(gESM.Lng) ? 'present' : 'undefined'));
+    addTest('test-globals', 'gESM.ModelInfo array', Array.isArray(gESM.ModelInfo),
+      'Model info array ' + (Array.isArray(gESM.ModelInfo) ? 'present' : 'undefined'));
+    addTest('test-globals', 'gESM.MsgC object', typeof(gESM.MsgC) === 'object',
+      'Message config ' + (typeof(gESM.MsgC) === 'object' ? 'accessible' : 'missing'));
+    addTest('test-globals', 'gESM.fn object', typeof(gESM.fn) === 'object',
+      'Function helpers ' + (typeof(gESM.fn) === 'object' ? 'available' : 'missing'));
+  }
+}
+
+function testFrameComm() {
+  var canAccessParent = false;
+  try {
+    canAccessParent = parent && parent.document && typeof(parent.document) === 'object';
+  } catch(e) {
+    canAccessParent = false;
+  }
+  
+  addTest('test-frames', 'Parent frame accessible', canAccessParent,
+    'Parent window ' + (canAccessParent ? 'accessible' : 'protected (cross-origin)'));
+  
+  var hasParentESM = false;
+  try {
+    hasParentESM = parent && parent.document && parent.document.ESM && typeof(parent.document.ESM) === 'object';
+  } catch(e) {
+    hasParentESM = false;
+  }
+  
+  addTest('test-frames', 'Parent ESM available', hasParentESM,
+    'Parent ESM object ' + (hasParentESM ? 'found' : 'not accessible'));
+  
+  var hasParentFunctions = false;
+  try {
+    hasParentFunctions = parent && typeof(parent.Old) === 'function';
+  } catch(e) {}
+  
+  addTest('test-frames', 'Parent functions', hasParentFunctions === null ? 
+    'Parent frame loaded with functions' :
+    'Parent functions ' + (hasParentFunctions ? 'available' : 'not found'));
+}
+
+function testDOMElements() {
+  var elements = ['cmbMY', 'cmbMC', 'cmbLang', 'radSM', 'radBM', 'txtWord'];
+  elements.forEach(function(id) {
+    var el = document.getElementById(id) || document.all(id);
+    addTest('test-dom', 'Element: ' + id, el !== null,
+      'Form element ' + id + ' ' + (el ? 'found' : 'missing'));
+  });
+}
+
+function testFunctionDefinitions() {
+  var functions = ['Initialize', 'WordSearch', 'ClearSearch', 'OnChangeModelYear', 
+                   'OnChangeModelCode', 'OnChangeLang', 'OnChangeIndv'];
+  functions.forEach(function(fname) {
+    var exists = typeof(window[fname]) === 'function';
+    addTest('test-functions', 'Function: ' + fname, exists,
+      'Function ' + fname + ' ' + (exists ? 'defined' : 'missing'));
+  });
+}
+
+function testErrorHandler() {
+  if (typeof(ErrorHandler) === 'undefined') {
+    addTest('test-errorhandler', 'ErrorHandler module', false, 'Module not loaded');
+    return;
+  }
+  
+  addTest('test-errorhandler', 'ErrorHandler loaded', true, 'Module available');
+  addTest('test-errorhandler', 'getLogs method', typeof(ErrorHandler.getLogs) === 'function',
+    'Error logging ' + (typeof(ErrorHandler.getLogs) === 'function' ? 'enabled' : 'unavailable'));
+  
+  var logs = ErrorHandler.getLogs();
+  addTest('test-errorhandler', 'Error log status', Array.isArray(logs),
+    'Error logs: ' + logs.length + ' entries recorded');
+  addTest('test-errorhandler', 'Health check', typeof(ErrorHandler.checkFrameHealth) === 'function',
+    'Frame health monitoring ' + (typeof(ErrorHandler.checkFrameHealth) === 'function' ? 'active' : 'disabled'));
+}
+
+function testSearchOptimizer() {
+  if (typeof(SearchOptimizer) === 'undefined') {
+    addTest('test-searchopt', 'SearchOptimizer module', false, 'Module not loaded');
+    return;
+  }
+  
+  addTest('test-searchopt', 'SearchOptimizer loaded', true, 'Module available');
+  addTest('test-searchopt', 'Search cache', typeof(SearchOptimizer.cache) === 'object',
+    'Search caching ' + (typeof(SearchOptimizer.cache) === 'object' ? 'enabled' : 'unavailable'));
+  addTest('test-searchopt', 'Search history', Array.isArray(SearchOptimizer.history),
+    'Search history: ' + (SearchOptimizer.history ? SearchOptimizer.history.length : 0) + ' items');
+  addTest('test-searchopt', 'Suggestions method', typeof(SearchOptimizer.getSuggestions) === 'function',
+    'Autocomplete suggestions ' + (typeof(SearchOptimizer.getSuggestions) === 'function' ? 'available' : 'missing'));
+}
+
+function testBrowserFeatures() {
+  addTest('test-browser', 'Local Storage', typeof(Storage) !== 'undefined',
+    'Local storage ' + (typeof(Storage) !== 'undefined' ? 'available' : 'not supported'));
+  
+  addTest('test-browser', 'ES5 Features', typeof(Array.prototype.forEach) !== 'undefined',
+    'Modern JavaScript ' + (typeof(Array.prototype.forEach) !== 'undefined' ? 'supported' : 'limited'));
+  
+  var hasConsole = typeof(console) !== 'undefined' && typeof(console.log) === 'function';
+  addTest('test-browser', 'Browser Console', hasConsole,
+    'Console API ' + (hasConsole ? 'available' : 'not available'));
+  
+  var canXHR = typeof(XMLHttpRequest) !== 'undefined';
+  addTest('test-browser', 'XMLHttpRequest', canXHR,
+    'AJAX ' + (canXHR ? 'supported' : 'not available'));
+}
+
+function testPerformance() {
+  var perfOk = performance && performance.now;
+  addTest('test-performance', 'Performance API', perfOk,
+    'Performance monitoring ' + (perfOk ? 'available' : 'not available'));
+  
+  var memInfo = performance && performance.memory ? 
+    (performance.memory.usedJSHeapSize / 1048576).toFixed(2) + ' MB' : 'N/A';
+  addTest('test-performance', 'Memory usage', true,
+    'Current memory: ' + memInfo);
+  
+  var initTime = window.performance && window.performance.timing ? 
+    (window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart) : 'N/A';
+  addTest('test-performance', 'Page load time', true,
+    'DOM ready: ' + (typeof initTime === 'number' ? initTime + ' ms' : initTime));
+}
+
+function testFunctions() {
+  alert('Interactive function tests:\n\n' +
+    '1. Try clicking model year dropdown\n' +
+    '2. Select a model code\n' +
+    '3. Try search and clear buttons\n' +
+    '4. Check browser console (F12) for any errors\n' +
+    '5. Visit /en/html/DIAGNOSTIC.HTML for detailed diagnostics');
+}
+
+function clearResults() {
+  testResults = { passed: 0, failed: 0, warnings: 0 };
+  document.querySelectorAll('[id^="test-"]').forEach(function(el) {
+    if (el.id !== 'test-section') el.innerHTML = '';
+  });
+  document.getElementById('summary-section').style.display = 'none';
+}
+
+function exportResults() {
+  var text = 'Honda ESM - Test Results\n';
+  text += '========================\n\n';
+  text += 'Passed: ' + testResults.passed + '\n';
+  text += 'Failed: ' + testResults.failed + '\n';
+  text += 'Warnings: ' + testResults.warnings + '\n\n';
+  text += 'Test Details:\n';
+  document.querySelectorAll('.test-item').forEach(function(item) {
+    var name = item.querySelector('.test-name').textContent.trim();
+    var result = item.querySelector('.test-result').textContent.trim();
+    text += '- ' + name + ': ' + result + '\n';
+  });
+  
+  var blob = new Blob([text], { type: 'text/plain' });
+  var url = window.URL.createObjectURL(blob);
+  var link = document.createElement('a');
+  link.href = url;
+  link.download = 'esm-test-results.txt';
+  link.click();
+}
+
+// Auto-run on load
+window.addEventListener('load', function() {
+  console.log('Test suite ready. Click "Run All Tests" to begin.');
+});
+</script>
+</body>
+</html>

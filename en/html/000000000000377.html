@@ -1,0 +1,688 @@
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta name="author" content="HONDA ACCESS Co.,Ltd.">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>SAA2E00K79100000000BBAT00</title>
+<link href="../css/ViewerStyle.css" rel="stylesheet">
+<style>
+	v\:*	{ behavior: url(#default#VML); }
+	.drag	{ position: relative; cursor:   hand; }
+</style>
+</head>
+<script>
+<!--
+-->
+</script>
+<body onload="javascript:parent.Old(this)" style="font-family:sans-serif;">
+<div xmlns:v="urn:schemas-microsoft-com:vml">
+<div class="top_title">
+How to Troubleshoot the SRS
+</div>
+<div>
+</div>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<div class="servinfosub_title">
+<b>
+DTC (Diagnostic Trouble Codes)
+</b>
+</div>
+<div>
+The self-diagnostic function of the SRS system allows it to locate the causes of system problems and then store this information in memory. For easier troubleshooting, this data can be retrieved via a data link circuit.
+</div>
+<ul type="disc">
+<li>
+<div>
+When you turn the ignition switch ON (II), the SRS indicator will come on. If it goes off after 6 seconds, the system is normal.
+</div>
+</li>
+<li>
+<div>
+If there is an abnormality, the system locates and defines the problem, stores this information in memory, and turns the SRS indicator on. The data will remain in the memory even when the ignition switch is turned off or if the battery is disconnected.
+</div>
+</li>
+<li>
+<div>
+When you connect the Honda PGM Tester to the 16P data link connector (DLC) to short the SCS terminal, and turn the ignition switch ON (II), the SRS indicator will indicate the diagnostic trouble code (DTC) by the number of blinks.
+</div>
+</li>
+<li>
+<div>
+After reading and recording the DTC, proceed with the troubleshooting procedure for this code.
+</div>
+</li>
+</ul>
+<ul type="disc">
+<div class="list1_title">
+<b>
+Precautions
+</b>
+</div>
+<li>
+<div>
+Use only a digital multimeter to check the system. If it′s not a Honda multimeter, make sure it's output is 10 mA (0.01A) or less when switched to the smallest value in the ohmmeter range. A tester with a higher output could damage the airbag circuit or cause accidental airbag deployment and possible injury.
+</div>
+</li>
+<li>
+<div>
+Whenever the ignition switch is ON (II), or has been turned OFF for less than 3 minutes, be careful not to bump the SRS unit; the airbags could accidentally deploy and cause damage or injuries.
+</div>
+</li>
+<li>
+<div>
+Before you remove the SRS main harness, disconnect the driver's airbag connector, the front passenger's airbag connector, both side airbag connectors, and both seat belt tensioner connectors.
+</div>
+</li>
+<li>
+<div>
+Make sure the battery is sufficiently charged. If the battery is dead or low, measuring values won't be correct.
+</div>
+</li>
+<li>
+<div>
+Do not touch a tester probe to the terminals in the SRS unit or harness connectors, and do not connect the terminals with a jumper wire. Use only the backprobe set and the Honda PGM Tester. Backprobe spring-loaded lock type connectors correctly.
+</div>
+</li>
+</ul>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<div class="servinfosub_title">
+<b>
+Reading the DTC
+</b>
+</div>
+<div>
+When the SRS indicator is on, read the DTC using either of the following methods:
+</div>
+<br>
+<div class="topic_title">
+<b>
+PGM Tester ‘‘SRS'' Menu Method:
+</b>
+</div>
+<br>
+<div>
+Connect the Honda PGM Tester (A) to the 16P Data Link Connector (DLC) (B), and follow the Tester's prompts in the ‘‘SRS'' menu. If the Tester indicates no DTC, DTC 9-1, or DTC 9-2, double-check by selecting ‘‘SCS'' on the display, and watching the SRS indicator.
+</div>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000000901','1');">
+<img src="../tn/SAA2E00K79100000000BBAD01.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<div class="procedure_sub_title">
+<b>
+‘‘SCS'' Menu Method (retrieving the flash codes)
+</b>
+</div>
+<div>
+The SRS indicator (A) indicates the DTC by the number of blinks when the DLC pin box (B) is connected to the Data Link Connector (DLC) 16P (C).
+</div>
+<a name="i210">
+</a>
+<ol>
+<li value="1">
+<div>
+Make sure the ignition switch is OFF, and wait for 10 seconds. Then connect the DLC pin box (A) to the Data Link Connector (DLC) 16P. If you don't wait 10 seconds, the SRS unit won't be completely reset or output DTCs.
+</div>
+</li>
+</ol>
+<a name="i220">
+</a>
+<ol>
+<li value="2">
+<div>
+Connect the DLC pin box terminals No.4 and No.9 with a jumper wire (D), and push the operation switch.
+</div>
+</li>
+</ol>
+<a name="i230">
+</a>
+<ol>
+<li value="3">
+<div>
+Turn the ignition switch ON (II). The SRS indicator comes on for about 6 seconds, and then goes off. Then it will indicate the DTC.
+</div>
+</li>
+</ol>
+<a name="i240">
+</a>
+<ol>
+<li value="4">
+<div>
+Read the DTC.
+</div>
+</li>
+</ol>
+<a name="i250">
+</a>
+<ol>
+<li value="5">
+<div>
+Turn the ignition switch OFF, and wait for 10 seconds. Then disconnect the DLC pin box from the Data Link Connector (DLC) 16P.
+</div>
+</li>
+</ol>
+<a name="i260">
+</a>
+<ol>
+<li value="6">
+<div>
+Proceed with the troubleshooting procedure for this DTC.
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000000902','1');">
+<img src="../tn/SAA2E00K79100000000BBAD02.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<br>
+<div class="topic_title">
+<b>
+Patterns of DTC Indications:
+</b>
+</div>
+<br>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000000903','1');">
+<img src="../tn/S5A1A00K79100000000BBAD03.png">
+</a>
+</div>
+<span style="display:none" id="imgId2">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<div class="figure_title">
+<b>
+Reading the main code:
+</b>
+</div>
+<a href="javascript:parent.Prt('ZOOM000000000000903','2');">
+<img src="../tn/S6M2E00K79100000000BBAD05.png">
+</a>
+</div>
+<span style="display:none" id="imgId3">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<div class="figure_title">
+<b>
+Reading the sub code:
+</b>
+</div>
+<a href="javascript:parent.Prt('ZOOM000000000000903','3');">
+<img src="../tn/S6M2A00K79100000000BBAD04.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<ul type="disc">
+<li>
+<div>
+Including the most recent problem, up to three different malfunctions can be indicated (see example 1 below).
+</div>
+</li>
+<li>
+<div>
+In case of a continuous failure, the DTC will be indicated repeatedly (see example 1 below).
+</div>
+</li>
+<li>
+<div>
+In case of an intermittent failure, the SRS indicator will indicate the DTCs one time, then it will stay on (see example 2 below).
+</div>
+</li>
+<li>
+<div>
+If both a continuous and an intermittent failure occur, both DTCs will be indicated as continuous failures.
+</div>
+</li>
+<li>
+<div>
+When the system is normal (no DTC), the SRS indicator will stay on (see example 3).
+</div>
+</li>
+<li>
+<div>
+If the SRS indicator comes on continuously without a DTC, there may be a problem with the system.
+</div>
+</li>
+<li>
+<div>
+If the SRS indicator does not come on as indicated above, always check for an open or a short to ground in the SCS circuit before troubleshooting the system.
+</div>
+</li>
+</ul>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<br>
+<div class="topic_title">
+<b>
+Example of DTC Indications:
+</b>
+</div>
+<br>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000000905','1');">
+<img src="../tn/SAA2E00K79100000000BBAD05.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<div class="servinfosub_title">
+<b>
+Erasing the DTC Memory
+</b>
+</div>
+<div class="tool_list_title">
+<b>
+Special Tools Required
+</b>
+</div>
+<a href="javascript:parent.Prt('ZOOM000000000009765')">
+<br>
+SCS short connector
+<div>
+ 07PAZ-0010100
+</div>
+</a>
+<div>
+To erase the DTC(s) from the SRS unit, use a Honda PGM Tester (see the Honda PGM Tester SRS vehicle System Supplement) or the following procedure.
+</div>
+<a name="i410">
+</a>
+<ol>
+<li value="1">
+<div>
+Make sure the ignition switch is OFF.
+</div>
+</li>
+</ol>
+<a name="i420">
+</a>
+<ol>
+<li value="2">
+<div>
+Connect the SCS short connector (A) to the MES connector (2P) (B). Do not use a jumper wire.
+</div>
+</li>
+</ol>
+<a name="i430">
+</a>
+<ol>
+<li value="3">
+<div>
+Turn the ignition switch ON (II).
+</div>
+</li>
+</ol>
+<a name="i440">
+</a>
+<ol>
+<li value="4">
+<div>
+The SRS indicator will come on for about 6 seconds, and then go off. Remove the SCS short connector from the MES connector (2P) within 4 seconds after the indicator goes off.
+</div>
+</li>
+</ol>
+<a name="i450">
+</a>
+<ol>
+<li value="5">
+<div>
+The SRS indicator will come on again. Reconnect the SCS short connector to the MES connector (2P) within 4 seconds after the indicator comes on.
+</div>
+</li>
+</ol>
+<a name="i460">
+</a>
+<ol>
+<li value="6">
+<div>
+When the SRS indicator goes off, remove the SCS short connector from the MES connector (2P) within 4 seconds.
+</div>
+</li>
+</ol>
+<a name="i470">
+</a>
+<ol>
+<li value="7">
+<div>
+The SRS indicator will blink two times indicating that the memory has been erased.
+</div>
+</li>
+</ol>
+<a name="i480">
+</a>
+<ol>
+<li value="8">
+<div>
+Turn the ignition switch OFF, and wait for 10 seconds.
+</div>
+<div>
+Turn the ignition switch ON (II) again after the procedure. The SRS system is OK if the SRS indicator comes on for 6 seconds, and then goes off.
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000000906','1');">
+<img src="../tn/SAA2E00K79100000000BBAD03.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<div class="servinfosub_title">
+<b>
+Troubleshooting Intermittent Failures
+</b>
+</div>
+<div>
+If there was a malfunction, but it doesn't recur, it will be stored in the memory as an intermittent failure, and the SRS indicator will come on.
+</div>
+<div>
+After checking the DTC, troubleshoot as follows:
+</div>
+<a name="i610">
+</a>
+<ol>
+<li value="1">
+<div>
+Read the DTC (see ‘‘Reading the DTC'').
+</div>
+</li>
+</ol>
+<a name="i620">
+</a>
+<ol>
+<li value="2">
+<div>
+Erase the DTC memory (see ‘‘Erasing the DTC Memory'').
+</div>
+</li>
+</ol>
+<a name="i630">
+</a>
+<ol>
+<li value="3">
+<div>
+With the shift lever in Park or neutral, start the engine, and let the engine idle.
+</div>
+</li>
+</ol>
+<a name="i640">
+</a>
+<ol>
+<li value="4">
+<div>
+The SRS indicator will come on for about 6 seconds and then go off.
+</div>
+</li>
+</ol>
+<a name="i650">
+</a>
+<ol>
+<li value="5">
+<div>
+Shake the wire harness and the connectors, take a test drive (quick acceleration, quick braking, cornering), turn the steering wheel fully left and right, and hold it there for 5 to 10 seconds. If the problem recurs, the SRS indicator will come on.
+</div>
+</li>
+</ol>
+<a name="i660">
+</a>
+<ol>
+<li value="6">
+<div>
+If you can't duplicate the intermittent failure, the system is OK at this time.
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<div class="servinfosub_title">
+<b>
+Initializing the OPDS (Occupant Position Detection System) Unit
+</b>
+</div>
+<div class="tool_list_title">
+<b>
+Special Tools Required
+</b>
+</div>
+<a href="javascript:parent.Prt('ZOOM000000000009766')">
+<br>
+SCS short connector
+<div>
+ 07PAZ-0010100
+</div>
+</a>
+<div>
+When the seat-back cover, seat-back cushion, and/or OPDS unit are replaced, initialize the OPDS system by following the procedure below.
+</div>
+<div>
+NOTE: Make sure the passenger's seat is dry. Set the seat-back in the normal position, and make sure there is nothing on the front passenger's seat.
+</div>
+<a name="i810">
+</a>
+<ol>
+<li value="1">
+<div>
+Make sure the ignition switch is OFF.
+</div>
+</li>
+</ol>
+<a name="i820">
+</a>
+<ol>
+<li value="2">
+<div>
+Connect the DLC pin box (A) to the DLC (16P) (B), and connect the DLC pin box terminals No.4 and No.9 with a jumper wire (C), and push the operation switch.
+</div>
+</li>
+</ol>
+<a name="i830">
+</a>
+<ol>
+<li value="3">
+<div>
+Connect the SCS short connector (D) to the MES connector (2P) (E). Do not use a jumper wire.
+</div>
+</li>
+</ol>
+<a name="i840">
+</a>
+<ol>
+<li value="4">
+<div>
+Turn the ignition switch ON (II).
+</div>
+</li>
+</ol>
+<a name="i850">
+</a>
+<ol>
+<li value="5">
+<div>
+The SRS indicator (F) comes on for about 6 seconds and goes off. Remove the SCS short connector from the MES connector within 4 seconds after the SRS indicator went off.
+</div>
+</li>
+</ol>
+<a name="i860">
+</a>
+<ol>
+<li value="6">
+<div>
+The SRS indicator comes on again. Reconnect the SCS short connector to the MES connector within 4 seconds after the SRS indicator comes on.
+</div>
+</li>
+</ol>
+<a name="i870">
+</a>
+<ol>
+<li value="7">
+<div>
+The SRS indicator goes off. Remove the SCS short connector from the MES connector within 4 seconds.
+</div>
+</li>
+</ol>
+<a name="i880">
+</a>
+<ol>
+<li value="8">
+<div>
+Watch the SRS indicator.
+</div>
+<ul type="disc">
+<li>
+<div>
+If the indicator blinks two times and then stays on, the OPDS is initialized, but the DTCs need to be erased. Go to 
+<a href="javascript:parent.Jmp('i890')">Step 9
+</a>
+, then erase the DTCs.
+</div>
+</li>
+<li>
+<div>
+If the indicator blinks two times and then goes off, the OPDS unit is initialized. Go to 
+<a href="javascript:parent.Jmp('i890')">Step 9
+</a>
+.
+</div>
+</li>
+<li>
+<div>
+If the indicator stays on without first blinking, the OPDS is not initialized. Read the DTC, and go to the appropriate page in the DTC Troubleshooting Index.
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000000908','1');">
+<img src="../tn/SAA2E00K79100000000BBAD04.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i890">
+</a>
+<ol>
+<li value="9">
+<div>
+Turn the ignition switch off, and disconnect the DLC pin box from the DLC (16P).
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000000909','1');">
+<img src="../tn/S80YA00K79100000000BBAD06.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

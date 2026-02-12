@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group19\" class=\"drag\" style=\"position:relative; width:950px; height:623px;\" coordsize=\"950,623\">");
+write("<v:rect id=\"rect19\"class=\"drag\"  style=\"width:950px;height:623px;\">");
+write("<img id=\"img19\" src=\"../img/SAA6EHPA20300000000DBAD33.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:623px;border-color:#ffffff\">");
+write("<p id=\"p19_1\" class=\"drag\" style=\"position:absolute;left:667px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DASHBOARD<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_2\" class=\"drag\" style=\"position:absolute;left:264px;top:586px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>6<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_3\" class=\"drag\" style=\"position:absolute;left:92px;top:207px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>1<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_4\" class=\"drag\" style=\"position:absolute;left:520px;top:13px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>5<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_5\" class=\"drag\" style=\"position:absolute;left:413px;top:14px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>4<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_6\" class=\"drag\" style=\"position:absolute;left:179px;top:114px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>3<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_7\" class=\"drag\" style=\"position:absolute;left:143px;top:158px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>2<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_8\" class=\"drag\" style=\"position:absolute;left:153px;top:473px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>7<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_9\" class=\"drag\" style=\"position:absolute;left:25px;top:427px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

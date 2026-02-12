@@ -1,0 +1,382 @@
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta name="author" content="HONDA ACCESS Co.,Ltd.">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>SAA3EZ2K72100081010FAAT90</title>
+<link href="../css/ViewerStyle.css" rel="stylesheet">
+<style>
+	v\:*	{ behavior: url(#default#VML); }
+	.drag	{ position: relative; cursor:   hand; }
+</style>
+</head>
+<script>
+<!--
+-->
+</script>
+<body onload="javascript:parent.Old(this)" style="font-family:sans-serif;">
+<div xmlns:v="urn:schemas-microsoft-com:vml">
+<div class="top_title">
+DTC Troubleshooting: 1
+</div>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<b>
+DTC 1:
+</b>
+<div>
+ Primary HO2S (Sensor 1) Circuit Malfunction
+</div>
+<a name="i010">
+</a>
+<ol>
+<li value="1">
+<div>
+<a href="javascript:parent.Cts('000000000001216','iG04')">
+Reset the ECM/PCM.
+</a>
+</div>
+</li>
+</ol>
+<a name="i020">
+</a>
+<ol>
+<li value="2">
+<div>
+Start the engine. Hold the engine at 3,000 rpm (min
+<sup>
+−1
+</sup>
+) with no load (in Park or neutral) until the radiator fan comes on, then let it idle for at least one minute before test-driving. 
+</div>
+</li>
+</ol>
+<a name="i030">
+</a>
+<ol>
+<li value="3">
+<div>
+Test-drive under following conditions.
+</div>
+<ul type="disc">
+<li>
+<div>
+M/T in 4th gear, CVT in D position
+</div>
+</li>
+<li>
+<div>
+accelerate using wide open throttle for at least 5 seconds, then decelerate for at least 5 seconds with the throttle completely closed.
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is the MIL on and does it indicate DTC 1?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Go to 
+<a href="javascript:parent.Jmp('i040')">Step 4
+</a>
+.
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Intermittent failure, system is OK at this time. Check for poor connections or loose terminals at the 
+primary HO2S (Sensor 1)
+ and at the 
+ECM
+/
+PCM
+.■
+</div>
+</td>
+</tr>
+</table>
+<a name="i040">
+</a>
+<ol>
+<li value="4">
+<div>
+<a href="javascript:parent.Cts('000000000000541','i000')">
+Inspect fuel pressure.
+</a>
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is it normal?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Go to 
+<a href="javascript:parent.Jmp('i050')">Step 5
+</a>
+.
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Check for fuel supply system.■
+</div>
+</td>
+</tr>
+</table>
+<a name="i050">
+</a>
+<ol>
+<li value="5">
+<div>
+Let it idle for at least 1 minute before test-driving.
+</div>
+</li>
+</ol>
+<a name="i060">
+</a>
+<ol>
+<li value="6">
+<div>
+Open the throttle wide open, then quickly release it.
+</div>
+</li>
+</ol>
+<a name="i070">
+</a>
+<ol>
+<li value="7">
+<div>
+Measure voltage between ECM/PCM connector terminals A6 and A10.
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is the voltage above 0.6 V at wide open throttle to 4,500 rpm (min
+<sup>
+−1
+</sup>
+) and below 0.4 V when the throttle is quickly released from 4,500 rpm (min
+<sup>
+−1
+</sup>
+)?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+<a href="javascript:parent.Cts('000000000001216','iG10')">
+Update the ECM/PCM if it does not have the latest software, or substitute a known-good ECM/PCM, then recheck.
+</a>
+ If the symptom/indication goes away with a known-good ECM/PCM, replace the original 
+ECM
+/
+PCM
+.■
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Go to 
+<a href="javascript:parent.Jmp('i080')">Step 8
+</a>
+.
+</div>
+</td>
+</tr>
+</table>
+<a name="i080">
+</a>
+<ol>
+<li value="8">
+<div>
+Turn the ignition switch OFF.
+</div>
+</li>
+</ol>
+<a name="i090">
+</a>
+<ol>
+<li value="9">
+<div>
+Disconnect the Primary HO2S (Sensor 1) 4P connector.
+</div>
+</li>
+</ol>
+<a name="i100">
+</a>
+<ol>
+<li value="10">
+<div>
+At the Primary HO2S(Sensor 1) harness side, connect the battery positive terminal to terminal No. 3 and battery negative terminal to terminal No. 4.
+</div>
+</li>
+</ol>
+<a name="i110">
+</a>
+<ol>
+<li value="11">
+<div>
+Start the engine.
+</div>
+</li>
+</ol>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000009522','1');">
+<img src="../tn/SAA3EZ2K72100081010FAAD01.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" size="2" color="gray">
+<table width="100%" class="Viewer">
+<tr>
+<td width="80%" class="ViewerTD" id="textTd" valign="top">
+<a name="i120">
+</a>
+<ol>
+<li value="12">
+<div>
+After 2 minutes, measure voltage between Primary HO2S (Sensor 1) 4P connector terminals No. 1 and No. 2.
+</div>
+</li>
+</ol>
+<div style="text-indent:40px;">
+<i>
+Is the voltage above 0.6 V at wide open throttle to 4,500 rpm (min
+<sup>
+−1
+</sup>
+) and below 0.4 V when the throttle is quickly released from 4,500 rpm (min
+<sup>
+−1
+</sup>
+)?
+</i>
+</div>
+<table class="Viewer" frame="void" style="margin-left:50px;">
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+YES
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+Repair open or short in the wire between the 
+ECM
+/
+PCM
+ (A6) and the 
+primary HO2S (Sensor 1)
+.■
+</div>
+</td>
+</tr>
+<tr>
+<td width="30" class="ViewerTD">
+<b>
+NO
+</b>
+</td>
+<td width="10" class="ViewerTD" align="center">-
+</td>
+<td class="ViewerTD">
+<div>
+<a href="javascript:parent.Cts('000000000000830','i000')">
+Replace the Primary HO2S (Sensor 1).
+</a>
+■
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td width="20%" class="ViewerTD" id="graphTd" valign="top">
+<span style="display:none" id="imgId1">
+<div style="page-break-after:always;">
+</div>
+</span>
+<div>
+<a href="javascript:parent.Prt('ZOOM000000000009523','1');">
+<img src="../tn/SAA2EZ1K72100081010FAAD02.png">
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

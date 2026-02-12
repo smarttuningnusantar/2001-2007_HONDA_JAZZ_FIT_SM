@@ -1,0 +1,30 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:799px;\" coordsize=\"950,799\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:799px;\">");
+write("<img id=\"img1\" src=\"../img/SAA7EV8000000000000NCAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:799px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:662px;top:290px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>1,460 mm (57.5 in.)*<sup>1</sup><br>1,440 mm (56.7 in.)*<sup>2</sup><br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:663px;top:330px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>1,675 mm (65.9 in.)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:662px;top:689px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>1,445 mm (56.9 in.)*<sup>1</sup><br>1,430 mm (56.3 in.)*<sup>2</sup><br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:238px;top:669px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>2,450 mm (96.5 in.)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:238px;top:700px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>3,830 mm (150.8 in.)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:16px;top:758px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>*1: Tyre size 175/65R14 82T<br>*2: Tyre size 185/55R15 82V<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("<v:line id=\"bl1_1\" class=\"drag\" from=\"914,600\" to=\"913,463\" strokecolor=\"black\">");
+write("<v:fill class=\"drag\" on=\"true\" color=\"black\"/>");
+write("<v:path class=\"drag\" textpathok=\"true\"/>");
+write("<v:textpath id=\"tp1_1\" class=\"drag\" on=\"true\" string=\"1,525 mm (60.0 in.)\" style=\"font-family:Arial;text-align:left;font-weight:small;font-size:8.6pt;\"/>");
+write("</v:line>");
+write("</v:group>");
+}

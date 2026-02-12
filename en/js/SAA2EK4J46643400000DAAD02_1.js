@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group2\" class=\"drag\" style=\"position:relative; width:950px; height:1103px;\" coordsize=\"950,1103\">");
+write("<v:rect id=\"rect2\"class=\"drag\"  style=\"width:950px;height:1103px;\">");
+write("<img id=\"img2\" src=\"../img/SAA2EK4J46643400000DAAD02.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:1103px;border-color:#ffffff\">");
+write("<p id=\"p2_1\" class=\"drag\" style=\"position:absolute;left:1px;top:148px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNLOCK BUTTON<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_2\" class=\"drag\" style=\"position:absolute;left:249px;top:92px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>LOCK BUTTON<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_3\" class=\"drag\" style=\"position:absolute;left:39px;top:254px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>TRANSMITTER<br><a href=\"javascript:parent.Cts('000000000003002','i000')\"></b>Test,</a><br><a href=\"javascript:parent.Cts('000000000003003','i000')\">Programming,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p2_4\" class=\"drag\" style=\"position:absolute;left:432px;top:81px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>LEFT SUPER LOCKING RELAY (KE model)<br><a href=\"javascript:parent.Cts('000000000003007','i000')\"></b>Test,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p2_5\" class=\"drag\" style=\"position:absolute;left:569px;top:177px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>GAUGE ASSEMBLY<br></b>(Has built in the super locking<br>or power dear lock control circuit)<br><a href=\"javascript:parent.Cts('000000000003006','i000')\">Input Test,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p2_6\" class=\"drag\" style=\"position:absolute;left:736px;top:780px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>KEYLESS RECEIVER UNIT<br><a href=\"javascript:parent.Cts('000000000003004','i000')\"></b>Input Test,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p2_7\" class=\"drag\" style=\"position:absolute;left:663px;top:874px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>POWER DOOR UNLOCK/<br>FUEL FILL DOOR UNLOCK<br><a href=\"javascript:parent.Cts('000000000003007','i000')\"></b>Test,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p2_8\" class=\"drag\" style=\"position:absolute;left:666px;top:992px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>POWER DOOR LOCK/<br>FUEL FILL DOOR LOCK RELAY<br><a href=\"javascript:parent.Cts('000000000003007','i000')\"></b>Test,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p2_9\" class=\"drag\" style=\"position:absolute;left:118px;top:916px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>IGNITION KEY SWITCH<br><a href=\"javascript:parent.Cts('000000000000329','i000')\"></b>Test,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p2_10\" class=\"drag\" style=\"position:absolute;left:432px;top:115px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>RIGHT SUPER LOCKING RELAY (KE model)<br><a href=\"javascript:parent.Cts('000000000003007','i000')\"></b>Test,</a><br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

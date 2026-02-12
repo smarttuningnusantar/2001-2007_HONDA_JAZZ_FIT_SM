@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:607px;\" coordsize=\"950,607\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:607px;\">");
+write("<img id=\"img1\" src=\"../img/SAA2E00B44100032511KBAD04.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:607px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:19px;top:17px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>REAR BEAM<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:364px;top:14px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SPINDLE<br></b>Check for bend and deformation.<br></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:599px;top:104px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>10 x 1.25 mm<br>64 N·m<br>(6.5 kgf·m, 47 lbf·ft)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:794px;top:545px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>BRAKE DRUM<br></b>Check for wear <br>and damage.<br></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:819px;top:134px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>HUB CAP<br></b>Replace.<br></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:35px;top:310px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>6 x 1.0 mm<br>9.8 N·m (1.0 kgf·m, 7.2 lbf·ft)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:200px;top:393px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>REAR BRAKE ASSEMBLY<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:354px;top:422px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>HUB BEARING UNIT<br></b>Check for faulty movement<br>and wear.<br></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:532px;top:495px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SPINDLE NUT<br>20 x 1.5 mm<br>162 N·m (16.5 kgf·m, 119 lgf·ft)<br></b>Replace.<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

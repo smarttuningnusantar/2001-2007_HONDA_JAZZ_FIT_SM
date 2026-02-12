@@ -1,0 +1,653 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+                      "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<meta name="author" content="HONDA MOTOR Co.,Ltd.">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Honda Jazz/Fit 2001-2007 Service Manual - Complete workshop documentation and technical specifications">
+<meta name="keywords" content="Honda Jazz, Honda Fit, Service Manual, Workshop Manual, Technical Documentation">
+<title>Shop Manual&nbsp;(HONDA MOTOR Co.,Ltd.)</title>
+<style>
+html, body { margin: 0; padding: 0; height: 100%; width: 100%; }
+frameset { border: none; }
+frame { border: none; }
+@media (max-width: 768px) {
+  body { font-size: 12px; }
+  frameset { display: none; }
+  body::before { content: "Desktop view required for full functionality"; display: block; padding: 20px; background: #f0f0f0; }
+}
+</style>
+<script src="./en/js/ErrorHandler.js"></script>
+<script src="./en/js/SearchOptimizer.js"></script>
+<!-- Load dependency files BEFORE FrameSync to ensure globals are ready -->
+<script src="./_COM/HONDAESM.JS"></script>
+<script src="./_COM/MESSAGE.JS"></script>
+<script src="./_COM/LANGINFO.JS"></script>
+<script src="./en/js/MODELINFO.JS"></script>
+<!-- Load FrameSync AFTER all dependencies so globals are available -->
+<script src="./en/js/FrameSync.js"></script>
+<script>
+<!--                                                                 
+var gESM, gLng, gMSG, gModelInfo, fn;
+
+// Ensure globals exist before anything relies on them
+function initializeGlobals() {
+  try {
+    if (typeof gESM === 'undefined' || !gESM) {
+      gESM = new Array;
+    }
+    if (typeof gLng === 'undefined' || !gLng) {
+      gLng = new Array;
+    }
+    if (typeof gMSG === 'undefined' || !gMSG) {
+      gMSG = new Array;
+    }
+    if (typeof gModelInfo === 'undefined' || !gModelInfo) {
+      gModelInfo = new Array;
+    }
+    if (typeof fn === 'undefined' || !fn) {
+      fn = new Array;
+    }
+    
+    // Link references
+    if (!gESM.Lng) gESM.Lng = gLng;
+    if (!gESM.MsgC) gESM.MsgC = gMSG;
+    if (!gESM.ModelInfo) gESM.ModelInfo = gModelInfo;
+    if (!gESM.fn) gESM.fn = fn;
+    
+    document.ESM = gESM;
+    
+    return true;
+  } catch(e) {
+    console.error("[initializeGlobals] Error:", e.message);
+    return false;
+  }
+}
+
+// Initialize globals immediately
+initializeGlobals();
+
+// Safely check GetCookie availability
+var fStart = false;
+try {
+  if (typeof(GetCookie) === 'function') {
+    fStart = (GetCookie("EsmStart") == "true")? false:true;
+    console.log("[init] GetCookie available, fStart=", fStart);
+  } else {
+    console.warn("[init] GetCookie function not available yet, assuming first start");
+    fStart = true;
+  }
+} catch(e) {
+  console.error("[init] Error calling GetCookie:", e.message);
+  fStart = true;
+}
+
+var frameLoadTimeout = setTimeout(function() {
+  console.warn("Frame loading timeout - reinitializing...");
+  if(typeof(Initialize) === 'function') Initialize();
+}, 10000); // Increased to 10 seconds to allow more time for initialization
+
+if (fStart || !document.referrer) {
+  // Initialize structure
+  gESM.lngSel   = -1;                   
+  gESM.mySel    = -1;                   
+  gESM.mcSel    = -1;                   
+  gESM.subSel   =  0;                   
+  gESM.subUse   = 0;
+  gESM.mdlSel   =  0;                   
+  gESM.manTyp   = 'SM';                 
+  gESM.smFlag   = -1;
+  gESM.brmFlag  = -1;
+  
+  gESM.Key = "";         
+  gESM.Sct = "";         
+  gESM.Sc  = "";         
+  gESM.Sys = "";         
+  gESM.Comp = "";        
+  gESM.Sitq = "";        
+  gESM.Keyword = "";     
+
+  // Setup function references FIRST
+  fn.GetCookie  = GetCookie;            
+  fn.SetCookie  = SetCookie;            
+  fn.FormatStr  = FormatStr;            
+  fn.ChangeLang = ChangeLang;
+  
+  // Call SetLang to populate gLng array
+  console.log("[init] Calling SetLang()...");
+  if (typeof(SetLang) === 'function') {
+    try {
+      SetLang();
+      console.log("[init] SetLang() completed. gLng length:", gLng.length);
+      if (gLng.length > 0) {
+        console.log("[init] Language data loaded:", gLng[0]);
+      } else {
+        console.error("[init] SetLang() executed but gLng is empty!");
+        // Fallback: manually populate gLng
+        gLng[0] = new LangItem('en', 'English');
+        console.log("[init] Manually populated gLng with fallback data");
+      }
+    } catch(e) {
+      console.error("[init] SetLang() threw error:", e.message);
+      gLng[0] = new LangItem('en', 'English');
+    }
+  } else {
+    console.warn("[init] SetLang function not available, creating default language");
+    gLng[0] = new LangItem('en', 'English');
+  }
+  
+  // Set default language
+  if (gLng && gLng.length > 0) {
+    gESM.lngSel = 0;
+    console.log("[init] Default language set to:", gLng[0].Code);
+  } else {
+    console.error("[init] CRITICAL: gLng is still empty after SetLang!");
+  }
+}
+else {
+  // This is a child frame - get ESM from parent
+  try {
+    if (parent && parent.document && parent.document.ESM) {
+      document.ESM  = parent.document.ESM;  
+      gESM = document.ESM;
+      gLng = gESM.Lng || [];
+      gMSG = gESM.MsgC || [];
+      gModelInfo = gESM.ModelInfo || [];
+      fn   = gESM.fn || {};
+      
+      // Ensure fn has all required function references even if from parent
+      if (!fn.SetCookie && typeof(SetCookie) === 'function') {
+        fn.SetCookie = SetCookie;
+      }
+      if (!fn.GetCookie && typeof(GetCookie) === 'function') {
+        fn.GetCookie = GetCookie;
+      }
+    } else {
+      console.warn("[init] Parent ESM not available, using local initialization");
+      initializeGlobals();
+      gLng[0] = new LangItem('en', 'English');
+      gESM.lngSel = 0;
+      
+      // Setup function references
+      fn.GetCookie  = GetCookie;            
+      fn.SetCookie  = SetCookie;            
+      fn.FormatStr  = FormatStr;            
+      fn.ChangeLang = ChangeLang;
+    }
+  } catch(e) {
+    console.error("[init] Error accessing parent ESM:", e.message);
+    initializeGlobals();
+    
+    // Setup function references as fallback
+    fn.GetCookie  = GetCookie;            
+    fn.SetCookie  = SetCookie;            
+    fn.FormatStr  = FormatStr;            
+    fn.ChangeLang = ChangeLang;
+  }
+}
+
+// Try to set cookie safely
+if (typeof(fn) !== 'undefined' && fn && typeof(fn.SetCookie) === 'function') {
+  try {
+    fn.SetCookie("EsmStart","true", true);
+    console.log("[init] SetCookie called successfully");
+  } catch(e) {
+    console.error("[init] Error calling fn.SetCookie:", e.message);
+  }
+} else {
+  console.warn("[init] fn.SetCookie not available, skipping cookie set");
+}
+
+// Initialize messages - MUST happen before Initialize()
+console.log("[init] Calling SetMessage()...");
+if (typeof(SetMessage) === 'function') {
+  try {
+    SetMessage();
+    console.log("[init] SetMessage() completed. gMSG length:", gMSG.length);
+  } catch(e) {
+    console.error("[init] SetMessage() threw error:", e.message);
+  }
+} else {
+  console.warn("[init] SetMessage function not available");
+}
+
+// Initialize model info - MUST happen before Initialize()
+console.log("[init] Calling CreateModelInf()...");
+if (typeof(CreateModelInf) === 'function') {
+  try {
+    CreateModelInf();
+    console.log("[init] CreateModelInf() completed. gModelInfo length:", gModelInfo.length);
+  } catch(e) {
+    console.error("[init] CreateModelInf() threw error:", e.message);
+  }
+} else {
+  console.warn("[init] CreateModelInf function not available");
+}
+
+function CheckEnvironment()
+{
+  return true;
+}
+
+// Fallback LangItem constructor if LANGINFO.JS hasn't loaded yet
+function LangItem(strCode, strName) {
+  if (typeof(arguments.callee.original) !== 'undefined') {
+    // Use original if available (from LANGINFO.JS)
+    return arguments.callee.original(strCode, strName);
+  }
+  // Fallback implementation
+  var data = new Array;
+  data.Code = strCode;
+  data.Name = strName;
+  return data;
+}
+
+// Store the fallback for later replacement if needed
+LangItem.hasFallback = true;
+
+function Initialize()
+{
+  var strLang, strYear, strCode, strData;
+  var i;
+
+  console.log("[Initialize] Starting initialization. gESM.Lng length:", gESM.Lng ? gESM.Lng.length : "undefined");
+
+  // Safety check
+  if (!gESM || !gESM.Lng) {
+    console.error("[Initialize] Safety check failed: gESM or gESM.Lng undefined");
+    console.log("[Initialize] Attempting recovery...");
+    // Attempt recovery
+    if (!initializeGlobals()) {
+      console.error("[Initialize] Could not recover globals");
+      // Last resort fallback
+      if (!gLng[0]) {
+        gLng[0] = new LangItem('en', 'English');
+      }
+      gESM.Lng = gLng;
+      console.log("[Initialize] Recovery: gESM.Lng reset, length:", gESM.Lng.length);
+    }
+  }
+
+  var w = screen.width;
+  var h = screen.height;
+  var t = 0;
+  var l = 0;
+  window.resizeTo(w,h);
+  window.moveTo(t,l);
+
+  if (!gESM.Lng || gESM.Lng.length <= 0) {
+    console.warn("[Initialize] Language not initialized, attempting to set default");
+    console.log("[Initialize] Checking gLng array. Length:", gLng ? gLng.length : "undefined");
+    
+    if (gLng && gLng.length > 0) {
+      gESM.Lng = gLng;
+      gESM.lngSel = 0;
+      console.log("[Initialize] ✓ Language set from gLng backup");
+    } else {
+      // Last resort: create minimal language item
+      console.error("[Initialize] gLng is empty, creating fallback language");
+      var fallbackLang = new LangItem('en', 'English');
+      gLng[0] = fallbackLang;
+      gESM.Lng = gLng;
+      gESM.lngSel = 0;
+      console.log("[Initialize] ✓ Fallback language created");
+      
+      // If still empty, show alert
+      if (!gESM.Lng || gESM.Lng.length <= 0) {
+        console.error("[Initialize] FATAL: Could not initialize language");
+        alert("Not found Language Information.");
+        close();
+        return;
+      }
+    }
+  }
+  
+  console.log("[Initialize] Language initialized successfully");
+  
+  strYear = GetCookie("EsmYear");
+  if(strYear && strYear.length > 0) {
+      strYear.toUpperCase();
+      gESM.mySel = -1;
+      for (i=0; i < gESM.ModelInfo.length; ++i) {
+        strData = gESM.ModelInfo[i].Year;
+        strData.toUpperCase();
+        if (strYear == strData) {
+          gESM.mySel = i;
+          break;
+        }
+      }
+        if((gESM.mySel >= 0) && (gESM.mcSel < 0)) {
+          strCode = GetCookie("EsmCode");
+          if(strCode.length > 0) {
+            strCode.toUpperCase();
+            gESM.mcSel = -1;
+            for (i=0; i < gESM.ModelInfo[gESM.mySel].CodeList.length; ++i) {
+              strData = gESM.ModelInfo[gESM.mySel].CodeList[i].Code;
+              strData.toUpperCase();
+              if (strCode == strData) {
+                gESM.mcSel = i;
+                break;
+              }
+            }
+          }
+        }
+  }
+  
+  if (gESM.mySel < 0 && gESM.ModelInfo.length > 0) {
+    gESM.mySel = 0;
+    console.log("[Initialize] Model year not found in cookies, using first available");
+  }
+  
+  if (gESM.mySel >= 0 && gESM.mcSel < 0 && gESM.ModelInfo[gESM.mySel].CodeList.length > 0) {
+    gESM.mcSel = 0;
+    console.log("[Initialize] Model code not found in cookies, using first available");
+  }
+  
+  console.log("[Initialize] ✓ Initialization completed successfully");
+}
+function Old(obj){
+  if(frameLoadTimeout) clearTimeout(frameLoadTimeout);
+  if(obj == null){
+    console.warn("Frame object is null");
+    return;
+  }
+  try {
+    if(typeof(obj.Fsl) === 'function') {
+      var keyword = gESM.Keyword || "";
+      console.log("[Old] Calling obj.Fsl with:", {key: gESM.Key, keyword: keyword});
+      obj.Fsl(gESM.Key,gESM.Sct,gESM.Sc,gESM.Sys,gESM.Comp,gESM.Sitq,keyword);
+    }
+    if(typeof(obj.Chh) === 'function' && obj.document && obj.document.body) {
+      obj.Chh(obj.document.body.clientHeight);
+    }
+  } catch(e) {
+    console.error("Error in Old() function:", e);
+    console.error("Error details:", e.message, "Stack:", e.stack);
+  }
+}
+function Tsl(key,sct,sc,sys,comp,sitq){
+  // Proxy function to handle tree clicks - called from nested tree iframe
+  console.log("[Parent Tsl] Called with:", {sys, comp});
+  
+  gESM.Key = key;
+  gESM.Sct = sct;
+  gESM.Sc = sc;
+  gESM.Sys = sys;
+  gESM.Comp = comp;
+  gESM.Sitq = sitq;
+  
+  // Load SML in F12 frame
+  if (gESM.mySel < 0 || gESM.mcSel < 0) {
+    console.error("[Parent Tsl] Invalid model selection");
+    return;
+  }
+  
+  if (!gESM.ModelInfo || !gESM.ModelInfo[gESM.mySel] || !gESM.ModelInfo[gESM.mySel].CodeList[gESM.mcSel]) {
+    console.error("[Parent Tsl] Invalid model info");
+    return;
+  }
+  
+  var code = gESM.ModelInfo[gESM.mySel].CodeList[gESM.mcSel].Code;
+  var year = gESM.ModelInfo[gESM.mySel].Year;
+  var smlFile = "./en/html/SML_" + code + "_" + year + ".html";
+  
+  console.log("[Parent Tsl] Loading SML:", smlFile);
+  
+  // Try to load in F12 frame using multiple methods
+  var loaded = false;
+  
+  // Method 1: Direct F12 frame reference
+  try {
+    if (F12 && F12.location) {
+      F12.location = smlFile;
+      console.log("[Parent Tsl] ✓ Loaded via direct F12");
+      loaded = true;
+    }
+  } catch(e) {
+    console.warn("[Parent Tsl] Direct F12 failed:", e.message);
+  }
+  
+  // Method 2: window.frames
+  if (!loaded) {
+    try {
+      if (window.frames && window.frames.F12) {
+        window.frames.F12.location = smlFile;
+        console.log("[Parent Tsl] ✓ Loaded via window.frames.F12");
+        loaded = true;
+      }
+    } catch(e) {
+      console.warn("[Parent Tsl] window.frames.F12 failed:", e.message);
+    }
+  }
+  
+  // Method 3: getElementById
+  if (!loaded) {
+    try {
+      var f12Elem = document.getElementById('F12');
+      if (f12Elem && f12Elem.contentWindow) {
+        f12Elem.contentWindow.location = smlFile;
+        console.log("[Parent Tsl] ✓ Loaded via getElementById");
+        loaded = true;
+      }
+    } catch(e) {
+      console.warn("[Parent Tsl] getElementById failed:", e.message);
+    }
+  }
+  
+  if (!loaded) {
+    console.error("[Parent Tsl] ✗ Could not load SML");
+  }
+}
+
+function Cts(key,anc){
+  var path = "";
+  var dir = window.location.href.substring(0,window.location.href.lastIndexOf("/")) + "/" +gESM.Lng[gESM.lngSel].Code+"/html/";
+  if(!anc){
+    anc = "";
+  }
+  else{
+    anc = "#" + anc;
+  }
+  var url =  key +".html" + anc;
+  jsShopPopUpHistWindow(url,key,anc);
+}
+
+function Jmp(anc){
+  
+}
+
+function Prt(key){
+  
+}
+
+function Scl(sys,comp){
+  
+}
+var win = null;
+
+function jsShopPopUpHistWindow(url,key,anc)
+{
+  var w;
+  var h;
+  w = 1024;
+  h = 668;
+
+  var t = (screen.AvailHeight- h)/2;
+  var l = (screen.AvailWidth - w)/2;
+  var newUrl = window.location.href.substring(0,window.location.href.lastIndexOf("/")) + "/" +gESM.Lng[gESM.lngSel].Code+"/html/"+"ESMManualMain.html?url="+escape(url)+"&key="+key+"&anc="+anc;
+  if(win == null || win.closed){
+		
+    win = jsDispPopup(w, h, "toolbar=yes,menubar=yes,status=yes,scrollbars=no,resizable=yes,top="+t+",left="+l, newUrl, true);
+  }
+  else {
+    win.location.href = newUrl;
+  }
+  win.resizeTo(w,h);
+  win.moveTo(l,t);
+  win.focus();
+}
+
+function jsDispPopup(pwidth, pheight, poption, purl, focusflg) 
+{
+  var wmargin = 50;
+  var ww = screen.availWidth;
+  var wh = screen.availHeight;
+  if (window.event != null) {
+    var wx = window.event.screenX;
+    var wy = window.event.screenY;
+  }
+  else{
+    var wx = ww/2-pwidth/2;
+    var wy = wh/2-pheight/2;
+  }
+  if (pwidth != null || pheight != null) {
+    if (wx <= ww - pwidth - wmargin) {
+      wleft = wx;
+    }
+    else {
+      wleft = wx - pwidth;
+    }
+    if (wy <= wh - pheight - wmargin) {
+      wtop = wy;
+    }
+    else {
+      wtop = wy - pheight;
+    }
+    if ((wleft < wmargin) || (wtop < wmargin)) {
+      wleft = wmargin;
+      wtop = wmargin;
+    }
+  }
+  var wattr = poption;
+  if (pwidth != null || pheight != null) {
+    wattr = wattr + ", width=" + pwidth + ", height=" + pheight + ", left=" + wleft + ", top=" + wtop;
+  }
+  var wpopup = window.open(purl,"ESM",wattr);
+  if ( wpopup == null ) {
+    maxRetryOpenWindow = 10000;
+    for (i=0;i<maxRetryOpenWindow;i++) {
+      wpopup = window.open(purl,"ESM",wattr);
+      if ( wpopup != null ) {
+        break;
+      }
+    }
+    if ( i == maxRetryOpenWindow ) {
+      return wpopup;
+    }
+  }
+  if (pwidth != null || pheight != null) {
+    wpopup.resizeTo(pwidth,pheight);
+    wpopup.moveTo(wleft,wtop);
+  }
+  return wpopup;
+}
+
+function jsClosePopup(pWinName){
+}
+
+function OnLoad()
+{
+  var nNdx;                                                         
+     
+    if(gESM.subSel==0){
+      gESM.subSel=1;
+    }
+    if(gESM.subSel==1){
+      if((gESM.subUse&1)==0){
+        gESM.subSel=2;
+      }
+    }
+    if(gESM.subSel==2){
+      if((gESM.subUse&2)==0){
+        gESM.subSel=1;
+      }
+    }
+    ChangeLang(false);
+}
+                                             
+                                                               
+function OnUnload()
+{
+  // Frame unload cleanup - no longer needed as frames load from en/html
+}
+
+
+function OnResizeProc()
+{
+   if(F12.Chh){
+      F12.Chh(F12.document.body.clientHeight);
+   }
+}
+
+// Call Initialize safely with error handling
+try {
+  if (typeof(Initialize) === 'function') {
+    Initialize();
+    console.log("[Parent] Initialize() completed successfully");
+  }
+} catch(e) {
+  console.error("[Parent] Initialize() error:", e.message, e.stack);
+  // Try to recover by reinitializing globals
+  try {
+    initializeGlobals();
+    console.log("[Parent] Recovered globals after Initialize error");
+  } catch(e2) {
+    console.error("[Parent] Failed to recover globals:", e2.message);
+  }
+}
+
+// Signal to child frames that parent is ready for communication
+// Do this after successful initialization
+try {
+  if (typeof(FrameSync) !== 'undefined' && typeof(FrameSync.parentReady) === 'function') {
+    FrameSync.parentReady();
+    console.log("[Parent] Frame synchronization ready - child frames can now safely access parent ESM");
+  } else {
+    console.warn("[Parent] FrameSync.parentReady not available");
+  }
+} catch(e) {
+  console.error("[Parent] Error calling FrameSync.parentReady():", e.message);
+  // Mark as ready anyway using fallback
+  if (!window.ESM_SYNC) {
+    window.ESM_SYNC = {};
+  }
+  window.ESM_SYNC.parentReady = true;
+  console.log("[Parent] Fallback parent ready marker set");
+}
+
+window.onload=OnLoad;
+
+// Frame reference helper for modern browsers
+setTimeout(function() {
+  if (window.frames && window.frames.length > 0) {
+    try {
+      window.F10 = window.frames['F10'] || window.frames[0];
+      window.F11 = window.frames['F11'] || (window.frames[1] && window.frames[1]);
+      window.F12 = window.frames['F12'] || (document.getElementById('F12'));
+      // Also try direct ID access
+      if (!window.F12 && document.getElementById('F12')) {
+        window.F12 = document.getElementById('F12');
+      }
+      console.log("[Parent] Frame references setup complete");
+    } catch(e) {
+      console.log('Frame reference setup warning:', e.message);
+    }
+  }
+}, 100);
+//-->
+</script>
+<noscript>
+<p>Execute the Microsoft Internet Explorer&#x00AE; Version more than 5.0.</p>
+</noscript>
+</head>
+<frameset id="F01" rows="71,*" frameborder="0" framespacing="0">
+  <frame id="F10" src="./en/html/ESMTITLE.HTML" noresize scrolling="no">
+  <frameset id="F02" cols="370,*">
+    <frame id="F11" name="F11" src="./en/html/ESMSELCT.HTML">
+    <frame id="F12" name="F12" src="./en/html/ESMBLANK.HTML" onResize="OnResizeProc();">
+  </frameset>
+</frameset>
+</html>

@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:475px; height:353px;\" coordsize=\"475,353\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:475px;height:353px;\">");
+write("<img id=\"img1\" src=\"../img/SAA4EP0K72200081460FAAD02.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:475px;height:353px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:25px;top:274px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>WHT/RED<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:368px;top:279px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>WHT/RED<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:341px;top:147px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>WHT/RED<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:72px;top:16px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>MOTOR RELAY 4P<br>CONNECTOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:129px;top:322px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b></b>Wire side of female terminals<br></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:259px;top:16px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>MOTOR 2P CONNECTOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:30px;top:54px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>LHD model:<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:32px;top:185px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>RHD model:<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:26px;top:141px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>WHT/RED<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

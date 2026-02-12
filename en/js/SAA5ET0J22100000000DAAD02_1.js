@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group2\" class=\"drag\" style=\"position:relative; width:950px; height:543px;\" coordsize=\"950,543\">");
+write("<v:rect id=\"rect2\"class=\"drag\"  style=\"width:950px;height:543px;\">");
+write("<img id=\"img2\" src=\"../img/SAA5ET0J22100000000DAAD02.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:543px;border-color:#ffffff\">");
+write("<p id=\"p2_1\" class=\"drag\" style=\"position:absolute;left:454px;top:15px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SPEEDOMETER<br></b>Vehicle Speed Signal Circuit<br><a href=\"javascript:parent.Cts('000000000003233','i000')\">Troubleshooting,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p2_2\" class=\"drag\" style=\"position:absolute;left:796px;top:110px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>FUEL GAUGE<br><a href=\"javascript:parent.Cts('000000000000807','i000')\"></b>Test,</a><br> in the  Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p2_3\" class=\"drag\" style=\"position:absolute;left:464px;top:375px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ODO/TRIP/OUTSIDE AIR<br>TEMPERATURE INDICATOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_4\" class=\"drag\" style=\"position:absolute;left:718px;top:478px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>COOLANT LOW TEMPERATURE<br>INDICATOR LIGHT<br><a href=\"javascript:parent.Cts('000000000003235','i000')\"></b>Troubleshooting,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p2_5\" class=\"drag\" style=\"position:absolute;left:543px;top:420px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>COOLANT HIGH TEMPERATURE<br>WARNING LIGHT<br><a href=\"javascript:parent.Cts('000000000003235','i000')\"></b>Troubleshooing,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p2_6\" class=\"drag\" style=\"position:absolute;left:286px;top:420px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>A/T GEAR POSITION<br>INDICATOR (CVT)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_7\" class=\"drag\" style=\"position:absolute;left:98px;top:389px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SEQUENTIAL<br>SPORTSHIFT MODE<br>INDICATOR (CVT)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_8\" class=\"drag\" style=\"position:absolute;left:157px;top:61px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>TACHOMETER<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

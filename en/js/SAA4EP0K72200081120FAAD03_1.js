@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:475px; height:320px;\" coordsize=\"475,320\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:475px;height:320px;\">");
+write("<img id=\"img1\" src=\"../img/SAA4EP0K72200081120FAAD03.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:475px;height:320px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:80px;top:15px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>EPS CONTROL UNIT CONNECTOR B (14P)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:38px;top:128px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>T/SIG<br>(GRY/BLU)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:130px;top:288px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b></b>Wire side of female terminals<br></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:276px;top:130px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>T/SIG<br>(GRY/BLU)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:135px;top:129px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b></b>Wire side of <br>female terminals<br></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:170px;top:209px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>TORQUE SENSOR<br>7P CONNECTOR<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:37px;top:207px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>T/SIG<br>(GRY/BLU)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:351px;top:209px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>T/SIG<br>(GRY/BLU)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:17px;top:49px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>LHD model:<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_10\" class=\"drag\" style=\"position:absolute;left:261px;top:49px;font-weight:normal;font-size:9.2pt;\">");
+write("<nobr><b>RHD model:<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

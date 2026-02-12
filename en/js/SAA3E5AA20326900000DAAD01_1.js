@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:703px;\" coordsize=\"950,703\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:703px;\">");
+write("<img id=\"img1\" src=\"../img/SAA3E5AA20326900000DAAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:703px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:558px;top:18px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>INTAKE AIR TEMPERATURE/<br>MANIFOLD ABSOLUTE PRESSURE (IAT/MAP)<br>SENSOR<br><a href=\"javascript:parent.Cts('000000000001473','i000')\"></b>Replacement,<br></a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:730px;top:502px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE COOLANT<br>TEMPERATURE<br>(ECT) SENSOR<br><a href=\"javascript:parent.Cts('000000000001469','i000')\"></b>Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:420px;top:639px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>KNOCK SENSOR<br><a href=\"javascript:parent.Cts('000000000001474','i000')\"></b>Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:156px;top:601px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CRANKSHAFT POSITION (CKP)<br>SENSOR<br><a href=\"javascript:parent.Cts('000000000001467','i000')\"></b>Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:383px;top:67px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>REAR IGNITION<br>COIL<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:39px;top:527px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>FRONT<br>IGNITION<br>COIL<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:799px;top:286px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ELECTRICAL<br>LOAD DETECTOR<br>(ELD)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:771px;top:101px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CAMSHAFT<br>POSITION (CMP)<br>SENSOR<br><a href=\"javascript:parent.Cts('000000000001466','i000')\"></b>Replacement,<br></a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:635px;top:602px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>INJECTORS<br><a href=\"javascript:parent.Cts('000000000001472','i000')\"></b>Replacement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p1_10\" class=\"drag\" style=\"position:absolute;left:0px;top:674px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>*: The illustration shows LHD model.<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

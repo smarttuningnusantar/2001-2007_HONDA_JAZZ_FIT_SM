@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group35\" class=\"drag\" style=\"position:relative; width:950px; height:687px;\" coordsize=\"950,687\">");
+write("<v:rect id=\"rect35\"class=\"drag\"  style=\"width:950px;height:687px;\">");
+write("<img id=\"img35\" src=\"../img/SAA5ES0A20300000000DBAD82.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:687px;border-color:#ffffff\">");
+write("<p id=\"p35_1\" class=\"drag\" style=\"position:absolute;left:16px;top:69px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE<br>COMPARTMENT<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p35_2\" class=\"drag\" style=\"position:absolute;left:16px;top:517px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>UNDER-DASH<br>FUSE/RELAY<br>BOX<br></b></nobr>");
+write("</p>");
+write("<p id=\"p35_3\" class=\"drag\" style=\"position:absolute;left:826px;top:303px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C204<br></b></nobr>");
+write("</p>");
+write("<p id=\"p35_4\" class=\"drag\" style=\"position:absolute;left:603px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DASHBOARD<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p35_5\" class=\"drag\" style=\"position:absolute;left:717px;top:631px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C218<br></b></nobr>");
+write("</p>");
+write("<p id=\"p35_6\" class=\"drag\" style=\"position:absolute;left:819px;top:631px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C217<br></b></nobr>");
+write("</p>");
+write("<p id=\"p35_7\" class=\"drag\" style=\"position:absolute;left:292px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C209<br></b></nobr>");
+write("</p>");
+write("<p id=\"p35_8\" class=\"drag\" style=\"position:absolute;left:187px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C241<br>C306<br></b></nobr>");
+write("</p>");
+write("<p id=\"p35_9\" class=\"drag\" style=\"position:absolute;left:445px;top:485px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C215<br>C305<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

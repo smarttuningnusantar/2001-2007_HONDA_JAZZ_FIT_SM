@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group19\" class=\"drag\" style=\"position:relative; width:950px; height:767px;\" coordsize=\"950,767\">");
+write("<v:rect id=\"rect19\"class=\"drag\"  style=\"width:950px;height:767px;\">");
+write("<img id=\"img19\" src=\"../img/SAA5ESPA20300000000DBAD51.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:767px;border-color:#ffffff\">");
+write("<p id=\"p19_1\" class=\"drag\" style=\"position:absolute;left:296px;top:19px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DASHBOARD<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_2\" class=\"drag\" style=\"position:absolute;left:740px;top:28px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C241<br>C306<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_3\" class=\"drag\" style=\"position:absolute;left:803px;top:322px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE<br>COMPARTMENT<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_4\" class=\"drag\" style=\"position:absolute;left:485px;top:564px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C209<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_5\" class=\"drag\" style=\"position:absolute;left:845px;top:544px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C215<br>C305<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_6\" class=\"drag\" style=\"position:absolute;left:211px;top:715px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C218<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_7\" class=\"drag\" style=\"position:absolute;left:80px;top:708px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C217<br></b></nobr>");
+write("</p>");
+write("<p id=\"p19_8\" class=\"drag\" style=\"position:absolute;left:35px;top:360px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>C204<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

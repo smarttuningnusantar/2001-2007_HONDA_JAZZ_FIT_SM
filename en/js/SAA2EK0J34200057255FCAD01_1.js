@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:626px;\" coordsize=\"950,626\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:626px;\">");
+write("<img id=\"img1\" src=\"../img/SAA2EK0J34200057255FCAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:626px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:335px;top:592px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>Wire side of female terminals<br></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:337px;top:399px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>GRN/WHT<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:496px;top:399px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>LT GRN<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:320px;top:542px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>YEL<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:446px;top:543px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>RED/YEL<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:560px;top:544px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>BLK<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:304px;top:335px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>B<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:743px;top:149px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>A<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

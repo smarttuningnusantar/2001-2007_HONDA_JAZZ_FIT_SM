@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group2\" class=\"drag\" style=\"position:relative; width:950px; height:431px;\" coordsize=\"950,431\">");
+write("<v:rect id=\"rect2\"class=\"drag\"  style=\"width:950px;height:431px;\">");
+write("<img id=\"img2\" src=\"../img/SAA2E02E15100000000CAAD13.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:431px;border-color:#ffffff\">");
+write("<p id=\"p2_1\" class=\"drag\" style=\"position:absolute;left:504px;top:377px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>START CLUTCH<br>BACK-UP VALVE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_2\" class=\"drag\" style=\"position:absolute;left:334px;top:375px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PH CONTROL<br>SHIFT VALVE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_3\" class=\"drag\" style=\"position:absolute;left:138px;top:349px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>MAIN VALVE BODY<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_4\" class=\"drag\" style=\"position:absolute;left:160px;top:20px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>LUBRICATION VALVE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_5\" class=\"drag\" style=\"position:absolute;left:389px;top:19px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PH REGULATOR VALVE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_6\" class=\"drag\" style=\"position:absolute;left:576px;top:42px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>START CLUTCH<br>SHIFT VALVE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_7\" class=\"drag\" style=\"position:absolute;left:699px;top:140px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CLUTCH REDUCING VALVE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_8\" class=\"drag\" style=\"position:absolute;left:696px;top:266px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SHIFT INHIBITOR VALVE<br></b></nobr>");
+write("</p>");
+write("<p id=\"p2_9\" class=\"drag\" style=\"position:absolute;left:649px;top:348px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>START CLUTCH<br>ACCUMULATOR VALVE<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

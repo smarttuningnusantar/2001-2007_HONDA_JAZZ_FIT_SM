@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group2\" class=\"drag\" style=\"position:relative; width:950px; height:1103px;\" coordsize=\"950,1103\">");
+write("<v:rect id=\"rect2\"class=\"drag\"  style=\"width:950px;height:1103px;\">");
+write("<img id=\"img2\" src=\"../img/SAA3E5PA18300000000DAAD02.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:1103px;border-color:#ffffff\">");
+write("<p id=\"p2_1\" class=\"drag\" style=\"position:absolute;left:603px;top:20px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PISTON RINGS<br><a href=\"javascript:parent.Cts('000000000000046','i000')\"></b>Replacement,</a><br> in the 2002 Jazz/Fit Shop Manual<br></nobr>");
+write("</p>");
+write("<p id=\"p2_2\" class=\"drag\" style=\"position:absolute;left:615px;top:153px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PISTON<br><a href=\"javascript:parent.Cts('000000000000041','i000')\"></b>Removal,</a><br> in the 2002 Jazz/Fit Shop Manual<br><a href=\"javascript:parent.Cts('000000000000870','i000')\">Measurement,</a><br></nobr>");
+write("</p>");
+write("<p id=\"p2_3\" class=\"drag\" style=\"position:absolute;left:568px;top:255px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CONNECTING ROD<br><a href=\"javascript:parent.Cts('000000000000038','i000')\"></b>End play,</a><br> in the 2002 Jazz/Fit Shop Manual<br><a href=\"javascript:parent.Cts('000000000000044','iR02')\">Small end measurement,<br></a><br> in the 2002 Jazz/Fit Shop Manual<br></nobr>");
+write("</p>");
+write("<p id=\"p2_4\" class=\"drag\" style=\"position:absolute;left:50px;top:320px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>PISTON PIN<br><a href=\"javascript:parent.Cts('000000000000044','iR01')\"></b>Removal,</a><br> in the 2002 Jazz/Fit Shop Manual<br><a href=\"javascript:parent.Cts('000000000000044','iR02')\">Inspection,</a><br> in the 2002 Jazz/Fit Shop Manual<br><a href=\"javascript:parent.Cts('000000000000044','iR03')\">Installation,</a><br> in the 2002 Jazz/Fit Shop Manual<br></nobr>");
+write("</p>");
+write("<p id=\"p2_5\" class=\"drag\" style=\"position:absolute;left:604px;top:804px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE BLOCK<br><a href=\"javascript:parent.Cts('000000000000870','i000')\"></b>Cylinder bore inspection,</a><br><a href=\"javascript:parent.Cts('000000000000507','i000')\">Warpage inspection,</a><br> in the 2002 Jazz/Fit Shop Manual<br><a href=\"javascript:parent.Cts('000000000000035','i000')\">Cylinder bore honing,</a><br> in the 2002 Jazz/Fit Shop Manual<br><a href=\"javascript:parent.Cts('000000000000041','i090')\">Ridge removal,</a><br> in the 2002 Jazz/Fit Shop Manual<br></nobr>");
+write("</p>");
+write("<p id=\"p2_6\" class=\"drag\" style=\"position:absolute;left:476px;top:948px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CONNECTING ROD BEARINGS<br><a href=\"javascript:parent.Cts('000000000000039','iR01')\"></b>Oil clearance,</a><br> in the 2002 Jazz/Fit Shop Manual<br><a href=\"javascript:parent.Cts('000000000000039','iR02')\">Selection,</a><br> in the 2002 Jazz/Fit Shop Manual<br></nobr>");
+write("</p>");
+write("<p id=\"p2_7\" class=\"drag\" style=\"position:absolute;left:139px;top:1036px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CONNECTING BOLT<br><a href=\"javascript:parent.Cts('000000000000040','i000')\"></b>Inspection,</a><br> in the 2002 Jazz/Fit Shop Manual<br></nobr>");
+write("</p>");
+write("<p id=\"p2_8\" class=\"drag\" style=\"position:absolute;left:101px;top:946px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>CONNECTING ROD<br>BEARING CAP<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

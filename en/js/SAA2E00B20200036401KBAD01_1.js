@@ -1,0 +1,34 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:655px;\" coordsize=\"950,655\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:655px;\">");
+write("<img id=\"img1\" src=\"../img/SAA2E00B20200036401KBAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:655px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:157px;top:13px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>KNUCKLE<br></b>Check for deformation and damage.<br></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:287px;top:86px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>WHEEL BEARING<br></b>Replace.<br></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:516px;top:105px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>5 mm SCREW<br>6 N·m<br>(0.6 kgf·m, 4 lbf·ft)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:676px;top:161px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>BRAKE DISC<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:89px;top:371px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SNAP RING<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:150px;top:447px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SPLASH GUARD<br></b>Check for corrosion, deformation,<br>and damage.<br>Replace if rusted.<br></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:361px;top:516px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>HUB<br></b>Check for deformation, <br>damage, and cracks.<br></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:801px;top:245px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>FLAT SCREW<br>6 x 1.0 mm<br>9.8 N·m<br>(1.0 kgf·m, <br>7.2 lbf·ft)<br></b></nobr>");
+write("</p>");
+write("<p id=\"p1_9\" class=\"drag\" style=\"position:absolute;left:739px;top:564px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>SPINDLE NUT<br></b>Replace.<br>22 x 1.5 mm<br>181 N·m<br>(18.5 kgf·m, 134 lbf·ft)<br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

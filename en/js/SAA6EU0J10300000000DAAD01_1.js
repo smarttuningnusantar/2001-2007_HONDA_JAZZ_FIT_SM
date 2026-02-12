@@ -1,0 +1,31 @@
+with(document) {
+write("<v:group id=\"group1\" class=\"drag\" style=\"position:relative; width:950px; height:943px;\" coordsize=\"950,943\">");
+write("<v:rect id=\"rect1\"class=\"drag\"  style=\"width:950px;height:943px;\">");
+write("<img id=\"img1\" src=\"../img/SAA6EU0J10300000000DAAD01.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:943px;border-color:#ffffff\">");
+write("<p id=\"p1_1\" class=\"drag\" style=\"position:absolute;left:432px;top:16px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>RADIO REMOTE SWITCH<br><a href=\"javascript:parent.Cts('000000000003223','i000')\"></b>Test,</a><br> in the Shop Manual Supplement, P/N 62SAA25<br></nobr>");
+write("</p>");
+write("<p id=\"p1_2\" class=\"drag\" style=\"position:absolute;left:489px;top:78px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>AUDIO UNIT<br><a href=\"javascript:parent.Cts('000000000003356','i000')\"></b>Connector Replacement,</a><br><a href=\"javascript:parent.Cts('000000000000168','i000')\">Removal/Installation,</a><br> in the Shop Manual, P/N 62SAA00<br>General Troubleshooting<br><a href=\"javascript:parent.Cts('000000000000158','i000')\"> Information,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_3\" class=\"drag\" style=\"position:absolute;left:55px;top:750px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>LEFT FRONT DOOR SPEAKER<br><a href=\"javascript:parent.Cts('000000000000169','i000')\"></b>Replacement,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_4\" class=\"drag\" style=\"position:absolute;left:294px;top:841px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>LEFT REAR DOOR SPEAKER<br><a href=\"javascript:parent.Cts('000000000000169','i000')\"></b>Replacement,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_5\" class=\"drag\" style=\"position:absolute;left:587px;top:203px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>RIGHT FRONT DOOR SPEAKER<br><a href=\"javascript:parent.Cts('000000000000169','i000')\"></b>Replacement,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_6\" class=\"drag\" style=\"position:absolute;left:699px;top:268px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>RIGHT REAR DOOR SPEAKER<br><a href=\"javascript:parent.Cts('000000000000169','i000')\"></b>Replacement,</a><br> in the Shop Manual, P/N 62SAA00<br></nobr>");
+write("</p>");
+write("<p id=\"p1_7\" class=\"drag\" style=\"position:absolute;left:16px;top:912px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b></b>LHD type is shown, RHD type is similar.<br></nobr>");
+write("</p>");
+write("<p id=\"p1_8\" class=\"drag\" style=\"position:absolute;left:16px;top:547px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>AUXILIARY JACK ASSEMBLY<br><a href=\"javascript:parent.Cts('000000000003358','i000')\"></b>Connector Replacement,<br></a><br><a href=\"javascript:parent.Cts('000000000003357','i000')\">Replacement,<br></a><br></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}

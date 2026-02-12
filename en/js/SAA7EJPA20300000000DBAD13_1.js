@@ -1,0 +1,37 @@
+with(document) {
+write("<v:group id=\"group27\" class=\"drag\" style=\"position:relative; width:950px; height:671px;\" coordsize=\"950,671\">");
+write("<v:rect id=\"rect27\"class=\"drag\"  style=\"width:950px;height:671px;\">");
+write("<img id=\"img27\" src=\"../img/SAA7EJPA20300000000DBAD13.PNG\" border=\"1\" class=\"drag\" style=\"position:absolute;left:0px;top:0px;width:950px;height:671px;border-color:#ffffff\">");
+write("<p id=\"p27_1\" class=\"drag\" style=\"position:absolute;left:804px;top:246px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ECM/PCM<br></b></nobr>");
+write("</p>");
+write("<p id=\"p27_2\" class=\"drag\" style=\"position:absolute;left:760px;top:436px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>ENGINE<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p27_3\" class=\"drag\" style=\"position:absolute;left:348px;top:615px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>DASHBOARD<br>WIRE HARNESS<br></b></nobr>");
+write("</p>");
+write("<p id=\"p27_4\" class=\"drag\" style=\"position:absolute;left:585px;top:52px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>2<br></b></nobr>");
+write("</p>");
+write("<p id=\"p27_5\" class=\"drag\" style=\"position:absolute;left:638px;top:128px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>3<br></b></nobr>");
+write("</p>");
+write("<p id=\"p27_6\" class=\"drag\" style=\"position:absolute;left:755px;top:148px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>4<br></b></nobr>");
+write("</p>");
+write("<p id=\"p27_7\" class=\"drag\" style=\"position:absolute;left:789px;top:196px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>5<br></b></nobr>");
+write("</p>");
+write("<p id=\"p27_8\" class=\"drag\" style=\"position:absolute;left:324px;top:34px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>1<br></b></nobr>");
+write("</p>");
+write("<p id=\"p27_9\" class=\"drag\" style=\"position:absolute;left:804px;top:314px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>6<br></b></nobr>");
+write("</p>");
+write("<p id=\"p27_10\" class=\"drag\" style=\"position:absolute;left:725px;top:495px;font-weight:normal;font-size:8.6pt;\">");
+write("<nobr><b>7<br></b></nobr>");
+write("</p>");
+write("</v:rect>");
+write("</v:group>");
+}
