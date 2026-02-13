@@ -172,7 +172,7 @@ function OnLoadTree(obj) {
 
 ### **Test Case 1: Basic Navigation (GD1 2002)**
 ```
-1. Open: https://gazrux184-del.github.io/2001-2007_HONDA_JAZZ_FIT_SM/
+1. Open: https://smarttuningnusantar.github.io/2001-2007_HONDA_JAZZ_FIT_SM/HONDAESM.HTML
 2. Select Model Year: 2002
 3. Select Model Code: GD1
 4. Expected: SMT_GD1_2002.html loads, showing tree structure
@@ -304,7 +304,7 @@ Solution:
 
 ## 🌐 Live Deployment
 
-**URL:** https://gazrux184-del.github.io/2001-2007_HONDA_JAZZ_FIT_SM/
+**URL:** https://smarttuningnusantar.github.io/2001-2007_HONDA_JAZZ_FIT_SM/HONDAESM.HTML
 
 All commits automatically deployed to GitHub Pages  
 Latest commit: 8c7067ce  

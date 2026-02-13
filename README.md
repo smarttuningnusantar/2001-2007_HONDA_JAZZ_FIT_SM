@@ -1,6 +1,6 @@
 # 2001-2007 Honda Jazz/Fit Service Manual
 
-**Live Site**: https://gazrux184-del.github.io/2001-2007_HONDA_JAZZ_FIT_SM/
+**Live Site**: https://smarttuningnusantar.github.io/2001-2007_HONDA_JAZZ_FIT_SM/HONDAESM.HTML
 
 A comprehensive digital service manual for Honda Jazz/Fit vehicles (2001-2007) with interactive documentation, search functionality, and diagnostic tools.
 
@@ -99,17 +99,17 @@ A comprehensive digital service manual for Honda Jazz/Fit vehicles (2001-2007) w
 ## 🚀 Quick Start
 
 1. **Visit the Live Site**:
-   https://gazrux184-del.github.io/2001-2007_HONDA_JAZZ_FIT_SM/HONDAESM.HTML
+   https://smarttuningnusantar.github.io/2001-2007_HONDA_JAZZ_FIT_SM/HONDAESM.HTML
 
 2. **For Developers**:
    ```bash
-   git clone https://github.com/gazrux184-del/2001-2007_HONDA_JAZZ_FIT_SM.git
+   git clone https://github.com/smarttuningnusantar/2001-2007_HONDA_JAZZ_FIT_SM.git
    cd 2001-2007_HONDA_JAZZ_FIT_SM
    # Open HONDAESM.HTML in a web server (not file://)
    ```
 
 3. **Access Diagnostic Panel**:
-   https://gazrux184-del.github.io/2001-2007_HONDA_JAZZ_FIT_SM/en/html/DIAGNOSTIC.HTML
+   https://smarttuningnusantar.github.io/2001-2007_HONDA_JAZZ_FIT_SM/en/html/DIAGNOSTIC.HTML
 
 ## 🔧 How to Use
 
@@ -248,8 +248,8 @@ Original content copyright © Honda Motor Co., Ltd.
 
 ## 🔗 Links
 
-- **GitHub Repository**: https://github.com/gazrux184-del/2001-2007_HONDA_JAZZ_FIT_SM
-- **Live Site**: https://gazrux184-del.github.io/2001-2007_HONDA_JAZZ_FIT_SM/
+- **GitHub Repository**: https://github.com/smarttuningnusantar/2001-2007_HONDA_JAZZ_FIT_SM
+- **Live Site**: https://smarttuningnusantar.github.io/2001-2007_HONDA_JAZZ_FIT_SM/HONDAESM.HTML
 - **Main Page**: HONDAESM.HTML
 - **Diagnostic Panel**: en/html/DIAGNOSTIC.HTML
 - **Sitemap**: sitemap.xml
