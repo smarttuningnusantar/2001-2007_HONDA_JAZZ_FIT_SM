@@ -20,4 +20,4 @@ Allow: /2001-2007_HONDA_JAZZ_FIT_SM/
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://gazrux184-del.github.io/2001-2007_HONDA_JAZZ_FIT_SM/sitemap.xml
+Sitemap: https://smarttuningnusantar.github.io/2001-2007_HONDA_JAZZ_FIT_SM/sitemap.xml
